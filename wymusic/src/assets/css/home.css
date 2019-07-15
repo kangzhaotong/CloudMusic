@@ -15,7 +15,7 @@ body{
     height:98px;
     padding-top:18px;
     overflow: hidden;
-   
+    position: absolute;
 }
 #header .icon-huatong{
     width:32px;
