@@ -39,10 +39,10 @@ class search extends Component{
                             return (<p className='content' key={index}>
                                 
                                     <span>{index+1}</span>
-                                <div>
+
                                     <span>{item.searchWord}</span>
                                     <span>{item.score}</span>
-                                </div>
+
                                 <span>{item.content}</span>
                             </p>)
                         })
