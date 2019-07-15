@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
     "@babel/core": "7.4.3",
     "@svgr/webpack": "4.1.0",
     "@typescript-eslint/eslint-plugin": "1.6.0",
@@ -47,10 +48,14 @@
     "postcss-safe-parser": "4.0.1",
     "postcss-viewport-units": "^0.1.6",
     "postcss-write-svg": "^3.0.1",
+=======
+    "axios": "^0.19.0",
+>>>>>>> df755d45752aacbfedae95972902a5bbb7b58a73
     "react": "^16.8.6",
     "react-app-polyfill": "^1.0.1",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
+<<<<<<< HEAD
     "resolve": "1.10.0",
     "sass-loader": "7.1.0",
     "semver": "6.0.0",
@@ -62,6 +67,13 @@
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
     "workbox-webpack-plugin": "4.2.0"
+=======
+    "react-redux": "^7.1.0",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.0.1",
+    "redux": "^4.0.4",
+    "redux-thunk": "^2.3.0"
+>>>>>>> df755d45752aacbfedae95972902a5bbb7b58a73
   },
   "scripts": {
     "start": "node scripts/start.js",
