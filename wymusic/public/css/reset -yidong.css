@@ -1,0 +1,25 @@
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img { 
+     margin:0; padding:0; 
+}
+body{
+    font-size:16px;
+}
+ul,ol,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6{
+    font-size: 16px;
+    font-weight: normal;
+}
+b,strong{
+     font-weight: normal;
+}
+i,em{
+    font-style: normal;
+}
+*{
+    box-sizing: border-box;
+}
