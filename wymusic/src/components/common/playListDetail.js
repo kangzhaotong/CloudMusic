@@ -20,7 +20,7 @@ class PlayListDetail extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props.match.params.id);
         if(this.props.match.params.id) {
             this.props.playListDetail(this.props.match.params.id);
         } else alert("获取歌单信息错误！！");

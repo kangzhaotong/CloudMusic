@@ -1,6 +1,12 @@
-import {combineReducers} from 'redux';
+
+import {combineReducers} from 'redux'
+import DiscoverReducer from './discover';
+//歌单
 import playList from './playList';
 
-export default combineReducers({
+let reducer= combineReducers({
+    discover:DiscoverReducer,
     playList
 })
+
+export default reducer;

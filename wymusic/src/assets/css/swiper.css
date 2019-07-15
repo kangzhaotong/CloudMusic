@@ -1,0 +1,32 @@
+
+html,body{
+    height: 100%;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    height: 100%;
+    width:100%;
+}
+#swiper {
+    width: 100%;
+    height: 164px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#swiper .swiper-container {
+    width: 100%;
+    overflow: hidden;
+    height: 140px;
+    display: block;
+}
+#swiper .swiper-container img{
+    height:100%;
+}
+
+.swiper-pagination{
+    margin-top: 140px;
+    height:8.8px;
+}
