@@ -28,8 +28,7 @@ class Home extends Component{
                 <div id="header">
                     <i className="iconfont icon-huatong"></i>
                     <div className="search"onClick={this.seaHandler} >
-                        <input type="text"  />
-                        <span>大家都在搜 隔壁老樊</span>
+                        <input type="text" placeholder="大家都在搜 隔壁老樊" />
                         <i className="iconfont icon-fangdajing"></i>
                     </div>
                     <i className="iconfont icon-gedan"></i>

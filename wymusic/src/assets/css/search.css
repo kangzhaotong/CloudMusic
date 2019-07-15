@@ -13,13 +13,12 @@ body{
 
 
 /*searchtop*/
- .searchTop{
+ .container{
     width:100%;
     height:76px;
     background: #ffffff;
-    overflow: hidden;
 }
-#search1 .searchTop>input{
+#search1 .container>input{
     width:502px;
     height:72px;
     border-radius:32px;
@@ -31,13 +30,13 @@ body{
     margin-left:66px;
     margin-right:20px;
 }
-.searchTop>.icon-fangdajing{
+.container>.icon-fangdajing{
     font-size:28px;
     color: #949595;
     position: relative;
     left:-454px;
 }
-.searchTop>span{
+.container>span{
     font-size:32px;
     color:#000001;
     text-align:center;
@@ -64,9 +63,7 @@ body{
     height:66px;
     margin-bottom:52px;
 }
-.hotSearch>.content div{
-    height:66px;
-}
+
 .hotSearch>.content>span:nth-of-type(1){
     color:red;
     font-size:24px;
@@ -77,7 +74,7 @@ body{
     display: inline-block;
     float: left;
 }
-.hotSearch>.content>div span:nth-of-type(1){
+.hotSearch>.content span:nth-of-type(2){
     color:#333334;
     font-size:24px;
     font-weight:700;
@@ -86,7 +83,7 @@ body{
     display: inline-block;
     
 }
-.hotSearch>.content>div span:nth-of-type(2){
+.hotSearch>.content span:nth-of-type(3){
     color:#d0d0d0;
     font-size:16px;
     font-weight:600;
@@ -94,7 +91,7 @@ body{
     margin-left:34px;
     display: inline-block;
 }
-.hotSearch>.content>span:nth-of-type(2){
+.hotSearch>.content>span:nth-of-type(4){
     color:#a7a7a7;
     font-size:20px;
     display:block;
