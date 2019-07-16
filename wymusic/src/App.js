@@ -7,7 +7,7 @@ import Video from './components/video/video';
 import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
-import Run from "./components/discover/run";
+import Player from "./components/discover/player";
 import Search from "./components/discover/search";
 import Result from "./components/discover/result";
 
@@ -50,7 +50,7 @@ class App extends React.Component {
 							<Route path="/friend" component={Friend} />
 							<Route path="/account" component={Account} />
 							<Route path="/everyday" component={Everyday} />
-							<Route path="/run" component={Run} />
+							<Route path="/player/:id" component={Player} />
 							<Route path="/search" component={Search} />
 							<Route path="/result" component={Result} />
 							

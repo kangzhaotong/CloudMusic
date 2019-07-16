@@ -7,14 +7,11 @@ class Everyday extends Component{
         super(props);
         //关键就是这里，把要使用this的函数  在构造函数中用bind方法传入this
         this.back = this.back.bind(this);
-        this.run = this.run.bind(this);
+        // this.run = this.run.bind(this);
 
     }
     back(){
         this.props.history.go(-1);
-    }
-    run(){
-        this.props.history.push("/run");
     }
     render(){
         let tuijian=this.props.discover.tuijian;
@@ -45,7 +42,9 @@ class Everyday extends Component{
                     <div>
                         {
                             tuijian.map( (item,index) => {
-                                return (<p className='content' key={index} onClick={this.run}>
+                                return (<p className='content' key={index} onClick={()=>{
+                                    this.props.history.push("/player/"+item.id);
+                                }}>
                                     <img width={'60px'} key={index}  src={item.song.artists[0].picUrl}  alt="完美"/>
                                     <span>{item.song.name}</span>
                                     <i className="iconfont icon-bofang"></i>
