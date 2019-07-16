@@ -19,7 +19,7 @@ class Concentrate extends React.Component{
                     {
                         this.props.rsPaymentList.map(v => {
                             return (
-                                <div key={v.id} class="payment">
+                                <div key={v.id} className="payment">
                                     <div><img width="100px" src={v.picUrl}></img></div>
                                     <div>
                                         <h3>{v.name}</h3>
@@ -40,7 +40,7 @@ class Concentrate extends React.Component{
     }
 }
 function mapStateToProps(state){
-    console.log(state)
+    // console.log(state)
     return {
         limit:state.radioStation.limit,
         rsPaymentList:state.radioStation.rsPaymentList

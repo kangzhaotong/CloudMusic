@@ -1,11 +1,4 @@
-// let initState={
-//     firstbannerlist:[],
-//     SellPoints:[],
-//     newSongs:[],
-//     tuijian:[],
-//     run:[],
-//     mv:[]
-// };
+
 export default {
     firstbannerlist:[],
     SellPoints:[],
@@ -13,5 +6,6 @@ export default {
     tuijian:[],
     run:[],
     mv:[],
-    list:[]
+    list:[],
+    music:[]
 };

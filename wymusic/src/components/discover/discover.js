@@ -144,4 +144,4 @@ let mapAction=(dispatch)=>{
         }
     }
 };
-export default connect(mapState,mapAction)(withRouter(Home));
+export default connect(mapState,mapAction)(withRouter(Home))
