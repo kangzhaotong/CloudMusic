@@ -1,0 +1,100 @@
+
+html,body{
+    height: 100%;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    height: 100%;
+    width:100%;
+    background-color: #fff;
+}
+
+
+/*searchtop*/
+ .container{
+    width:100%;
+    height:76px;
+    background: #ffffff;
+}
+#search1 .container>input{
+    width:502px;
+    height:72px;
+    border-radius:32px;
+    border:none;
+    padding-left:120px;
+    background: #f7f7f7;
+    line-height:120px;
+    margin-top:6px;
+    margin-left:66px;
+    margin-right:20px;
+}
+.container>.icon-fangdajing{
+    font-size:28px;
+    color: #949595;
+    position: relative;
+    left:-454px;
+}
+.container>span{
+    font-size:32px;
+    color:#000001;
+    text-align:center;
+    margin-top:100px;
+}
+
+
+/* 热搜榜 */
+.hotSearch{
+    overflow: hidden;
+}
+.hotSearch>span{
+    font-size:30px;
+    margin-top:44px;
+    color:black;
+    display: block;
+    font-weight:900;
+    margin-bottom:10px;
+    margin-left:34px;
+ 
+}
+.hotSearch>.content {
+    width:100%;
+    height:66px;
+    margin-bottom:52px;
+}
+
+.hotSearch>.content>span:nth-of-type(1){
+    color:red;
+    font-size:24px;
+    font-weight:700;
+    line-height:66px;
+    text-align:center;
+    margin-left:34px;
+    display: inline-block;
+    float: left;
+}
+.hotSearch>.content span:nth-of-type(2){
+    color:#333334;
+    font-size:24px;
+    font-weight:700;
+    line-height:66px;
+    margin-left:34px;
+    display: inline-block;
+    
+}
+.hotSearch>.content span:nth-of-type(3){
+    color:#d0d0d0;
+    font-size:16px;
+    font-weight:600;
+    line-height:66px;
+    margin-left:34px;
+    display: inline-block;
+}
+.hotSearch>.content>span:nth-of-type(4){
+    color:#a7a7a7;
+    font-size:20px;
+    display:block;
+    margin-left:80px;
+    margin-top:-2px;
+}

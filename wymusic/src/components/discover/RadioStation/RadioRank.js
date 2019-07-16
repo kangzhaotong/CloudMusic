@@ -1,5 +1,7 @@
 import React from "react";
-export default class RadioRank extends React.Component{
+import {withRouter} from 'react-router-dom';
+
+class RadioRank extends React.Component{
     render(){
         return (
             <div>电台排行</div>
@@ -7,6 +9,8 @@ export default class RadioRank extends React.Component{
     }
 
     componentDidMount() {
-        
+        console.log(3343554567);
     }
 }
+
+export default RadioRank;

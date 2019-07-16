@@ -1,7 +1,8 @@
 import React,{Component} from "react";
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
-import axios from "axios";
+import radioCreator from "../../../store/actionCreator/radioStation"
+
 class RadioChildren extends Component{
     render() {
         return (
@@ -10,20 +11,22 @@ class RadioChildren extends Component{
                     {
                     this.props.popularList.map( (v,i)=> {
                         return (
-                            <div key={v.categoryId}>
-                                    <div>
+                            <div key={v.categoryId} className="popular-box">
+                                    <div className="play">
                                         <h3>{v.categoryName}></h3>
-                                        <p style={{display:i===1?"block":"none"}}>播放全部</p>
+                                        
                                     </div>
-                                    <div>
+                                    <div className="popular-list">
                                     
                                     {
                                         this.props.popularList[i].radios.map( v=> {
                                             return (
                                                 <div key={v.id} className="sing">
-                                                    <div><img width={"100px"} height={"100px"} src={v.picUrl} alt=""></img></div>
-                                                    <div>
+                                                    <div className="radio-ps">
+                                                        <img src={v.picUrl} alt=""></img>
                                                         <p>{v.name}</p>
+                                                    </div>
+                                                    <div>
                                                         <p>{v.rcmdText}</p>
                                                     </div>
                                                 </div>
@@ -41,9 +44,15 @@ class RadioChildren extends Component{
             </div>
         )
     }
+    addDiv(){
+        // let radioChildren = document.querySelector(".radio-children");
+        // let one = radioChildren.firstChild
+        // console.log(radioChildren)
+    }
     componentDidMount(){
         this.props.getPopularList();
         console.log(2222,this.props)
+        this.addDiv();
     }
 }
 function mapStateToProps(state){
@@ -52,27 +61,5 @@ function mapStateToProps(state){
         popularListSon:state.radioStation.popularListSon
     }
 }
-function mapDispatchToProps(dispatch){
-    return{
-        getPopularList(){
-            axios.get("http://www.qmsdalao.com:3000/dj/category/recommend")
-                .then(({data})=>{
-                    
-                    const popularList = data.data.splice(0,9);
-                    // let popularListSon = []
-                    // popularList.map(v => {
-                    //     console.log(5555,v.radios)
-                    //     popularListSon.push(v.radios)
-                    // })
-                    
-                    dispatch({
-                        type: "UP_POPULARLIST",
-                        payload: {
-                            popularList,  
-                        }
-                    })
-                })
-        }
-    }
-}
-export default connect(mapStateToProps,mapDispatchToProps)(RadioChildren);
+
+export default connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(RadioChildren);

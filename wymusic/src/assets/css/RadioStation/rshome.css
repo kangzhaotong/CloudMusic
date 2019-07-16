@@ -1,24 +1,215 @@
+html,body{
+    height: 100%;
+}
+*{
+    box-sizing:border-box;
+}
+body{
+    height: 100%;
+    width:100%;
+    background-color: #fff;
+}
+.back{
+    display: flex;
+    padding-left:20px;
+    margin: 20px 0;
+}
+.back i{
+    margin-right:20px;
+}
+.swiper-container{
+
+    width: 100%;
+    
+    height: 400px;
+    
+    }
+    
+    .swiper-slide{
+        padding: 20px;
+        width: 100%;
+    
+        height: 400px;
+    
+    }
+    
+    .swiper-slide img{
+    
+        width: 100%;
+    
+        height: 90%;
+    
+    }
 .radio-nav{
     display: flex;
-    justify-content: space-between
+    justify-content: space-around;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #66666642;
+}
+.radio-nav div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.radio-nav div img{
+    margin-bottom: 15px;
+}
+.radio-nav div img{
+    width: 100px;
+    height: 100px;
+}
+.radio-recommend-wrap{
+    padding: 0 20px;
+    margin-top:20px;
+}
+.change{
+    display: flex;
+    justify-content: space-between;
+    margin: 22px 0;
+}
+.change h3{
+    font-size: 33px;
+    font-weight: 700;
+}
+.change span{
+    display: block;
+    font-size: 20px;
+    width: 117px;
+    height:40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 46px;
+    border:1px solid #666666;
 }
 .radio-recommend{
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
+}
+.recommend-box{
+    width: 30%;
+}
+.radio-recommend-ps img{
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+}
+.radio-recommend-ps{
+    position: relative;
+}
+.radio-recommend-ps p{
+    position: absolute;
+    left:2px;
+    bottom: 8px;
+    font-size: 23px;
+    color:#fff;
+}
+.radio-recommend-nm{
+    font-size: 25px;
+}
+.concentrateList-box{
+    background: #68423267;
+}
+.concentrateList-box .concentrate-ps{
+    position: relative;
+}
+.concentrateList-box .concentrate-ps p{
+    position: absolute;
+    left:2px;
+    bottom: 8px;
+    font-size: 23px;
+    color:#fff;
+}
+.concentrateList-box .concentrate-ps span{
+    display: block;
+    width:90px;
+    height:30px;
+    position: absolute;
+    left:0px;
+    top: 0;
+    font-size: 20px;
+    color:#fff;
+    background-color: red;
+    border-radius: 10px 0 0 0;
+    text-align: center;
+    line-height: 30px;
+}
+.concentrateList-box .concentrate-price p{
+    font-size: 26px;
+}
+.concentrateList-box .concentrate-price p:nth-child(2){
+   color:red;
+}
+.concentrateList-all{
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0 30px 0;
+}
+.concentrateList-all h3{
+    font-size: 33px;
+    font-weight: 700;
+}
+.concentrateList-all h3 span{
+    font-size: 20px;
+    color:#684232;
+    margin-left:10px;
+}
+.concentrateList-all p{
+    font-size: 20px;
+    width: 117px;
+    height:40px;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 46px;
+    border:1px solid #684232;
+}
+.concentrateList-box{
+    padding: 0 20px;
 }
 .concentrateList{
     display: flex;
-    justify-content: space-between
+    justify-content: space-between;
 }
-.radio-children div:nth-child(1) div:nth-of-type(1){
+.concentrateList .qqq{
+    width: 30%;
+}
+.concentrateList img{
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+}
+.radio-children .popular-list{
     display: flex;
     justify-content: space-between;
 }
-.radio-children div:nth-child(1) div:nth-of-type(2) img{
-    width: 40px;
-    height: 40px;
+.radio-children .popular-box{
+    padding: 0 20px;
 }
-.radio-children div:nth-child(1) div:nth-of-type(2) .sing{
-    display: flex;
-    align-items: center;
+.radio-children .popular-list .radio-ps{
+    position: relative;
+}
+.radio-children .popular-list .radio-ps img{
+    width: 100%;
+    height:100%;
+    border-radius: 10px;
+}
+.radio-children .popular-list .sing{
+    width: 30%;
+}
+.radio-children .popular-list .sing div:nth-child(2) p{
+    font-size: 26px;
+}
+.radio-children .popular-list .radio-ps p{
+    width: 100%;
+    position: absolute;
+    left:2px;
+    bottom:8px;
+    color:#fff;
+    font-size: 24px;
+}
+.radio-children .play{
+    margin:80px 0 25px 0;
+}
+.radio-children .play h3{
+    font-size: 30px;
+    font-weight: 700;
 }

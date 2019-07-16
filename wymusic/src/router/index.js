@@ -6,23 +6,23 @@ import Concentrate from "../components/discover/RadioStation/Concentrate";
 
 export default [
     {
-        path: '/radio',
+        path: '/discover/radio',
         component: Radio,
         exact: true
     },
     {
-        path: '/radio/radioclassification',
+        path: '/discover/radio/radioclassification',
         component: RadioClassification
     },
     {
-        path:"/radio/radiorank",
+        path:"/discover/radio/radiorank",
         component:RadioRank
     },{
-        path:"/radio/concentrate",
+        path:"/discover/radio/concentrate",
         component:Concentrate
     },
     {
-        path:"/radio/musicclass",
+        path:"/discover/radio/musicclass",
         component:MusicClass
     }
 ]

@@ -2,5 +2,9 @@ export default{
     radioRecommendList:[],
     concentrateList:[],
     popularList:[],
-    popularListSon:[]
+    popularListSon:[],
+    rsBannerList:[],
+    radioSortList:[],
+    rsPaymentList:[],
+    limit:20
 }
