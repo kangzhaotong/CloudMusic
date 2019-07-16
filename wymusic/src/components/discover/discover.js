@@ -59,7 +59,9 @@ class Home extends Component{
                         <img src={require("../../assets/images/3.jpg")} alt=""/>
                         <span>排行榜</span>
                     </li>
-                    <li>
+                    <li onClick={()=>{
+                        this.props.history.push("/radio")
+                    }}>
                         <img src={require("../../assets/images/4.jpg")} alt=""/>
                         <span>电台</span>
                     </li>
@@ -142,4 +144,4 @@ let mapAction=(dispatch)=>{
         }
     }
 };
-export default connect(mapState,mapAction)(withRouter(Home));
+export default connect(mapState,mapAction)(withRouter(Home))

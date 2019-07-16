@@ -26,7 +26,6 @@ export default{
     getSong(){
         return (dispatch)=>{
             axios.get(baseUrl+"/album/newest?&limit=6").then( res => {
-
                 dispatch({
                     newSongs: res.data.albums,
                     type:'GETSONG'
@@ -64,6 +63,17 @@ export default{
                 })
             })
         }
+    },
+    getResults(keywords){
+    
+        return (dispatch)=>{
+            axios.get(baseUrl+"/search?keywords="+keywords).then( res => {
+                console.log(res.data);
+                dispatch({
+                    music:res.data.result.songs,
+                    type:'RES'
+                })
+            })
+        }
     }
-
 }

@@ -7,10 +7,20 @@ import Video from './components/video/video';
 import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
-import Run from "./components/discover/run";
+import Player from "./components/discover/player";
 import Search from "./components/discover/search";
-//获取歌单详情
+import Result from "./components/discover/result";
+
 import PlayListDetail from './components/common/PlayListDetail';
+import router from "./router";
+import Radio from "./views/RadioStation";
+import RadioClassification from "./components/discover/RadioStation/RadioClassification";
+import RadioRank from "./components/discover/RadioStation/RadioRank";
+import MusicClass from "./components/discover/RadioStation/MusicClass";
+import Concentrate from "./components/discover/RadioStation/Concentrate";
+
+
+
 
 class App extends React.Component {
     render(){
@@ -49,16 +59,22 @@ class App extends React.Component {
 							<Route path="/friend" component={Friend} />
 							<Route path="/account" component={Account} />
 							<Route path="/everyday" component={Everyday} />
-							<Route path="/run" component={Run} />
+							<Route path="/player/:id" component={Player} />
 							<Route path="/search" component={Search} />
+							<Route path="/result" component={Result} />
+							
 							<Route path='/playListDetails/:id' component={PlayListDetail}/>
+							<Route exact path="/radio" component={Radio}/>
+							<Route path="/radio/radioclassification" component={RadioClassification}/>
+							<Route path="/radio/radiorank" component={RadioRank}/>
+							<Route path="/radio/musicclass" component={MusicClass}/>
+							<Route path="/radio/concentrate" component={Concentrate}/>
 						</Switch>
 					</div>
 				</div>
 			</Router>
         )
     }
-
 }
 
 export default App;
