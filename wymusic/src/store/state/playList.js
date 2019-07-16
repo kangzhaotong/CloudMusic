@@ -1,4 +1,19 @@
 /* 歌单 */
 export default {
-    playListDetail: []
+    playListDetail: {
+        tracks:[],
+        backgroundCoverUrl: "",
+        coverImgUrl: "",
+        name: "",
+        creator: {
+            avatarUrl: "",
+            nickname: ""
+        },
+        description: "",
+        commentCount: "",
+        shareCount: "",
+        subscribers: [],
+        trackCount: "",
+        subscribedCount: ""
+    }
 }

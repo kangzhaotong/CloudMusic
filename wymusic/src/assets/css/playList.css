@@ -1,0 +1,202 @@
+.playListTopWrap{
+    height:550px;
+    width: 100%;
+    position: relative;
+}
+.coverWrap{
+    filter: blur(20px);
+    position: absolute;
+    top: 0;
+}
+.play-list-cover{
+    width: 100%;
+    height: 550px;
+}
+
+.playListTop{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.listTop{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+}
+.listTop span{
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 600;
+    letter-spacing: 6px;
+}
+
+.listMiddle{
+    margin-top: 120px;
+    display: flex;
+    padding: 0 10px 0 25px;
+}
+.listCover{
+    height: 256px;
+    border-radius: 7px;
+}
+.listInfoWrap{
+    margin-left: 30px;
+}
+.listName{
+    font-size: 38px;
+    color: #ffffff;
+    letter-spacing: 3px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.listCreator{
+    display: flex;
+    align-items: center;
+}
+.listCreator img{
+    height: 60px;
+    border-radius: 50%;
+}
+.listCreator span{
+    color: #dad1d1;
+    margin: 0 20px 0 7px;
+}
+.listDescription{
+    margin-top: 48px;
+    line-height: 43px;
+    font-size: 30px;
+    color: rgb(218, 209, 209);
+}
+
+.listBottom{
+    margin: 60px 0;
+    display: flex;
+}
+.listBottom div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+}
+.listBottom div span{
+    font-size: 30px;
+    color: #dad1d1;
+    letter-spacing: 2px;
+}
+
+.playListBottomWrap{
+    background: #ffffff;
+    border: 3px solid #ffffff;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    padding-bottom: 100px;
+}
+.playListBottomWrap .topMsg{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 0 22px;
+    border-bottom: 2px solid #cccccc;
+}
+.topMsg div span{
+    font-size: 34px;
+    letter-spacing: 2px;
+}
+.topMsg div:nth-of-type(2) span{
+    color: #a79e9e;
+}
+.playAll{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding: 0 4px 0 22px;
+}
+.playAllOne span{
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 38px;
+}
+.playAllOne b{
+    color: #a79e9e;
+    letter-spacing: 2px;
+    font-size: 34px;
+}
+.playAllTwo{
+    background: rgb(235, 30, 30);
+    line-height: 80px;
+    color: #ebe1e1;
+    border-radius: 20px;
+    text-align: center;
+    width: 280px;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
+.songItem{
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+.songInfo{
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+.songNum{
+    margin-right: 20px;
+    color: #cccccc;
+    width: 60px;
+    text-align: center;
+    font-size: 38px;
+}
+.songDetail{
+    display: flex;
+    flex-direction: column;
+}
+.songDetail >span{
+    font-size: 38px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.songAr{
+    display: flex;
+    margin-top: 8px;
+    align-items: center;
+}
+.songSQ{
+    color: rgb(226, 48, 48);
+    font-size: 21px;
+    width: 38px;
+    height: 26px;
+    line-height: 22px;
+    border: 1px solid rgb(226, 48, 48);
+    text-align: center;
+    margin-right: 10px;
+}
+.songAr span{
+    font-size: 28px;
+    letter-spacing: 1px;
+    color: #948f8f;
+}
+
+.subscriberWrap{
+    display: flex;
+    padding-left: 30px;
+    margin: 20px 0;
+}
+.subscriber img{
+    height: 60px;
+    border-radius: 50%;
+    padding-right: 10px;
+}

@@ -9,7 +9,7 @@ export default {
                 dispatch({
                     type: PLAYlISTDETAIL,
                     payload: {
-                        tracks: data.playlist.tracks
+                        playListDetail: data.playlist
                     }
                 })
             })
