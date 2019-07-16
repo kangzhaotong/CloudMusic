@@ -1,9 +1,11 @@
 import React,{ Component } from 'react';
+import {withRouter} from 'react-router-dom';
 import "../../assets/css/home.css"
 import {connect} from 'react-redux'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
-import actionCreate from '../../store/actionCreator/index.js'
+import actionCreate from '../../store/actionCreator/index.js';
+
 class Home extends Component{
     constructor(props){
         super(props);
@@ -26,8 +28,7 @@ class Home extends Component{
                 <div id="header">
                     <i className="iconfont icon-huatong"></i>
                     <div className="search"onClick={this.seaHandler} >
-                        <input type="text"  />
-                        <span>大家都在搜 隔壁老樊</span>
+                        <input type="text" placeholder="大家都在搜 隔壁老樊" />
                         <i className="iconfont icon-fangdajing"></i>
                     </div>
                     <i className="iconfont icon-gedan"></i>
@@ -74,7 +75,9 @@ class Home extends Component{
                     <p>歌单广场</p>
                     <div>{
                         SellPoints.map((item,index) => {
-                            return <p className='content' key={index}>
+                            return <p className='content' key={index} onClick={() => {
+                                this.props.history.push('/playListDetails/'+item.id)
+                            }}>
                                 <img key={index} src={item.picUrl} alt="完美"/>
                                 <span>{item.name}</span>
                             </p>
@@ -105,7 +108,7 @@ class Home extends Component{
     }
 
     componentDidMount() {
-        console.log(this.props);
+        // console.log(this.props);
         this.props.getBanner();
         this.props.getData();
         this.props.getSong();
@@ -139,4 +142,4 @@ let mapAction=(dispatch)=>{
         }
     }
 };
-export default connect(mapState,mapAction)(Home);
+export default connect(mapState,mapAction)(withRouter(Home));

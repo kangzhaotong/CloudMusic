@@ -9,7 +9,7 @@ import {GETHOT} from "../actionType/index";
 let reducer=(state=initState,action)=>{
     let newState= JSON.parse(JSON.stringify(state));
     if(action.type=== GETBANNER){
-        console.log(action.firstbannerlist);
+        // console.log(action.firstbannerlist);
         newState.firstbannerlist=action.firstbannerlist
     }
     if(action.type===GETDATA){

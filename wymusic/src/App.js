@@ -9,6 +9,8 @@ import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
 import Search from "./components/discover/search";
+//获取歌单详情
+import PlayListDetail from './components/common/PlayListDetail';
 
 class App extends React.Component {
     render(){
@@ -49,6 +51,7 @@ class App extends React.Component {
 							<Route path="/everyday" component={Everyday} />
 							<Route path="/player/:id" component={Player} />
 							<Route path="/search" component={Search} />
+							<Route path='/playListDetails/:id' component={PlayListDetail}/>
 						</Switch>
 					</div>
 				</div>
