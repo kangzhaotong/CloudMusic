@@ -17,7 +17,6 @@ body{
   height: 98px;
   background-color: #edeee3;
   width: 100%;
-
   overflow-x:hidden;
   display: flex;
   position: fixed;
