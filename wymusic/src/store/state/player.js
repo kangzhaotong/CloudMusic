@@ -1,3 +1,5 @@
 export default {
-    song:[]
+    song:[],
+    songDetail:[],
+    songLyric:[]
 }
