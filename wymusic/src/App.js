@@ -10,9 +10,11 @@ import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
 import Search from "./components/discover/search";
 import Result from "./components/discover/result";
-
-import PlayListDetail from './components/common/PlayListDetail';
-import router from "./router";
+//歌单列表
+import PlayListDetail from './views/PlayListDetail';
+//新歌列表
+import NewSongList from './views/NewSongList';
+// import router from "./router";
 import Radio from "./views/RadioStation";
 import RadioClassification from "./components/discover/RadioStation/RadioClassification";
 import RadioRank from "./components/discover/RadioStation/RadioRank";
@@ -64,6 +66,8 @@ class App extends React.Component {
 							<Route path="/result" component={Result} />
 							
 							<Route path='/playListDetails/:id' component={PlayListDetail}/>
+							<Route path='/newsSongList/:songId' component={NewSongList}/>
+							
 							<Route exact path="/radio" component={Radio}/>
 							<Route path="/radio/radioclassification" component={RadioClassification}/>
 							<Route path="/radio/radiorank" component={RadioRank}/>

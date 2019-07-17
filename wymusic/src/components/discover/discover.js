@@ -1,5 +1,4 @@
 import React,{ Component } from 'react';
-import {withRouter} from 'react-router-dom';
 import "../../assets/css/home.css"
 import {connect} from 'react-redux'
 import Swiper from 'swiper/dist/js/swiper.js'
@@ -96,7 +95,9 @@ class Home extends Component{
                     <div>
                         {
                             newSongs.map( (item,index) => {
-                                return <p className='content' key={index}>
+                                return <p className='content' key={index} onClick={() => {
+                                    this.props.history.push('/newsSongList/'+item.id);
+                                }}>
                                     <img key={index} src={item.picUrl}  alt="完美"/>
                                     <span>{item.name}</span>
                                 </p>
@@ -144,4 +145,4 @@ let mapAction=(dispatch)=>{
         }
     }
 };
-export default connect(mapState,mapAction)(withRouter(Home))
+export default connect(mapState,mapAction)(Home);
