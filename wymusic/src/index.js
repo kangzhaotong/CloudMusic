@@ -5,6 +5,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from 'react-redux'
 import store from './store/index'
+import "./assets/iconfont/iconfont.css"
+import "./assets/css/reset -yidong.css"
 
 // axios.defaults.withCredentials=true;
 // axios请求带上cookie

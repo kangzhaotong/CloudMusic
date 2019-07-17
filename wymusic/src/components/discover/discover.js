@@ -24,21 +24,21 @@ class Home extends Component{
         let SellPoints=this.props.discover.SellPoints;
         let newSongs=this.props.discover.newSongs;
         return(
-            <div>
+            <div id="discover">
                 <div id="header">
-                    <i className="iconfont icon-huatong"></i>
+                    <i className="iconfont iconhuatong"></i>
                     <div className="search"onClick={this.seaHandler} >
                         <input type="text" placeholder="大家都在搜 隔壁老樊" />
-                        <i className="iconfont icon-fangdajing"></i>
+                        <i className="iconfont iconfangdajing"></i>
                     </div>
-                    <i className="iconfont icon-gedan"></i>
+                    <i className="iconfont  iconyinlebofangxuanlvjiezou"></i>
                 </div>
                 {/*轮播图*/}
                 <div className='firstbanner'>
-                    <div className="swiper-container first-swiper" id="first-swiper">
+                    <div className="swiper-container first-swiper" id="first">
                         <div className="swiper-wrapper">{
                             firstbannerlist.map((item,index) => {
-                                return <div key={index} className="swiper-slide"><img src={item.imageUrl}  alt="完美"/></div>
+                                return <div key={index} className="swiper-slide" id="box"><img src={item.imageUrl}  alt="完美"/></div>
                             })
                         }
                         </div>
@@ -92,11 +92,16 @@ class Home extends Component{
                 {/*新碟，新歌*/}
                 <div className="newSongs">
                     <p>新碟、新歌</p>
-                    <p>更多新碟</p>
+                    <p onClick={() => {
+                        this.props.history.push('/album')
+                    }}> 数字专辑</p>
+                    <p onClick={() => {
+                        this.props.history.push('/CD')
+                    }}>更多新碟</p>
                     <div>
                         {
                             newSongs.map( (item,index) => {
-                                return <p className='content' key={index}>
+                                return <p className='content' key={index} >
                                     <img key={index} src={item.picUrl}  alt="完美"/>
                                     <span>{item.name}</span>
                                 </p>
@@ -116,16 +121,14 @@ class Home extends Component{
         this.props.getSong();
     }
     componentDidUpdate(){
-        new Swiper('.swiper-container', {
-            loop: true, // 循环模式选项
-            observer: true,
-            // 如果需要分页器
-            pagination: {
-                el: '.swiper-pagination',
+        new Swiper ('.swiper-container', {
+            loop: true,  //循环
+            autoplay: {   //滑动后继续播放（不写官方默认暂停）
+                disableOnInteraction: false,
+                
             },
-            autoplay:{
-                delay:1000,
-                disableOnInteraction:false
+            pagination: {  //分页器
+                el: '.swiper-pagination'
             }
         })
     }

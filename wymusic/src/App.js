@@ -8,9 +8,10 @@ import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
-import Search from "./components/discover/search";
-import Result from "./components/discover/result";
-
+import Search from "./components/discover/search/search";
+import Result from "./components/discover/search/result";
+import Album from "./components/common/Album";
+import CD from "./components/common/CD";
 import PlayListDetail from './components/common/PlayListDetail';
 import router from "./router";
 import Radio from "./views/RadioStation";
@@ -29,23 +30,23 @@ class App extends React.Component {
 				<div className="App">
 					<div className="nav">
 						<NavLink to="/discover" activeClassName="activeStyle">
-							<i className="iconfont icon-musiccloud"></i>
+							<i className="iconfont iconmusiccloud"></i>
 							<span>发现</span>
 						</NavLink>
 						<NavLink to="/video" activeClassName="activeStyle">
-							<i className="iconfont icon-shipin" aria-hidden="true"></i>
+							<i className="iconfont iconshipin1" aria-hidden="true"></i>
 							<span>视频</span>
 						</NavLink>
 						<NavLink to="/my" activeClassName="activeStyle">
-							<i className="iconfont icon-yinyue" aria-hidden="true"></i>
+							<i className="iconfont  iconyinyue" aria-hidden="true"></i>
 							<span>我的</span>
 						</NavLink>
 						<NavLink to="/friend" activeClassName="activeStyle">
-							<i className="iconfont icon-pengyou" aria-hidden="true"></i>
+							<i className="iconfont iconpengyou" aria-hidden="true"></i>
 							<span>朋友</span>
 						</NavLink>
 						<NavLink to="/account" activeClassName="activeStyle">
-							<i className="iconfont icon-zhanghao" aria-hidden="true"></i>
+							<i className="iconfont iconzhanghao" aria-hidden="true"></i>
 							<span>账号</span>
 						</NavLink>
 
@@ -58,10 +59,15 @@ class App extends React.Component {
 							<Route path="/my" component={My} />
 							<Route path="/friend" component={Friend} />
 							<Route path="/account" component={Account} />
+
+
 							<Route path="/everyday" component={Everyday} />
 							<Route path="/player/:id" component={Player} />
+							<Route path="/album" component={Album} />
+				
 							<Route path="/search" component={Search} />
 							<Route path="/result" component={Result} />
+							<Route path="/CD" component={CD} />
 							
 							<Route path='/playListDetails/:id' component={PlayListDetail}/>
 							<Route exact path="/radio" component={Radio}/>
@@ -69,6 +75,7 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+
 						</Switch>
 					</div>
 				</div>

@@ -38,7 +38,7 @@ class Player extends Component {
         if (!this.state.isPlay) {
             audio.play();
             //如果没有加载出时间
-            if (this.state.voiceDuration == "00:00") {
+            if (this.state.voiceDuration === "00:00") {
                 window.setTimeout(() => {
                     self.loadVideo();
                 }, 300);
@@ -69,11 +69,11 @@ class Player extends Component {
         let self = this;
         let audio = this.refs.audioTag;
         let duration = this.transTime(audio.duration);
-        let time = duration == "NaN:NaN" ? "00:00" : duration;
+        let time = duration === "NaN:NaN" ? "00:00" : duration;
         let initAudio = false;
         // alert(audio.duration);
 
-        if (time == "00:00" && duration != "NaN:NaN" && !!initAudio) {
+        if (time === "00:00" && duration !== "NaN:NaN" && !!initAudio) {
             // alert("initAudio play");
             audio.play();
             // alert("initAudio pause");
@@ -95,12 +95,12 @@ class Player extends Component {
         let minute = parseInt(duration / 60);
         let sec = duration % 60 + '';
         let isM0 = ':';
-        if (minute == 0) {
+        if (minute === 0) {
             minute = '00';
         } else if (minute < 10) {
             minute = '0' + minute;
         }
-        if (sec.length == 1) {
+        if (sec.length === 1) {
             sec = '0' + sec;
         }
         return minute + isM0 + sec
@@ -222,7 +222,7 @@ class Player extends Component {
                                             }
                                             <div className={"swiper-container"}>
                                                 <div className={"swiper-wrapper"}>
-
+                                                            
                                                 </div>
                                             </div>
                                         </div>
