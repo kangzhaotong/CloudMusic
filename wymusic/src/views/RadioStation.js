@@ -61,7 +61,9 @@ class Radio extends Component{
                         {
                             this.props.radioRecommendList.map(v => {
                                 return (
-                                    <div key={v.id} className="recommend-box">
+                                    <div key={v.id} className="recommend-box" onClick={()=>{
+                                        this.props.history.push("/radio/radiodetail/"+v.id)
+                                    }}>
                                         <div className="radio-recommend-ps">
                                             <img  src={v.picUrl} alt=""></img>
                                             <p>{v.program.dj.nickname}</p>

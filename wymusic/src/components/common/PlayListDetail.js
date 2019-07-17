@@ -84,7 +84,9 @@ class PlayListDetail extends Component {
                     {
                         this.props.playList.tracks.map((v, i) => {
                             return (
-                                <div key={i} className="songItem">
+                                <div key={i} className="songItem" onClick={()=>{
+                                    this.props.history.push("/player/"+v.id)
+                                }}>
                                     <div className="songInfo">
                                         <span className="songNum">{i + 1}</span>
                                         <div className="songDetail">
