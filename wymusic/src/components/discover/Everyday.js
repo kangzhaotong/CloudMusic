@@ -43,7 +43,7 @@ class Everyday extends Component{
                         {
                             tuijian.map( (item,index) => {
                                 return (<p className='content' key={index} onClick={()=>{
-                                    this.props.history.push("/player/"+item.id);
+                                    this.props.history.push("/player/"+item.id)
                                 }}>
                                     <img width={'60px'} key={index}  src={item.song.album.blurPicUrl}  alt="完美"/>
                                     <span>{item.song.name}</span>

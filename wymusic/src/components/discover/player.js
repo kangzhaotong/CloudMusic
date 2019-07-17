@@ -63,8 +63,7 @@ class Player extends Component {
             currentTime: audio.currentTime,
         });
     }
-
-    /** 获取视频总长 */
+    /** 获取音频总长 */
     loadVideo() {
         let self = this;
         let audio = this.refs.audioTag;
@@ -75,15 +74,13 @@ class Player extends Component {
 
         if (time === "00:00" && duration !== "NaN:NaN" && !!initAudio) {
             // alert("initAudio play");
+        if (time == "00:00" && duration != "NaN:NaN" && !!initAudio) {
             audio.play();
-            // alert("initAudio pause");
             audio.pause();
-
             window.setTimeout(() => {
                 self.loadVideo();
             }, 300);
         }
-
         this.setState({
             voiceDuration: time,
         });
@@ -118,8 +115,8 @@ class Player extends Component {
         // 更新坐标位置
         // e.pageX 鼠标点击位置
         // offsetLeft  元素 相对于它的直接父元素 的 偏移量
-        let newLeft = e.pageX - timeline.offsetParent.offsetLeft;
-        let currentTime = audio.duration * (e.pageX - timeline.offsetParent.offsetLeft) / timelineWidth;
+        let newLeft = e.pageX - timeline.offsetLeft;
+        let currentTime = audio.duration * (e.pageX - timeline.offsetLeft) / timelineWidth;
 
         if (newLeft >= 0 && newLeft <= timelineWidth) {
             playhead.style.transform = "translateX(" + newLeft + "px)";
@@ -156,9 +153,6 @@ class Player extends Component {
     }
 
     touchMove(e) {
-        // if (this.state.touching !== true) {
-        //   return;
-        // }
         let events = e.touches[0] || e;
         this.timelineClick(events);
     }
@@ -185,6 +179,9 @@ class Player extends Component {
     render() {
         return (
             <div className="player">
+                <i className="iconfont iconarrow-right" onClick={()=>{
+                    this.props.history.go(-1)
+                }}></i>
                 <div className={"player-songDetail"}>
                     {
                         this.props.songDetail.map((item, index) => {
@@ -208,15 +205,15 @@ class Player extends Component {
                                             })
                                         }
                                     </div>
-                                    <div onClick={this.handoverLyric.bind(this)}>
-                                        <div className={"player-songDetail-img"} style={{display:this.state.isLyric?"block":"none"}}>
+                                    <div onClick={this.handoverLyric.bind(this)} className={"player-lrc-img"}>
+                                        <div className={"player-songDetail-img"} style={{display:this.state.isLyric?"none":"block",animationPlayState:this.state.isPlay?"running":"paused"}}>
                                             <img src={item.al.picUrl} alt=""/>
                                         </div>
-                                        <div ref={"lyric"} className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"none":"block"}}>
+                                        <div className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"block":"none"}}>
                                             {
                                                 this.props.songLyric.map((v,i)=>{
                                                     return(
-                                                        <p key={i}>{v.type}</p>
+                                                        <p className={"player-songDetail-lyric-1"} ref="lrc" key={i}>{v.type}</p>
                                                     )
                                                 })
                                             }
@@ -261,9 +258,15 @@ class Player extends Component {
                                             </div>
                                         </div>
                                         <div className="inline-block voice-control">
-                                            <div onClick={this.handlerNext.bind(this)}>上一首</div>
-                                            <div className="play-icon" onClick={() => this.play()}>{this.state.isPlay ? "点击暂停" : "点击播放"}</div>
-                                            <div onClick={this.handlerPreps.bind(this)}>下一首</div>
+                                            <div onClick={this.handlerNext.bind(this)}>
+                                                <i className={"iconfont iconshangyishou"}></i>
+                                            </div>
+                                            <div className="play-icon">
+                                                <i className={this.state.isPlay?"iconfont iconzanting":"iconfont iconbofang1"} onClick={() => this.play()}></i>
+                                            </div>
+                                            <div onClick={this.handlerPreps.bind(this)}>
+                                                <i className={"iconfont iconnext-chapter"}></i>
+                                            </div>
                                             </div>
                                     </div>
 

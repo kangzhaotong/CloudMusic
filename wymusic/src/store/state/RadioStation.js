@@ -6,5 +6,6 @@ export default{
     rsBannerList:[],
     radioSortList:[],
     rsPaymentList:[],
-    limit:20
+    limit:20,
+    i:0
 }
