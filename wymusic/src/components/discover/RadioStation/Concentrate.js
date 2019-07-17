@@ -25,7 +25,7 @@ class Concentrate extends React.Component{
                         this.props.rsPaymentList.map(v => {
                             return (
                                 <div key={v.id} className="payment">
-                                    <div><img src={v.picUrl}></img></div>
+                                    <div><img src={v.picUrl} alt=""></img></div>
                                     <div className="payment-price">
                                         <h3>{v.name}</h3>
                                         <p>{v.rcmdText}<br/>最新上架</p>

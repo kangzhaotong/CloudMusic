@@ -12,12 +12,13 @@ import Search from "./components/discover/search";
 import Result from "./components/discover/result";
 
 import PlayListDetail from './components/common/PlayListDetail';
-import router from "./router";
 import Radio from "./views/RadioStation";
 import RadioClassification from "./components/discover/RadioStation/RadioClassification";
 import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
+import RadioInfo from "./components/discover/RadioStation/RadioInfo";
+import RsInfo from "./components/discover/RadioStation/RsInfo"
 
 
 
@@ -69,6 +70,8 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route exact path="/radio/radioinfo" component={RadioInfo}/>
+							<Route path="/radio/radioinfo/rsinfo/:id" component={RsInfo}/>
 						</Switch>
 					</div>
 				</div>

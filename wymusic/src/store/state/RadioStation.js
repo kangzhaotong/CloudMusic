@@ -7,5 +7,7 @@ export default{
     radioSortList:[],
     rsPaymentList:[],
     limit:20,
-    i:0
+    i:0,
+    radioClassInfoList:[],
+    playMp3:[]
 }

@@ -80,7 +80,9 @@ class Radio extends Component{
                 <div className="concentrateList-box">
                     <div className="concentrateList-all">
                         <h3>精品推荐<span>你值得拥有的优质内容</span></h3>
-                        <p>全部精品</p>
+                        <p  onClick={()=>{
+                        this.props.history.push("/radio/concentrate")
+                    }}>全部精品</p>
                     </div>
                     <div className="concentrateList">
                         {

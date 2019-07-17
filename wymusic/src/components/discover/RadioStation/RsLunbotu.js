@@ -14,7 +14,7 @@ class RsLunbotu extends Component{
                         this.props.rsBannerList.map((v,i)=>{
                             return (
                                 <div className="swiper-slide" key={i}>
-                                    <img  src={v.imageUrl}></img>
+                                    <img  src={v.imageUrl} alt=""></img>
                                 </div>
                             )
                         })
@@ -41,7 +41,7 @@ class RsLunbotu extends Component{
             },
             autoplay:{
                 stopOnLastSlide: true
-            },    
+            }  
         })        
     }
     componentDidMount(){

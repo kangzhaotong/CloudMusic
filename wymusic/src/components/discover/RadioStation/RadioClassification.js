@@ -21,7 +21,7 @@ class RadioClassification extends React.Component{
                         this.props.radioSortList.slice(0,6).map(v => {
                         return (
                             <div key={v.id} className="hotClass-box">
-                                <div className="hotClass"><img src={v.pic56x56Url}></img><p>{v.name}</p></div>
+                                <div className="hotClass"><img src={v.pic56x56Url} alt=""></img><p>{v.name}</p></div>
                             </div>
                         )
                         })
@@ -35,7 +35,7 @@ class RadioClassification extends React.Component{
                         this.props.radioSortList.slice(6).map(v => {
                         return (
                             <div key={v.id} className="hotClass-box">
-                                <div className="hotClass"><img src={v.pic56x56Url}></img><p>{v.name}</p></div>
+                                <div className="hotClass"><img src={v.pic56x56Url} alt=""></img><p>{v.name}</p></div>
                             </div>
                         )
                         })

@@ -5,7 +5,9 @@ import {
     UP_POPULARLIST,
     UP_RSBANNER_LIST,
     UP_SORTLIST,
-    UP_PAYMENTLIST
+    UP_PAYMENTLIST,
+    UP_CLASSINFOLIST,
+    UP_PLAYLIST
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
@@ -23,6 +25,10 @@ export default function (state=stateInit,{type,payload}) {
     }else if (type === UP_PAYMENTLIST) {
         state.rsPaymentList = payload.rsPaymentList;
         state.limit = payload.limit;
+    }else if (type === UP_CLASSINFOLIST) {
+        state.radioClassInfoList = payload.radioClassInfoList
+    }else if (type === UP_PLAYLIST) {
+        state.playMp3 = payload.playMp3
     }
     return state;
 }

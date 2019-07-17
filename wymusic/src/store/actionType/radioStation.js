@@ -4,3 +4,6 @@ export const UP_POPULARLIST = "UP_POPULARLIST";
 export const UP_RSBANNER_LIST = "UP_RSBANNER_LIST";
 export const UP_SORTLIST = "UP_SORTLIST";
 export const UP_PAYMENTLIST = "UP_PAYMENTLIST";
+export const UP_CLASSINFOLIST = "UP_CLASSINFOLIST";
+export const UP_MP3 = "UP_MP3";
+export const UP_PLAYLIST = "UP_PLAYLIST"

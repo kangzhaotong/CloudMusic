@@ -12,7 +12,7 @@ export default{
                 const radioRecommendList1 = data.djRadios.splice(i,i+3);
                 if(radioRecommendList1.length>3){
                     const radioRecommendList = radioRecommendList1.slice(0,3);
-                    console.log(555,radioRecommendList)
+                    // console.log(555,radioRecommendList)
                     dispatch({
                         type: "UP_RADIORECOMEENDIST",
                         payload: {
@@ -22,7 +22,7 @@ export default{
                     })
                 }else{
                     const radioRecommendList = radioRecommendList1;
-                    console.log(333,radioRecommendList)
+                    // console.log(333,radioRecommendList)
                     dispatch({
                         type: "UP_RADIORECOMEENDIST",
                         payload: {
@@ -41,7 +41,7 @@ export default{
             axios.get(baseUrl+"/dj/paygift?limit=3&offset=20")
             .then(({data})=>{     
                 const concentrateList = data.data.list;
-                console.log(2222,data)
+                // console.log(2222,data)
                 dispatch({
                     type: "UP_CONCENTRATELIST",
                     payload: {
@@ -99,7 +99,7 @@ export default{
         return (dispatch) => {
             axios.get(baseUrl+"/dj/paygift?limit="+limit+"&offset=20")
             .then(({data})=>{
-                console.log(data)     
+                // console.log(data)     
                 const rsPaymentList = data.data.list;
                 dispatch({
                     type: "UP_PAYMENTLIST",
@@ -110,7 +110,37 @@ export default{
                 })
             })
         }
-        
     },
+    getRadioClassInfoList(id){
+        return (dispatch) => {
+            axios.get(baseUrl+"/dj/recommend/type?type="+id)
+                .then(({data})=>{
+                    const radioClassInfoList = data.djRadios
+                    // console.log(1111,radioClassInfoList);
+                    dispatch({
+                        type: "UP_CLASSINFOLIST",
+                        payload: {
+                            radioClassInfoList,  
+                        }
+                    })
+                })
+        }
+    },
+    getPlayList(id){
+        console.log(111,id)
+        return (dispatch) => {
+            axios.get(baseUrl+"/dj/program?rid="+id+"&limit=20")
+                .then(({data})=>{
+                    const playMp3 = data.programs
+                    // console.log(playMp3)
+                    dispatch({
+                        type: "UP_PLAYLIST",
+                        payload: {
+                            playMp3
+                        }
+                    })
+                })
+        }
+    }
 }
 
