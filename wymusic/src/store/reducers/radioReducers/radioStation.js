@@ -10,7 +10,8 @@ import {
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
     if (type === UP_RADIORECOMEENDIST) {
-        state.radioRecommendList = payload.radioRecommendList
+        state.radioRecommendList = payload.radioRecommendList;
+        state.i = payload.i;
     }else if (type === UP_CONCENTRATELIST) {
         state.concentrateList = payload.concentrateList
     }else if (type === UP_POPULARLIST) {

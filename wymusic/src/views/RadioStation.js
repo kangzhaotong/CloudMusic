@@ -55,7 +55,9 @@ class Radio extends Component{
                 <div className="radio-recommend-wrap">
                     <div className="change">
                         <h3>电台推荐</h3>
-                        <span>换一换</span>
+                        <span onClick={()=>{
+                            this.props.getRadioRecommendList(this.props.i+3)
+                        }}>换一换</span>
                     </div>
                     <div className="radio-recommend">
                         {
@@ -64,10 +66,10 @@ class Radio extends Component{
                                     <div key={v.id} className="recommend-box">
                                         <div className="radio-recommend-ps">
                                             <img  src={v.picUrl} alt=""></img>
-                                            <p>{v.program.dj.nickname}</p>
+                                            <p>{v.name}</p>
                                         </div>
                                         
-                                        <div className="radio-recommend-nm">{v.name}</div>
+                                        <div className="radio-recommend-nm">{v.rcmdtext}</div>
                                     </div>
                                 )
                             })
@@ -107,14 +109,15 @@ class Radio extends Component{
     }
     componentDidMount(){ 
         this.props.getConcentrateList();
-        this.props.getRadioRecommendList();
+        this.props.getRadioRecommendList(this.props.i);
         console.log(this.props);
     }
 }
 function mapStateToProps(state){
     return{
         radioRecommendList:state.radioStation.radioRecommendList,
-        concentrateList:state.radioStation.concentrateList
+        concentrateList:state.radioStation.concentrateList,
+        i:state.radioStation.i
     }
 }
 export default connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(withRouter(Radio));

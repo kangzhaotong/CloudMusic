@@ -11,9 +11,9 @@ class RsLunbotu extends Component{
             <div className="swiper-container">
                 <div className="swiper-wrapper">
                     {
-                        this.props.rsBannerList.map(v=>{
+                        this.props.rsBannerList.map((v,i)=>{
                             return (
-                                <div className="swiper-slide" key={v.targetId}>
+                                <div className="swiper-slide" key={i}>
                                     <img  src={v.imageUrl}></img>
                                 </div>
                             )
