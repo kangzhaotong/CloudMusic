@@ -2,17 +2,36 @@ import axios from 'axios';
 import baseUrl from '../../baseUrl';
 
 export default{
-    getRadioRecommendList(){
+    getRadioRecommendList(i){
         return (dispatch) => {
-            axios.get(baseUrl+"/personalized/djprogram")
+            axios.get(baseUrl+"/dj/recommend")
             .then(({data})=>{
-                const radioRecommendList = data.result.splice(3,6);
-                dispatch({
-                    type: "UP_RADIORECOMEENDIST",
-                    payload: {
-                        radioRecommendList,  
-                    }
-                })
+                if(i > data.djRadios.length+1){
+                    i=0;
+                }
+                const radioRecommendList1 = data.djRadios.splice(i,i+3);
+                if(radioRecommendList1.length>3){
+                    const radioRecommendList = radioRecommendList1.slice(0,3);
+                    console.log(555,radioRecommendList)
+                    dispatch({
+                        type: "UP_RADIORECOMEENDIST",
+                        payload: {
+                            radioRecommendList,
+                            i
+                        }
+                    })
+                }else{
+                    const radioRecommendList = radioRecommendList1;
+                    console.log(333,radioRecommendList)
+                    dispatch({
+                        type: "UP_RADIORECOMEENDIST",
+                        payload: {
+                            radioRecommendList,
+                            i
+                        }
+                    })
+                }
+                
             })
         }
         
