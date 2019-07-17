@@ -31,7 +31,7 @@ body{
     margin-right:20px;
     font-size:24px;
 }
-#search1 .container>.icon-fangdajing{
+#search1 .container>i{
     font-size:28px;
     color: #949595;
     position: relative;

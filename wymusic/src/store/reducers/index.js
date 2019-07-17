@@ -5,13 +5,15 @@ import PlayerReducer from './player'
 //歌单
 import playList from './playList';
 import radioStation from "./radioReducers/radioStation";
+//新碟
+import AlbumList from "./AlbumList";
 
 let reducer = combineReducers({
     discover: DiscoverReducer,
     player: PlayerReducer,
     playList,
-    radioStation
-
+    radioStation,
+    AlbumList
 })
 
 

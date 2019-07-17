@@ -1,5 +1,12 @@
 import React from "react";
-import {withRouter} from 'react-router-dom';
+<<<<<<< HEAD
+=======
+import { connect } from 'react-redux';
+import {bindActionCreators} from "redux";
+import radioCreator from '../../../store/actionCreator/radioStation'; 
+import "../../../assets/css/RadioStation/rsPrice.css"
+>>>>>>> c668bea697662e17547d80ca31c082e8f544a517
+
 
 class RadioRank extends React.Component{
     render(){
@@ -9,8 +16,15 @@ class RadioRank extends React.Component{
     }
 
     componentDidMount() {
-        console.log(3343554567);
+        console.log(2062132164);
     }
 }
 
-export default RadioRank;
+function mapStateToProps(state){
+    // console.log(state)
+    return {
+        limit:state.radioStation.limit,
+        rsPaymentList:state.radioStation.rsPaymentList
+    }
+}
+export default connect(mapStateToProps, dispatch=>bindActionCreators(radioCreator,dispatch))(RadioRank);

@@ -1,7 +1,7 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux';
-import actionCreate from '../../store/actionCreator';
-import "../../assets/css/search.css";
+import actionCreate from '../../../store/actionCreator';
+import "../../../assets/css/search.css";
 class Search extends Component{
     constructor(props){
         super(props);
@@ -36,7 +36,7 @@ class Search extends Component{
                 {/*搜索*/}   
                 <div className='container'>
                     <input type="text" defaultValue={this.state.val} onChange={this.handleChange.bind(this)}   onKeyDown={this.handleKeyDown.bind(this)} className='form-control' placeholder='那个女孩 最近很火哦'/>
-                     <i className="iconfont icon-fangdajing"></i>
+                     <i className="iconfont  iconfangdajing"></i>
                     <span onClick={this.go.bind(this)}>取消</span>
                 </div>   
                 {/*搜索历史*/}
@@ -46,9 +46,11 @@ class Search extends Component{
                     <span>热搜榜</span>
                     {
                         list.map((item,index) => {
-                            return (<p className='content' key={index}>
+                            return (<p className='content' key={index} onClick={()=>{
+                                this.props.history.push("result?keywords="+item.searchWord);
+                            }}>
                                 <span>{index+1}</span>
-                                <span>{item.searchWord}</span>
+                                <span >{item.searchWord}</span>
                                 <span>{item.score}</span>
                                 <span>{item.content}</span>
                             </p>)
