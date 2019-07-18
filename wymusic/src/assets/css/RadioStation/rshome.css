@@ -26,7 +26,6 @@ body{
     padding: 20px;
     width: 100%;
     height: 400px;
-<<<<<<< HEAD
     
     }
     
@@ -45,13 +44,6 @@ body{
         height: 90%;
     
     }
-=======
-}   
-.swiper-slide img{
-    width: 100%;
-    height: 90%;
-}
->>>>>>> c668bea697662e17547d80ca31c082e8f544a517
 .radio-nav{
     display: flex;
     justify-content: space-around;

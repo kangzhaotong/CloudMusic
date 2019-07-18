@@ -4,7 +4,7 @@ import baseUrl from '../../baseUrl';
 export default{
     getAlbumlun(){
         return (dispatch)=>{
-            axios.get(baseUrl+"/banner?type=2").then( res => {
+            axios.get("/wymusic/banner?type=2").then( res => {
                 dispatch({
                     type:'GETALBUMLUN',
                     albumLun:res.data.banners,
@@ -14,7 +14,7 @@ export default{
     },
     getAlbum(){
         return (dispatch)=>{
-            axios.get(baseUrl+"/top/album?offset=0&limit=30").then( res => {
+            axios.get("/wymusic/top/album?offset=0&limit=30").then( res => {
                 dispatch({
                     type:'GETALBUM',
                     AlbumPut:res.data.albums,

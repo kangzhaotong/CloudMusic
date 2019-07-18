@@ -5,7 +5,7 @@ import {PLAYlISTDETAIL} from '../actionType/playList';
 export default {
     playListDetail(id) {
         return (dispatch) => {
-            axios.get(baseUrl+"/playlist/detail?id="+id).then(({data}) => {
+            axios.get("/wymusic/playlist/detail?id="+id).then(({data}) => {
                 dispatch({
                     type: PLAYlISTDETAIL,
                     payload: {
