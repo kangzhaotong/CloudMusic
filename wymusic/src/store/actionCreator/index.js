@@ -15,7 +15,6 @@ export default{
     getData(){
         return (dispatch)=>{
             axios.get(baseUrl+"/personalized?&limit=9").then( res => {
-
                 dispatch({
                     SellPoints: res.data.result,
                     type:'GETDATA'
@@ -64,6 +63,7 @@ export default{
                 })
             })
         }
-    }
+    },
+   
 
 }

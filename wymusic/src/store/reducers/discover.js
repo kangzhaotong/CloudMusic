@@ -5,7 +5,10 @@ import {GETSONG} from "../actionType/index";
 import {GETTUIJIAN} from "../actionType/index";
 import {GETRUN} from "../actionType/index";
 import {GETHOT} from "../actionType/index";
-
+// import {USER_PLAYLIST} from "../actionType/index";
+// import {COLLECT} from "../actionType/index";
+// import {COLLECT_ALBUM} from "../actionType/index";
+// import {COLLECT_SINGER} from "../actionType/index";
 let reducer=(state=initState,action)=>{
     let newState= JSON.parse(JSON.stringify(state));
     if(action.type=== GETBANNER){

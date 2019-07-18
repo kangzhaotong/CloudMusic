@@ -13,5 +13,5 @@ export default {
     tuijian:[],
     run:[],
     mv:[],
-    list:[]
+    list:[],
 };

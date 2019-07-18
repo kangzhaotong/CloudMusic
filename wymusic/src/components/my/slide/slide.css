@@ -1,0 +1,159 @@
+
+@import '../../../../public/iconfont/iconfont.css'
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.slide-box {
+   width:100%;
+    overflow-x: scroll;
+    display: -webkit-box;
+    -webkit-overflow-scrolling: touch;
+    height:228px;
+}
+
+.slide-item {
+    margin: 0 45px;
+}
+.slide-item_a{
+    height:176px;
+    margin: 26px 0 0 0;
+}
+.slide-item_a span{
+    width:106px;
+    height: 110px;
+
+}
+.slide-item_a p{
+    font-size: 25px;
+    text-align: center;
+} 
+.slide-item_a span img{
+    width:106px;
+    height: 110px;
+}
+.slide-box::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+}
+.slide_list{
+    height:627px;
+    width:100%;
+    margin-left: 45px;
+}
+.slide_list ul li{
+    width: 100%;
+    height:136px;
+    padding: 40px 0px 0px 30px;
+}
+.slide_list ul li span{
+    display: block;
+    width:62px;
+    height:58px;
+   
+    float: left;
+    margin-right:64px; 
+   font-size: 54px;
+}
+.slide_list ul li i{
+    display: block;
+    float: left;
+    height:88px;
+    width:580px;
+    border-bottom: 1px solid #e6e6e6;
+    line-height: 58px;
+    font-size: 34px;
+    color: #000;
+}
+.collect{
+    margin: 70px 10px 0px 40px ;
+}
+.collect_a span{
+    display: block;
+    height:36px;
+    width:36px;
+   
+    float: left;
+    margin: 9px 0px 0px 0px;
+}
+.collect_a span img{
+    height:35px;
+    width:35px;
+}
+.collect_a a{
+    display: block;
+    float: left;
+    font-size: 40px;
+    font-weight:500;
+    margin: 0 0 0 20px;
+}
+.collect_a .collect_add{
+    display: block;
+    width:38px;
+    height:38px;
+    background: steelblue;
+    float: left;
+    margin: 10px 0px 0px 345px;
+}
+.collect_a .collect_add img{
+    width:38px;
+    height:38px;
+
+}
+.collect_a .collect_settings{
+    float: left;
+    display: block;
+    width:42px;
+    height:42px;
+  
+    margin: 10px 0px 0px 30px;
+}
+.user_playlist{
+    width:100%;
+    height:159px;
+   
+  
+}
+.user_playlist img{
+    float: left;
+    width:132px;
+    height:132px;
+    border-radius:20px;
+}
+.user_playlist div a{
+    width:500px;
+    float: left;
+    font-size: 38px;
+    margin: 0px 0px 0px 30px;
+    overflow: hidden;
+text-overflow:ellipsis;
+white-space: nowrap;
+}
+.user_playlist div{
+    padding: 15px 0px 0px 0px;
+}
+.user_playlist div p{
+    width:505px;
+    margin: 0px 0px 0px 160px;
+    font-size: 20px;
+    color: #808080;
+}
+.user_playlist span{
+    float: right;
+    display: block;
+    width:42px;
+    height:42px;
+ 
+    margin: -77px 0px 0px 28px;
+}
+.user_playlist span img{
+    width:42px;
+    height:42px;
+}
+.collect .MuiButtonBase-root{
+    padding: 0 0 0 24px;
+    background: #ffffff;
+}
