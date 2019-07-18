@@ -30,9 +30,9 @@ class Song extends Component{
         return(
             <div>
               <div className="head">
-                <i className="iconfont icon-fanhui" onClick={this.back}></i>
+                <i className="iconfont iconfanhui" onClick={this.back}></i>
                 <span style={{fontSize:'20px'}}>歌单广场</span>
-                <i className="iconfont icon-yinlebofangxuanlvjiezou"></i>
+                <i className="iconfont iconyinlebofangxuanlvjiezou"></i>
               </div>
               <div className="nav1">
                 {
@@ -44,7 +44,7 @@ class Song extends Component{
                           </p>
                   })
                 }
-                <i className="iconfont icon-gengduo"></i>
+                <i className="iconfont icongengduo"></i>
                 
               </div>
               <div className="banner1">

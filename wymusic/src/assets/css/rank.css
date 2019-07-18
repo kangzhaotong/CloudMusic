@@ -1,15 +1,19 @@
 
-.header{
+#paihang .header{
     position: absolute;
     top:0;
     left: 0;
     font-size: 40px;
     background:#ffffff;
-}
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height:100px;
+} 
 .guanfangrank{
     margin-top: 85px;
     width: 100%;
-    height:1115px;
     overflow: hidden;
     margin-bottom: 40px;
     padding: 0 30px;
@@ -25,7 +29,7 @@
 }
 .guanfangrank .content p{
     padding-left: 30px;
-    width:440px;
+    width:410px;
     padding-top:38px;
 }
 .guanfangrank .content p span{
@@ -33,7 +37,8 @@
     white-space: nowrap;
     overflow: hidden;
     margin-right:30px;
-    margin: 10px 0;
+    margin: 15px 0;
+    font-size: 30px;
 }
 .tuijianrank{
     padding: 0 30px;
@@ -50,7 +55,7 @@
     position: relative;
     margin-bottom: 20px;
 }
-.tuijianrank .content p:nth-child(2){
+#paihang .tuijianrank .content p:nth-child(2){
     font-size: 25px;
     letter-spacing: 3px;
     color: #000000;

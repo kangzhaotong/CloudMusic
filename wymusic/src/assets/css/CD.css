@@ -1,0 +1,141 @@
+html,body{
+  height: 100%;
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  height: 100%;
+  width:100%;
+  background-color: #fff;
+}
+#CD .CDTop{
+  width:100%;
+  height:97px;
+  background: #ffffff;;
+  padding:18px 21px 35px 21px;
+  
+}
+#CD .CDTop>i:nth-of-type(1){
+  font-size:44px;
+  color:#000001;
+}
+#CD .CDTop>span{
+  font-size:40px;
+  color:red;
+  font-weight:700;
+  margin-left:270px;
+}
+#CD .CDTop>i:nth-of-type(2){
+  font-size:42px;
+  color:#000001;
+  margin-left:260px;
+}
+/* 数字新碟 */
+#CD  .wrap{
+  padding:0px 31px 0px 31px;
+  width:100%;
+  height:370px;
+}
+#CD  .wrap>span:nth-of-type(1){
+  font-size:34px;
+  display: inline-block;
+  color:black;
+  font-weight:700;
+  margin-bottom:35px;
+}
+#CD  .wrap>span:nth-of-type(2){
+  width:200px;
+  height:52px;
+  display: inline-block;
+  color:black;
+  border:1px solid #ccc;
+  border-radius: 15px;
+  text-align:center;
+  line-height:50px;
+  font-size:24px;
+  float:right;
+}
+#CD .wrap>.con{
+  height:294px;
+  overflow: hidden;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+  
+}
+#CD .wrap .content{
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  width:30%;
+}
+#CD .con .content>img{
+  width:184px;
+  height:184px;
+  border-radius:10px;
+}
+#CD .con .content>span{
+  font-size:25px;
+  color:#333333;
+  margin-top:12px;
+}
+#CD .con .content .nei{
+  font-size:20px;
+  color:#9c9d9d;
+  margin-top:11px;
+}
+#CD .line{
+  width:100%;
+  height:16px;
+  background: #f8f8f8;
+  margin-top:43px;
+}
+
+
+/* 本周新碟 */
+#CD .newCD{
+  width:100%;
+  padding:39px 0px 100px 28px;
+}
+#CD .newCD>span:nth-of-type(1){
+  font-size:34px;
+  display: inline-block;
+  color:black;
+  font-weight:700;
+  margin-bottom:35px;
+}
+#CD .newCD>.new{
+  margin-bottom:10px;
+  overflow: hidden;
+  width:100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap:wrap;
+}
+#CD .newCD .content{
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  width:50%;
+  margin-bottom:40px;
+}
+#CD .newCD .content>img{
+  width:329px;
+  height:280px;
+  border-radius:10px;
+}
+#CD .newCD .content>span{
+  font-size:25px;
+  color:#333333;
+  display: inline-block;
+  margin-top:12px;
+}
+#CD .newCD .content .nei{
+  font-size:20px;
+  display: inline-block;
+
+  color:#9c9d9d;
+  margin-top:11px;
+}

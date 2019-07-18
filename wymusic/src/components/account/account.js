@@ -3,10 +3,10 @@ import "../../assets/css/account.css"
 class Card extends Component{
     render(){
         return(
-        <div>
+        <div id="account">
             <div className="header">
-                <i className="iconfont icon-saoyisaoerweimasaomasaomiao" style={{color:'#000001',fontSize:'28px'}}></i>
-                <i className="iconfont icon-yinlebofangxuanlvjiezou" style={{color:'#000001',fontSize:'25px'}}></i>
+                <i className="iconfont iconsaoyisaoerweimasaomasaomiao" style={{color:'#000001',fontSize:'28px'}}></i>
+                <i className="iconfont iconyinlebofangxuanlvjiezou" style={{color:'#000001',fontSize:'25px'}}></i>
             </div>
             <div className="banner">
                 <img src={require("../../assets/images/banner_1.jpg")} alt="" />
@@ -37,7 +37,7 @@ class Card extends Component{
             </div>
             <div className="assage">
                 <p>
-                    <i className="iconfont icon-xiaoxi"></i>
+                    <i className="iconfont iconxiaoxi"></i>
                     <span>消息</span>
                 </p>
                 <p>
@@ -46,105 +46,105 @@ class Card extends Component{
                     <span>JBL 68元抢</span>
                 </p>
                 <p>
-                    <i className="iconfont icon-yanchu"></i>
+                    <i className="iconfont iconyanchu"></i>
                     <span>演出</span>
                     <span>刘润琦巡演</span>
                 </p>
                 <p>
-                    <i className="iconfont icon-pifu3"></i>
+                    <i className="iconfont iconpifu3"></i>
                     <span>个性换肤</span>
                 </p>
             </div>
             <div className="main1">
                 <p>
-                    <i className="iconfont icon-lingsheng"></i>
+                    <i className="iconfont iconlingsheng"></i>
                     <span>
                         口袋铃声
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-icon-"></i>
+                    <i className="iconfont iconicon-"></i>
                     <span>
                         我的订单
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
             </div>
             <div className="main2">
                 <p>
-                    <i className="iconfont icon-shezhi"></i>
+                    <i className="iconfont iconshezhi"></i>
                     <span>
                         设置
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-yejian"></i>
+                    <i className="iconfont iconyejian"></i>
                     <span>
                         夜间模式
-                        <i className="iconfont icon-dakai"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-dingshiguanbi"></i>
+                    <i className="iconfont icondingshiguanbi"></i>
                     <span>
                         定时关机
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-clock"></i>
+                    <i className="iconfont iconclock"></i>
                     <span>
                         音乐闹钟
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
             </div>
             <div className="main3">
                 <p>
-                    <i className="iconfont icon-zaixiantinggemianliuliang"></i>
+                    <i className="iconfont iconzaixiantinggemianliuliang"></i>
                     <span>
                         在线听歌免流量
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-youhuiquan"></i>
+                <i className="iconfont iconyouhuiquan"></i>
                     <span>
                         优惠券
-                        <i className="iconfont icon-dakai"></i>
+                        <i className="iconfont iconyou"></i>
                         </span>
                 </p>
             </div>
             <div className="main4">
                 <p>
-                    <i className="iconfont icon-wodediantai"></i>
+                    <i className="iconfont icondiantai"></i>
                     <span>
                         加入网易音乐人
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-huatong1"></i>
+                    <i className="iconfont iconhuatong2"></i>
                     <span>
                         我要直播
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-fenxiang"></i>
+                    <i className="iconfont iconfenxiangzhuanfafasongzhijiantouyuanxingshar"></i>
                     <span>
                         分享网易云音乐
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
                 <p>
-                <i className="iconfont icon-guanyu"></i>
+                    <i className="iconfont iconguanyu"></i>
                     <span>
                         关于
-                        <i className="iconfont icon-you"></i>
-                        </span>
+                        <i className="iconfont iconyou"></i>
+                    </span>
                 </p>
             </div>
             <div className="exit">

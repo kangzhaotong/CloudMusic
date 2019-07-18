@@ -25,6 +25,7 @@ class Rank extends Component{
     }
     render(){
         let gfList=this.props.Rank.gf;
+        let guanfang=gfList.slice(0,4);
         let tjList=this.props.Rank.tj;
         let tuijian=tjList.slice(4,10);
         let qqList=this.props.Rank.qq;
@@ -32,16 +33,16 @@ class Rank extends Component{
         let moreList=this.props.Rank.more;
         let gengduo=moreList.slice(10,25)
         return(
-            <div>
+            <div id="paihang">
               <div className="header">
-                <i className="iconfont icon-fanhui" style={{color:'#000000'}} onClick={this.back}></i>
+                <i className="iconfont iconfanhui" style={{color:'#000000'}} onClick={this.back}></i>
                 <span>排行榜</span>
-                <i className="iconfont icon-yinlebofangxuanlvjiezou" style={{color:'#000000'}}></i>
+                <i className="iconfont iconyinlebofangxuanlvjiezou" style={{color:'#000000'}}></i>
               </div>
               <div className="guanfangrank">
                 <div className="title">官方榜</div>
                 {
-                  gfList.map((item,index)=>{
+                  guanfang.map((item,index)=>{
                     return (
                       <div className="content" key={index}>
                         <img src={item.coverImgUrl} style={{width:'130px',height:'130px',borderRadius:'10%'}} alt="" />

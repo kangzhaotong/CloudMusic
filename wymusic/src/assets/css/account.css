@@ -130,34 +130,34 @@
 .assage p:nth-child(4) span{
     font-size: 25px;
 }
-.main1{
+#account .main1{
     width: 100%;
     height:230px;
     background:#f8f8f8;
     padding-top:25px;
 }
-.main1 p{
+#account .main1 p{
     width: 100%;
     height:90px;
     background:#ffffff;
-    line-height: 100px;
-    float: left;
-    padding-left: 32px;
+    line-height: 90px;
 
 }
-.main1 p i{
-    font-size:40px;
+#account .main1 p>i{
+    font-size:20px !important;
+    color:#000000;
+    margin-left: 25px;
 }
-.main1 span{
-    width: 640px;
-    display: block;
-    margin-left: 30px;
+#account .main1 p span{
+    width: 670px;
     float: right;
-}
-.main1 span i{
-    float: right;
-    margin-right: 25px;
     font-size:25px;
+}
+#account .main1 p span i{
+    font-size:20px !important; 
+    color:#000000;
+    float: right;
+    margin-right: 20px;
 }
 .main2{
     width: 100%;
@@ -168,53 +168,55 @@
     width: 100%;
     height:90px;
     background:#ffffff;
-    line-height: 100px;
+    line-height: 90px;
     float: left;
-    padding-left: 32px;
 
 }
-.main2 p i{
-    font-size:40px;
+.main2 p>i{
+    font-size:20px !important;
+    color:#000000;
+    margin-left: 25px;
 }
-.main2 span{
-    width: 640px;
-    display: block;
-    margin-left: 30px;
+.main2 p span{
+    width: 670px;
     float: right;
-}
-.main2 span i{
-    float: right;
-    margin-right: 25px;
     font-size:25px;
+}
+.main2 p span i{
+    font-size:20px !important; 
+    color:#000000;
+    float: right;
+    margin-right: 20px;
 }
 .main3{
     width: 100%;
     height:200px;
     background:#f8f8f8;
-    padding-top:30px;
+    padding-top:25px;
 }
 .main3 p{
     width: 100%;
     height:90px;
     background:#ffffff;
-    line-height: 100px;
+    line-height: 90px;
     float: left;
-    padding-left: 32px;
 
 }
-.main3 p i{
-    font-size:40px;
+.main3 p>i{
+    font-size:20px !important;
+    color:#000000;
+    margin-left: 25px;
 }
-.main3 span{
-    width: 640px;
-    display: block;
-    margin-left: 30px;
+.main3 p span{
+    width: 670px;
     float: right;
-}
-.main3 span i{
-    float: right;
-    margin-right: 25px;
     font-size:25px;
+}
+.main3 p span i{
+    font-size:20px !important; 
+    color:#000000;
+    float: right;
+    margin-right: 20px;
 }
 .main4{
     width: 100%;
@@ -226,24 +228,25 @@
     width: 100%;
     height:90px;
     background:#ffffff;
-    line-height: 100px;
+    line-height: 90px;
     float: left;
-    padding-left: 32px;
 
 }
-.main4 p i{
-    font-size:40px;
+.main4 p>i{
+    font-size:20px !important;
+    color:#000000;
+    margin-left: 25px;
 }
-.main4 span{
-    width: 640px;
-    display: block;
-    margin-left: 30px;
+.main4 p span{
+    width: 670px;
     float: right;
-}
-.main4 span i{
-    float: right;
-    margin-right: 25px;
     font-size:25px;
+}
+.main4 p span i{
+    font-size:20px !important; 
+    color:#000000;
+    float: right;
+    margin-right: 20px;
 }
 .exit{
     width: 100%;

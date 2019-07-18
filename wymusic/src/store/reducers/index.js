@@ -6,14 +6,16 @@ import PlayerReducer from './player'
 import playList from './playList';
 import radioStation from "./radioReducers/radioStation";
 import RankReducers from "./rank"
+//新碟
+import AlbumList from "./AlbumList";
 
 let reducer = combineReducers({
     discover: DiscoverReducer,
     player: PlayerReducer,
     playList,
     radioStation,
-    Rank:RankReducers
-
+    Rank:RankReducers,
+    AlbumList
 })
 
 
