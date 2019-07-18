@@ -76,7 +76,7 @@ class PlayListDetail extends Component {
 
                     <div className="playAll">
                         <div className="playAllOne">
-                            <i className="iconfont iconbofang"></i>
+                            <i className="iconfont iconshipin1"></i>
                             <span>播放全部</span>
                             <b>(共{this.props.playList.trackCount}首)</b>
                         </div>
@@ -114,7 +114,7 @@ class PlayListDetail extends Component {
                                             </div>
                                         </div>
                                     </div>
-                                    <i className="iconfont iconbofang"></i>
+                                    <i className="iconfont iconshipin1"></i>
                                     <i className="iconfont iconshudian"></i>
                                 </div>
                             )

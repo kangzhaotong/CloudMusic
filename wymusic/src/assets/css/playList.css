@@ -76,6 +76,7 @@
 }
 .listCreator span{
     color: #dad1d1;
+    font-size: 35px;
     margin: 0 20px 0 7px;
 }
 .listDescription{
@@ -107,7 +108,7 @@
     color: #dad1d1;
     letter-spacing: 2px;
 }
-.listBottom .iconfont{
+#playListWrap .listBottom .iconfont{
     font-size: 46px !important;
 }
 
@@ -139,6 +140,9 @@
 .topMsg div:nth-of-type(2) span{
     color: #a79e9e;
 }
+.topMsg .iconarrow-right1{
+    color: #a79e9e;
+}
 .playAll{
     display: flex;
     justify-content: space-between;
@@ -146,7 +150,7 @@
     height: 100px;
     padding: 0 8px 0 22px;
 }
-.playAllOne .iconbofang{
+.playAllOne .iconshipin1{
     color: #000000;
     margin-right: 10px;
 }
@@ -180,8 +184,11 @@
     align-items: center;
     padding: 15px 20px;
 }
-.songItem .iconbofang{
+.songItem .iconshipin1{
     color: #000000;
+}
+.songItem .iconshudian{
+    color: #a79e9e;
 }
 .songInfo{
     display: flex;
@@ -264,9 +271,10 @@
 .shareCount{
     color: #948f8f;
     letter-spacing: 1px;
+    font-size: 32px;
 }
 
 /* iconfont样式 */
-.iconfont{
+#playListWrap .iconfont{
     font-size: 38px !important;
 }

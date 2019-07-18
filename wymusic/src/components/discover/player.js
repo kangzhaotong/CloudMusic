@@ -72,8 +72,6 @@ class Player extends Component {
         let initAudio = false;
         // alert(audio.duration);
 
-        if (time === "00:00" && duration !== "NaN:NaN" && !!initAudio) {
-            // alert("initAudio play");
         if (time == "00:00" && duration != "NaN:NaN" && !!initAudio) {
             audio.play();
             audio.pause();
