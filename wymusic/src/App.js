@@ -18,7 +18,8 @@ import RadioClassification from "./components/discover/RadioStation/RadioClassif
 import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
-
+import Song from "./components/discover/song";
+import Rank from "./components/discover/rank";
 
 
 
@@ -69,6 +70,8 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route path="/song" component={Song} />
+							<Route path="/rank" component={Rank} />
 						</Switch>
 					</div>
 				</div>

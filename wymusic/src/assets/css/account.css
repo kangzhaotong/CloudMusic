@@ -1,0 +1,262 @@
+
+.header{
+    width: 100%;
+    height: 85px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    padding-top:25px;
+    position: fixed;
+    top:0;
+    left: 0;
+    background: #ffffff
+}
+.banner{
+    width: 100%;
+    height: 160px;
+    position: relative;
+    margin-top:85px;
+}
+.banner img:nth-child(1){
+    width: 85px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 45px;
+    float: left;
+}
+.banner img:nth-child(2){
+    width: 365px;
+    height: 32px;
+    float: left;
+    margin-left: 35px;
+    margin-top:53px ;
+}
+.banner img:nth-child(3){
+    width: 87px;
+    height: 40px;
+    float: left;
+    position: absolute;
+    top:95px ;
+    left:155px ;
+}
+.banner img:nth-child(4){
+    width: 126px;
+    height: 51px;
+    float: right;
+    margin-top:53px;
+    margin-right: 40px;
+}
+.nav2{
+    width: 100%;
+    height:135px;
+    display: flex;
+    padding-top:27px;
+}
+.nav2 p{
+    width: 25%;
+    height: 82px;
+    display: flex;
+    flex-direction: column;
+    border-right:1px solid #dedede;
+    text-align: center;
+}
+.nav2 p:nth-child(4){
+    border: none;
+}
+.nav2 p span:nth-child(1){
+    font-size:26px;
+    color: #313131;
+}
+.nav2 p span:nth-child(2){
+    font-size:23px;
+    color: #909090;
+}
+.img{
+    padding:0 30px;
+}
+.img img{
+    width: 100%;
+    height: 120px;
+}
+.assage{
+    width: 100%;
+    height:200px;
+    display: flex;
+    flex-direction: row;
+    padding-top:40px;
+}
+.assage p{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    text-align: center;
+
+}
+.assage p:nth-child(1) i{
+    font-size: 55px;
+    color: red;
+}
+.assage p:nth-child(1) span{
+    font-size: 25px;
+}
+.assage p:nth-child(2) img{
+    width: 55px;
+    height:60px;
+    margin: 0 auto;
+}
+.assage p:nth-child(2) span:nth-child(2){
+    font-size: 25px;
+}
+.assage p:nth-child(2) span:nth-child(3){
+    font-size: 20px;
+    color:#b1b1b1;
+}
+.assage p:nth-child(3) i{
+    margin-top:-10px;
+    font-size: 65px;
+    color: red;
+}
+.assage p:nth-child(3) span:nth-child(2){
+    font-size: 25px;
+}
+.assage p:nth-child(3) span:nth-child(3){
+    font-size: 20px;
+    color:#b1b1b1;
+}
+.assage p:nth-child(4) i{
+    font-size: 60px;
+    color: red;
+}
+.assage p:nth-child(4) span{
+    font-size: 25px;
+}
+.main1{
+    width: 100%;
+    height:230px;
+    background:#f8f8f8;
+    padding-top:25px;
+}
+.main1 p{
+    width: 100%;
+    height:90px;
+    background:#ffffff;
+    line-height: 100px;
+    float: left;
+    padding-left: 32px;
+
+}
+.main1 p i{
+    font-size:40px;
+}
+.main1 span{
+    width: 640px;
+    display: block;
+    margin-left: 30px;
+    float: right;
+}
+.main1 span i{
+    float: right;
+    margin-right: 25px;
+    font-size:25px;
+}
+.main2{
+    width: 100%;
+    height:360px;
+    background:#f8f8f8;
+}
+.main2 p{
+    width: 100%;
+    height:90px;
+    background:#ffffff;
+    line-height: 100px;
+    float: left;
+    padding-left: 32px;
+
+}
+.main2 p i{
+    font-size:40px;
+}
+.main2 span{
+    width: 640px;
+    display: block;
+    margin-left: 30px;
+    float: right;
+}
+.main2 span i{
+    float: right;
+    margin-right: 25px;
+    font-size:25px;
+}
+.main3{
+    width: 100%;
+    height:200px;
+    background:#f8f8f8;
+    padding-top:30px;
+}
+.main3 p{
+    width: 100%;
+    height:90px;
+    background:#ffffff;
+    line-height: 100px;
+    float: left;
+    padding-left: 32px;
+
+}
+.main3 p i{
+    font-size:40px;
+}
+.main3 span{
+    width: 640px;
+    display: block;
+    margin-left: 30px;
+    float: right;
+}
+.main3 span i{
+    float: right;
+    margin-right: 25px;
+    font-size:25px;
+}
+.main4{
+    width: 100%;
+    height:410px;
+    background:#f8f8f8;
+    padding-top:30px;
+}
+.main4 p{
+    width: 100%;
+    height:90px;
+    background:#ffffff;
+    line-height: 100px;
+    float: left;
+    padding-left: 32px;
+
+}
+.main4 p i{
+    font-size:40px;
+}
+.main4 span{
+    width: 640px;
+    display: block;
+    margin-left: 30px;
+    float: right;
+}
+.main4 span i{
+    float: right;
+    margin-right: 25px;
+    font-size:25px;
+}
+.exit{
+    width: 100%;
+    height: 100px;
+    margin-bottom:95px;
+}
+.exit input{
+    width: 100%;
+    height: 90px;
+    line-height: 90px;
+    text-align: center;
+    color: red;
+    background: #ffffff;
+    font-size:30px;
+    border:none;
+}

@@ -12,12 +12,20 @@ class Home extends Component{
         //关键就是这里，把要使用this的函数  在构造函数中用bind方法传入this
         this.tuijian = this.tuijian.bind(this);
         this.seaHandler = this.seaHandler.bind(this);
+        this.song=this.song.bind(this);
+        this.rank=this.rank.bind(this);
     }
     seaHandler(){
         this.props.history.push("/search");
     }
     tuijian(){
         this.props.history.push("/everyday");
+    }
+    song(){
+        this.props.history.push("/song");
+    }
+    rank(){
+        this.props.history.push("/rank");
     }
     render(){
         let firstbannerlist=this.props.discover.firstbannerlist;
@@ -51,11 +59,11 @@ class Home extends Component{
                         <img src={require("../../assets/images/1.jpg")} alt=""/>
                         <span>每日推荐</span>
                     </li>
-                    <li>
+                    <li onClick={this.song}>
                         <img src={require("../../assets/images/2.jpg")} alt=""/>
                         <span>歌单</span>
                     </li>
-                    <li>
+                    <li onClick={this.rank}>
                         <img src={require("../../assets/images/3.jpg")} alt=""/>
                         <span>排行榜</span>
                     </li>
