@@ -5,7 +5,7 @@ export default {
     //用户歌单
     user_playlist() {
         return (dispatch) => {
-            axios.get(baseUrl + "/user/playlist?uid=32953014").then(({ data }) => {
+            axios.get("/wymusic/user/playlist?uid=32953014").then(({ data }) => {
                 console.log(data.playlist)
                 dispatch({
                     playlist: data.playlist,
