@@ -1,2 +1,2 @@
 export const PLAYlISTDETAIL = "PLAYlISTDETAIL";
-export const NEWSONGLIST = "NEWSONGLIST";
+export const ALBUMLIST = "ALBUMLIST";
