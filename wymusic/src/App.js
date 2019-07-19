@@ -31,6 +31,8 @@ import Concentrate from "./components/discover/RadioStation/Concentrate";
 import Song from "./components/discover/song";
 import Rank from "./components/discover/rank";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
+//登录
+import Login from './views/login';
 
 
 
@@ -98,6 +100,9 @@ class App extends React.Component {
 							<Route path="/rank" component={Rank} />
 
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
+							
+							<Route path="/login" component={Login}/>
+
 						</Switch>
 					</div>
 				</div>

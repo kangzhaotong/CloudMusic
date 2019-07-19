@@ -21,7 +21,7 @@ class CD extends Component {
     return (
           <div id="CD">
             <div className="CDTop">
-              <i className="iconfont iconarrow-right" onClick={this.back.bind(this)}></i>
+              <i className="iconfont iconfanhui" onClick={this.back.bind(this)}></i>
               <span>新碟</span>
               <i className="iconfont iconyinlebofangxuanlvjiezou"></i>
             </div>

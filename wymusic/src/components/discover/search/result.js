@@ -48,10 +48,12 @@ class Result extends Component{
                             return (<p className='content' key={index}>
                                 <span onClick={()=>{
                                     this.props.history.push("/player/"+item.id);
-                                }}>{item.name}</span><br />
-        
-                                <i className="iconfont icon-bofang"></i>
-                                <i className="iconfont icon-shudian"></i>
+                                }}>{item.name}</span>
+                                <div className="com">
+                                      <span>-{item.album.name}</span>  
+                                </div>
+                                <i className="iconfont iconshipin"></i>
+                                <i className="iconfont iconshudian"></i>
                             </p>)
                         })
                     } 

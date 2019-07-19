@@ -4,7 +4,7 @@ import baseUrl from '../../baseUrl';
 export default{
     getRadioRecommendList(i){
         return (dispatch) => {
-            axios.get(baseUrl+"/dj/recommend")
+            axios.get("/wymusic/dj/recommend")
             .then(({data})=>{
                 if(i > data.djRadios.length+1){
                     i=0;
@@ -38,7 +38,7 @@ export default{
     },
     getConcentrateList(){
         return (dispatch) => {
-            axios.get(baseUrl+"/dj/paygift?limit=3&offset=20")
+            axios.get("/wymusic/dj/paygift?limit=3&offset=20")
             .then(({data})=>{     
                 const concentrateList = data.data.list;
                 console.log(2222,data)
@@ -54,7 +54,7 @@ export default{
     },
     getRsBannerList(){
         return (dispatch) => {
-            axios.get(baseUrl+"/banner?type=4")
+            axios.get("/wymusic/banner?type=4")
             .then(({data})=>{    
                 const rsBannerList = data.banners.splice(3);
                 dispatch({
@@ -68,7 +68,7 @@ export default{
     },
     getPopularList(){
         return (dispatch) => {
-            axios.get(baseUrl+"/dj/category/recommend")
+            axios.get("/wymusic/dj/category/recommend")
             .then(({data})=>{
                 const popularList = data.data.splice(0,9);
                 dispatch({
@@ -82,7 +82,7 @@ export default{
     },
     getRadioSortList(){
         return (dispatch) => {
-            axios.get(baseUrl+"/dj/catelist")
+            axios.get("/wymusic/dj/catelist")
                 .then(({data})=>{
                     const radioSortList = data.categories;
                     dispatch({
@@ -97,7 +97,7 @@ export default{
     },
     getPaymentList(limit = 20){
         return (dispatch) => {
-            axios.get(baseUrl+"/dj/paygift?limit="+limit+"&offset=20")
+            axios.get("/wymusic/dj/paygift?limit="+limit+"&offset=20")
             .then(({data})=>{
                 console.log(data)     
                 const rsPaymentList = data.data.list;
