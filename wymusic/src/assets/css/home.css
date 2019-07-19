@@ -44,12 +44,10 @@ body{
     color:#949595;
     margin-right:14px;
 }
-#header .search span{
+#header .search input{
+    text-indent:150px;
     font-size:28px;
     color:#c5c5c6;
-    position: absolute;
-   left:240px;
-    top:26px;
 }
 #header .icon-gedan{
     float: left;

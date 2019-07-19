@@ -1,0 +1,15 @@
+.video-react .video-react-big-play-button {
+    display: none !important;
+}
+.mv-data{
+    margin-top:15px;
+    padding:0 15px;
+}
+.mv-data p:nth-child(1) {
+    font-size:35px;
+    margin-bottom:20px;
+}
+.mv-data p:nth-child(2) {
+    font-size:28px;
+    color:#8F8F8F;
+}

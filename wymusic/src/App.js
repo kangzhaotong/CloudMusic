@@ -3,13 +3,15 @@ import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react
 import Account from './components/account/account'
 import My from './components/my/my';
 import Discover from "./components/discover/discover";
-import Video from './components/video/video';
+import Video from './views/video';
 import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Run from "./components/discover/run";
 import Search from "./components/discover/search";
-
+import PlayMv from "@/views/video/play-mv/PlayMv";//播放组件
+import MoreMv from  "@/views/video/more-mv/MoreMv"//更多Mv
+import RankingMv from "@/views/video/ranking-mv/RankingMv" //mv 排行榜
 class App extends React.Component {
     render(){
         return (
@@ -49,6 +51,9 @@ class App extends React.Component {
 							<Route path="/everyday" component={Everyday} />
 							<Route path="/run" component={Run} />
 							<Route path="/search" component={Search} />
+							<Route path="/playMy" component={PlayMv} />	
+							<Route path="/moreMv" component={MoreMv} />	
+							<Route path="/mvRanking" component={RankingMv} />	
 						</Switch>
 					</div>
 				</div>
