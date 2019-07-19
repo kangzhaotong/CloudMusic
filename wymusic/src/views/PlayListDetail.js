@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {withRouter} from 'react-router-dom';
 import '../assets/css/playList.css';
 import playListCreator from '../store/actionCreator/playListCreator';
+import loadingCreator from '../store/actionCreator/loading';
 
 class PlayListDetail extends Component {
     render() {
@@ -85,6 +86,7 @@ class PlayListDetail extends Component {
                             <span style={{display:this.props.playList.subscribed?'inline':'none'}}>- 已收藏({this.props.playList.subscribedCount})</span>
                         </div>
                     </div>
+                    <div className="isLoading" style={{display:this.props.isLoading?'block':'none'}}>加载中....</div>
 
                     {
                         this.props.playList.tracks.map((v, i) => {
@@ -145,13 +147,16 @@ class PlayListDetail extends Component {
     }
 }
 
-function mapStateToProps({playList}) {
+function mapStateToProps({playList, loading}) {
     // console.log("22222222", playList.playListDetail);
+    console.log(loading.isLoading)
     return {
-        playList: playList.playListDetail
+        playList: playList.playListDetail,
+        isLoading: loading.isLoading
     }
 }
 
 export default connect(mapStateToProps, dispatch => bindActionCreators({
-    ...playListCreator
+    ...playListCreator,
+    ...loadingCreator
 }, dispatch))(withRouter(PlayListDetail));

@@ -42,7 +42,7 @@ class Home extends Component{
     }
     render(){
         let firstbannerlist=this.props.discover.firstbannerlist;
-        console.log(firstbannerlist)
+        // console.log(firstbannerlist)
         let SellPoints=this.props.discover.SellPoints;
         let newSongs=this.props.discover.newSongs;
         return(
