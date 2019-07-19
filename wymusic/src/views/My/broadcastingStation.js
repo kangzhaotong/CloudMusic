@@ -39,9 +39,9 @@ class BroadcastingStation extends Component {
                     <h3>我创建的电台(0)</h3>
 
                     <div className="apply">
-                        <span>1</span>
+                        <span className="iconfont  iconhuatong1"></span>
                         <h4>申请做主播</h4>
-                        <i>1</i>
+                        <i className="iconfont iconyou"></i>
                     </div>
                     <div className="content">
                         <ul>

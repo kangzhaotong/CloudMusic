@@ -22,4 +22,5 @@ export default {
     singer_recommend:[],
     recommend_radio:[],
     subscribe:[],
+    recent_songs:[],
 };

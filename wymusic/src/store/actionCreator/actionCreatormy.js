@@ -121,5 +121,21 @@ export default {
                 })
             })
         }
+    },
+    //最近播放音乐
+    recent_songs(id){
+        console.log(id)
+        return (dispatch) => {
+            axios.get(baseUrl + "/user/record",{
+                params:{uid:id,type:1}
+            }
+            ).then(({ data }) => {
+                console.log(data, "最近播放")
+                dispatch({
+                    type: 'REAENT_SONGS',
+                    recent_songs:data.weekData,
+                })
+            })
+        }
     }
 }
