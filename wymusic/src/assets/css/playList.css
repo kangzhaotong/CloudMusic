@@ -114,12 +114,12 @@
 
 .playListBottomWrap{
     position: absolute;
-    top: 590px;
+    top: 600px;
     width: 100%;
     background: #ffffff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    padding-bottom: 100px;
+    padding-bottom: 110px;
 }
 .playListBottomWrap .topMsg{
     display: flex;

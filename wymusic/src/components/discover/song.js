@@ -92,7 +92,9 @@ class Song extends Component{
               <div className="mainContent">
                 {
                   mvList.map((item,index)=>{
-                    return <p key={index}>
+                    return <p key={index} onClick={() => {
+                      this.props.history.push('/playListDetails/'+item.id)
+                  }}>
                       <img width={'100%'} style={{borderRadius:'10%'}} src={item.coverImgUrl} alt="" />
                       <span>
                         {item.name}

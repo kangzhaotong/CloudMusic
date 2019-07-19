@@ -1,0 +1,36 @@
+
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+.header_collect{
+    width:100%;
+    height:128px;
+    background: #ffffff;
+   line-height: 128px;
+}
+.header_collect a{
+    float: left;
+    font-size: 44px;
+   
+}
+.header_collect span{
+    color: black;
+}
+.header_collect_left{
+    float: left;
+    width:54px;
+    height:54px;
+    font-size: 54px;
+    margin: 0px 50px 0px 48px;
+    color: black;
+}
+.header_collect_right{
+    float: right;
+    width:54px;
+    height:54px;
+    font-size: 54px;
+    margin: 0px 32px 0px 0px;
+    color:black;
+}
