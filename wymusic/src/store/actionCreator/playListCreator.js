@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {PLAYlISTDETAIL, NEWSONGLIST} from '../actionType/playList';
+import {PLAYlISTDETAIL, ALBUMLIST} from '../actionType/playList';
 
 export default {
     playListDetail(id) {
@@ -16,12 +16,12 @@ export default {
         }
     },
 
-    newSongList(songId) {
+    albumList(albumId) {
         //新歌详情列表
         return dispatch => {
-            axios.get("/wymusic/album?id="+songId).then(({data}) => {
+            axios.get("/wymusic/album?id="+albumId).then(({data}) => {
                 dispatch({
-                    type: NEWSONGLIST,
+                    type: ALBUMLIST,
                     payload: {
                         data
                     }

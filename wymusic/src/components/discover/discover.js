@@ -34,6 +34,7 @@ class Home extends Component{
             }
         })
     }   
+    
     song(){
         this.props.history.push("/song");
     }
@@ -125,7 +126,7 @@ class Home extends Component{
                         {
                             newSongs.map( (item,index) => {
                                 return <p className='content' key={index} onClick={() => {
-                                    this.props.history.push('/newsSongList/'+item.id);
+                                    this.props.history.push('/albumList/'+item.id);
                                 }}>
                                     <img key={index} src={item.picUrl}  alt="完美"/>
                                     <span>{item.name}</span>

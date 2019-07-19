@@ -9,7 +9,7 @@ export default {
                 console.log(data.playlist)
                 dispatch({
                     playlist: data.playlist,
-                    type: 'USER_PLAYLIST',
+                    type: USER_PLAYLIST,
                     id: data.province
                 })
             })
@@ -22,7 +22,7 @@ export default {
                 console.log(data)
                 dispatch({
                     collete: data.subscribers,
-                    type: 'COLLECT',
+                    type: COLLECT,
                     id: data.province
                 })
             })
@@ -35,7 +35,7 @@ export default {
             axios.get(baseUrl + "/album/sublist").then(({ data }) => {
                 console.log(data, "我是收藏的专辑")
                 dispatch({
-                    type: 'COLLECT_ALBUM',
+                    type: COLLECT_ALBUM,
                     collect_album: data.data,
                     index: data.count
                 })
@@ -48,7 +48,7 @@ export default {
             axios.get(baseUrl + "/artist/sublist").then(({ data }) => {
                 console.log(data, "我是收藏的专辑")
                 dispatch({
-                    type: 'COLLECT_SINGER',
+                    type: COLLECT_SINGER,
                     collect_singer: data.data,
                     index: data.count
                 })
@@ -62,7 +62,7 @@ export default {
                 console.log("www")
                 console.log(data.data, "视频")
                 dispatch({
-                    type: 'COLLECT_VIDEO',
+                    type: COLLECT_VIDEO,
                     collect_singer: data.data,
                 })
             })
