@@ -37,7 +37,7 @@ class Album extends Component{
       return(
           <div id="album">
               <div className="albumTop">
-                <i className="iconfont iconarrow-right" onClick={this.back.bind(this)}></i>
+                <i className="iconfont iconfanhui" onClick={this.back.bind(this)}></i>
                 <span>数字专辑</span>
                 <i className="iconfont iconyinlebofangxuanlvjiezou"></i>
               </div>

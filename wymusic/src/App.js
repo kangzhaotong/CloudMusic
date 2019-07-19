@@ -7,6 +7,13 @@ import Video from './components/video/video';
 import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
+import Player from "./components/discover/player";
+//歌单列表
+import PlayListDetail from './views/PlayListDetail';
+//新歌列表
+import AlbumList from './views/AlbumList';
+
+// import router from "./router";
 // import Run from "./components/discover/run";
 //import Search from "./components/discover/search";
 import Collection from "./views/My/Collection";//我的收藏
@@ -24,11 +31,8 @@ import Concentrate from "./components/discover/RadioStation/Concentrate";
 import Song from "./components/discover/song";
 import Rank from "./components/discover/rank";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
-import Player from "./components/discover/player";
-//歌单列表
-import PlayListDetail from './views/PlayListDetail';
-//新歌列表
-import NewSongList from './views/NewSongList';
+//登录
+import Login from './views/login';
 
 
 
@@ -89,7 +93,7 @@ class App extends React.Component {
 							<Route path="/CD" component={CD} />
 							
 							<Route path='/playListDetails/:id' component={PlayListDetail}/>
-							<Route path='/newsSongList/:songId' component={NewSongList}/>
+							<Route path='/albumList/:albumId' component={AlbumList}/>
 							
 							<Route exact path="/radio" component={Radio}/>
 							<Route path="/radio/radioclassification" component={RadioClassification}/>
@@ -100,6 +104,9 @@ class App extends React.Component {
 							<Route path="/rank" component={Rank} />
 
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
+							
+							<Route path="/login" component={Login}/>
+
 						</Switch>
 					</div>
 				</div>

@@ -1,9 +1,11 @@
 import React,{ Component } from 'react';
-import "../../assets/css/home.css"
+
 import {connect} from 'react-redux'
 import Swiper from 'swiper/dist/js/swiper.js'
 import 'swiper/dist/css/swiper.min.css'
+import "../../assets/css/home.css"
 import actionCreate from '../../store/actionCreator/index.js';
+
 
 class Home extends Component{
     constructor(props){
@@ -20,6 +22,19 @@ class Home extends Component{
     tuijian(){
         this.props.history.push("/everyday");
     }
+    componentDidUpdate(){
+        new Swiper ('.swiper-container', {
+            loop: true,  //循环
+            autoplay: {   //滑动后继续播放（不写官方默认暂停）
+                disableOnInteraction: false,
+      
+            },
+            pagination: {  //分页器
+                el: '.swiper-pagination'
+            }
+        })
+    }   
+    
     song(){
         this.props.history.push("/song");
     }
@@ -43,16 +58,17 @@ class Home extends Component{
                 </div>
                 {/*轮播图*/}
                 <div className='firstbanner'>
-                    <div className="swiper-container first-swiper" id="first">
-                        <div className="swiper-wrapper">{
-                            firstbannerlist.map((item,index) => {
-                                return <div key={index} className="swiper-slide" id="box"><img src={item.imageUrl}  alt="完美"/></div>
-                            })
-                        }
+                        <div className="swiper-container">
+                            <div className="swiper-wrapper">
+                                {
+                                    firstbannerlist.map((item,index) => {
+                                        return <div key={index} className="swiper-slide" id="box"><img src={item.imageUrl}  alt="完美"/></div>
+                                    })
+                                }
+                            </div>
+                          <div className="swiper-pagination"></div>
                         </div>
-                        <div className="swiper-pagination first-pagination"></div>
                     </div>
-                </div>
                 {/*每日推荐*/}
                 <div id="everyday">
                     <li onClick={this.tuijian}>
@@ -110,7 +126,7 @@ class Home extends Component{
                         {
                             newSongs.map( (item,index) => {
                                 return <p className='content' key={index} onClick={() => {
-                                    this.props.history.push('/newsSongList/'+item.id);
+                                    this.props.history.push('/albumList/'+item.id);
                                 }}>
                                     <img key={index} src={item.picUrl}  alt="完美"/>
                                     <span>{item.name}</span>
@@ -129,18 +145,6 @@ class Home extends Component{
         this.props.getBanner();
         this.props.getData();
         this.props.getSong();
-    }
-    componentDidUpdate(){
-        new Swiper ('.swiper-container', {
-            loop: true,  //循环
-            autoplay: {   //滑动后继续播放（不写官方默认暂停）
-                disableOnInteraction: false,
-                
-            },
-            pagination: {  //分页器
-                el: '.swiper-pagination'
-            }
-        })
     }
 }
 let mapState=(state)=>state;

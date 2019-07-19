@@ -1,4 +1,4 @@
-/* 歌单 */
+/* 歌单、专辑 */
 export default {
     playListDetail: {
         tracks:[],
@@ -16,8 +16,21 @@ export default {
         trackCount: "",
         subscribedCount: ""
     },
-    newSongList: {
-        album: {},
+    albumList: {
+        album: {
+            blurPicUrl: "",
+            name: "",
+            artist: {
+                name: ""
+            },
+            publishTime: "",
+            description: "",
+            info: {
+                commentCount: 0,
+                shareCount: 0
+            },
+            size: 0
+        },
         songs: []
     }
 }

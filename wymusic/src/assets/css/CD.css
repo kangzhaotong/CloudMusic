@@ -17,19 +17,20 @@ body{
   
 }
 #CD .CDTop>i:nth-of-type(1){
-  font-size:44px;
+  font-size:44px !important;
   color:#000001;
+  margin-top:-29px;
 }
 #CD .CDTop>span{
   font-size:40px;
   color:red;
   font-weight:700;
-  margin-left:270px;
+  margin-left:300px;
 }
 #CD .CDTop>i:nth-of-type(2){
-  font-size:42px;
+  font-size:42px !important;
   color:#000001;
-  margin-left:260px;
+  margin-left:230px;
 }
 /* 数字新碟 */
 #CD  .wrap{

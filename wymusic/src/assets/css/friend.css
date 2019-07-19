@@ -1,0 +1,136 @@
+#friendWrap .iconfont{
+    color: #000000 ;
+    font-size: 35px !important;
+}
+#friendWrap{
+    margin-bottom: 100px;
+}
+
+.frTop{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+    padding: 0 30px;
+}
+.frDongtai{
+    display: flex;
+    border: 1px solid red;
+    width: 260px;
+    height: 60px;
+    line-height: 55px;
+    border-radius: 40px;
+}
+.frDongtai span{
+    font-size: 30px;
+    color: rgb(240, 38, 38);
+    width: 130px;
+    height: 100%;
+    text-align: center;
+    border-radius: 40px;
+    letter-spacing: 1px;
+}
+.frDongtai span:nth-child(1){
+    background: red;
+    color: #ffffff;
+}
+
+.frShipin{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 80px;
+    height: 110px;
+    align-items: center;
+    border-bottom: 10px solid #f3ecec;
+}
+.frShipin div{
+    display: flex;
+    align-items: center;
+}
+.frShipin span{
+    font-size: 30px;
+    margin-left: 20px;
+    letter-spacing: 1px;
+}
+
+.frInfoWrap{
+    padding: 0 30px;
+    border-bottom: 3px solid #e7e0e0;
+}
+.frInfoTop{
+    display: flex;
+    height: 140px;
+    justify-content: space-between;
+    align-items: center;
+}
+.frInfoTr{
+    display: flex;
+}
+.fravta img{
+    width: 100px;
+    border-radius: 50%;
+}
+.fruser{
+    display: flex;
+    flex-direction: column;
+    margin-left: 18px;
+    justify-content: center;
+}
+.fruser span:nth-child(1){
+    font-size: 29px;
+    letter-spacing: 2px;
+    color: rgb(42, 141, 233);
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fruser span:nth-child(2){
+    font-size: 23px;
+    color: #a79e9e;
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.frFocus{
+    width: 150px;
+    height: 60px;
+    line-height: 58px;
+    background: red;
+    text-align: center;
+    border-radius: 40px;
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.frInfoCOntent{
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    /* background: pink; */
+}
+.josnMsg{
+    margin-bottom: 20px;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+.frInfoPicWrap img{
+    width: 186px;
+    margin: 0 12px 10px 0;
+    border-radius: 10px;
+}
+.frInfoPicWrap img:nth-child(3n){
+    margin-right: 0;
+}
+
+.frInfoBottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+    height: 60px;
+}
+.frInfoBottom span{
+    font-size: 27px;
+    margin-left: 10px;
+}

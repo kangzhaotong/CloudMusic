@@ -34,9 +34,9 @@ body{
   color: #999;
 
 }
-.nav .iconfont {
-   font-size: 40px ;
-   color: #ccc;
+.nav>.iconfont{
+   font-size: 40px !important;
+   color:black !important;
  }
 .activeStyle {
   color: #eb5444 !important;
