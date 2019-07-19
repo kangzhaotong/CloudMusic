@@ -8,18 +8,24 @@ import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
+//歌单列表
+import PlayListDetail from './views/PlayListDetail';
+//新歌列表
+import NewSongList from './views/NewSongList';
+
+// import router from "./router";
 import Search from "./components/discover/search/search";
 import Result from "./components/discover/search/result";
 import Album from "./components/common/Album";
 import CD from "./components/common/CD";
-import PlayListDetail from './components/common/PlayListDetail';
-import router from "./router";
 import Radio from "./views/RadioStation";
 import RadioClassification from "./components/discover/RadioStation/RadioClassification";
 import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
+//登录
+import Login from './views/login';
 
 
 
@@ -71,6 +77,8 @@ class App extends React.Component {
 							<Route path="/CD" component={CD} />
 							
 							<Route path='/playListDetails/:id' component={PlayListDetail}/>
+							<Route path='/newsSongList/:songId' component={NewSongList}/>
+							
 							<Route exact path="/radio" component={Radio}/>
 							<Route path="/radio/radioclassification" component={RadioClassification}/>
 							<Route path="/radio/radiorank" component={RadioRank}/>
@@ -78,6 +86,9 @@ class App extends React.Component {
 							<Route path="/radio/concentrate" component={Concentrate}/>
 
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
+							//登录
+							<Route path="/login" component={Login}/>
+
 						</Switch>
 					</div>
 				</div>

@@ -12,7 +12,7 @@ export default{
             });
         }
     },
-    getAlbum(){
+    getAlbum(){ //获取新碟
         return (dispatch)=>{
             axios.get("/wymusic/top/album?offset=0&limit=30").then( res => {
                 dispatch({
