@@ -149,7 +149,6 @@ class PlayListDetail extends Component {
 
 function mapStateToProps({playList, loading}) {
     // console.log("22222222", playList.playListDetail);
-    console.log(loading.isLoading)
     return {
         playList: playList.playListDetail,
         isLoading: loading.isLoading

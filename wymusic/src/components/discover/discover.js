@@ -33,7 +33,8 @@ class Home extends Component{
                 el: '.swiper-pagination'
             }
         })
-    }
+    }   
+    
     song(){
         this.props.history.push("/song");
     }
@@ -48,9 +49,7 @@ class Home extends Component{
         return(
             <div id="discover">
                 <div id="header">
-                    <i className="iconfont iconhuatong" onClick={() => {
-                            this.props.history.push('/login')
-                        }}></i>
+                    <i className="iconfont iconhuatong"></i>
                     <div className="search"onClick={this.seaHandler} >
                         <input type="text" placeholder="大家都在搜 隔壁老樊" />
                         <i className="iconfont iconfangdajing"></i>

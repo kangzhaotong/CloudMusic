@@ -1,6 +1,21 @@
 import React,{Component} from 'react';
-import "../../assets/css/account.css"
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import "../../assets/css/account.css";
+import userCreator from '../../store/actionCreator/userCreator';
+
+
 class Card extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            avatarUrl:this.props.user.avatarUrl,
+            nickname:this.props.user.nickname
+         
+        }
+        console.log(this.props)
+      }
+     
     render(){
         return(
         <div id="account">
@@ -9,10 +24,22 @@ class Card extends Component{
                 <i className="iconfont iconyinlebofangxuanlvjiezou" style={{color:'#000001',fontSize:'25px'}}></i>
             </div>
             <div className="banner">
-                <img src={require("../../assets/images/banner_1.jpg")} alt="" />
-                <img src={require("../../assets/images/banner_2.jpg")} alt="" />
-                <img src={require("../../assets/images/banner_3.jpg")} alt="" />
-                <img src={require("../../assets/images/banner_4.jpg")} alt="" />
+                <div style= {{display:localStorage.token?'block':'none',width:'100px',height:'50px'}}>
+                    <img src={this.state.avatarUrl} alt="头像" />
+                    <span>{this.state.nickname}</span>
+                    <img src={require("../../assets/images/banner_3.jpg")} />
+
+                    <img src={require("../../assets/images/banner_4.jpg")} />
+                </div>
+                <div style= {{display:localStorage.token?'none':'block',borderRadius:'30px',width:'90%',height:'70px',background:'red',opacity:0.5,
+            fontSize:'25px',textAlign:'cneter',marginTop:"6px",lineHeight:'70px',marginLeft:'20px',paddingLeft:'100px'}}
+                onClick={() => {
+                    this.props.history.push('/login');
+ 
+                }}
+                >
+                    还未登录哦！
+                </div>
             </div>
             <div className="nav2">
                 <p>
@@ -28,7 +55,7 @@ class Card extends Component{
                     <span>粉丝</span>
                 </p>
                 <p>
-                    <span className="iconfont icon-bianji"></span>
+                    <i className="iconfont iconbianji"></i>
                     <span>编辑资料</span>
                 </p>
             </div>
@@ -148,10 +175,28 @@ class Card extends Component{
                 </p>
             </div>
             <div className="exit">
-                <input type="button" value="退出登录"></input>
+                <input type="button" value="退出登录" onClick={() => {
+           
+            this.props.logout();
+                      
+                }}></input>
             </div>
         </div>
         )
     }
+    componentDidMount(){ 
+        this.forceUpdate();
+    }
 }
-export default Card;
+
+function mapStateToProps({userInfo}) {
+    console.log(666, userInfo);
+    return {
+        user: userInfo.userInfo
+    }
+}
+
+
+export default connect(mapStateToProps, dispatch => bindActionCreators({
+    ...userCreator
+}, dispatch))(Card);
