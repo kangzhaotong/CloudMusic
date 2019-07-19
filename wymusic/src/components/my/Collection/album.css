@@ -1,0 +1,140 @@
+@import '../../../../public/iconfont/iconfont.css'
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+.album{
+    margin-left: 41px;
+}
+.album .figure_album{
+    width:100%;
+    height:167px;
+    line-height: 167px;
+}
+.album .figure_album img{
+    width: 172px;
+    height:167px;
+    float: left;
+}
+.album .figure_album a{
+    float: left;
+    font-size: 29px;
+    margin-left: 28px;
+}
+.collect_album h3{
+    width:100%;
+    height:108px;
+    line-height: 108px;
+    font-size: 36px;
+}
+.collect_album ul li{
+    width:100%;
+    height: 162px;
+   
+}
+.collect_album ul li .outer_img{
+    width:172px;
+    height:166px;
+    background-image:url(../../../assets/images/b1.gif);
+    background-size:cover;
+    float: left;
+   
+}
+.collect_album ul li{
+    margin: 5px 0;
+}
+.collect_album ul li .outer_img img{
+    width:144px;
+    height:144px;
+    margin: 13px 0px 0px 5px;
+    border-radius:9px
+}
+.collect_album ul li h5{
+    font-size: 34px;
+    padding-top:26px;
+    margin-left:198px 
+}
+.collect_album ul li p{
+    margin-left:198px ;
+    margin-top:30px ;
+    font-size: 28px;
+    color: #adadad;
+}
+.collect_album ul li span{
+    width:44px;
+    height:44px;
+    float: right;
+    margin: -80px 20px 0px 0px;
+    font-size: 44px;
+}
+.collect_album_recommend{
+    margin: 84px 0 0 0;
+    display: none;
+}
+.collect_album_recommend h3 span{
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: yellow;
+    font-size: 52px;
+    margin: 39px 10px 0 0;
+  
+}
+.collect_album_recommend h3 span img{
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: yellow;
+    font-size: 52px;
+}
+.collect_album_recommend h3 i{
+    float: right;
+    margin-right: 50px; 
+    color: #cccccc;
+}
+.collect_album_recommend h3{
+    width:100%;
+    height: 136px;
+    font-size: 45px;
+    line-height: 136px;
+}
+.collect_album_recommend .recommend_content ul li{
+    width: 210px;
+    height:300px;
+    float: left;
+    margin: 10px 20px 0 0;
+}
+.collect_album_recommend .recommend_content ul li .outer_img{
+    width:210px;
+    height: 189px;
+    background-image:url(../../../assets/images/b1.gif);
+    background-size:cover;
+    float: left;
+}
+.collect_album_recommend .recommend_content ul li .outer_img img{
+    width:180px;
+    height:189px;
+    border-radius:9px
+}
+.collect_album_recommend .recommend_content ul li span{
+    display: block;
+    width: 200px;
+    font-size: 28px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.collect_album_recommend .recommend_content ul li p{
+    font-size: 16px;
+    color: #adadad;
+}
+.collect_album_recommend .load_more{
+    width: 300px;
+    height:80px;
+    font-size: 32px;
+    border: 1px solid #d9d9d9;
+    border-radius:40px;
+    background: floralwhite;
+    margin-left:200px; 
+}

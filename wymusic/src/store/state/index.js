@@ -7,5 +7,7 @@ export default {
     run:[],
     mv:[],
     list:[],
-    music:[]
+    music:[],
+    songList:[],
+    mvList:[]
 };

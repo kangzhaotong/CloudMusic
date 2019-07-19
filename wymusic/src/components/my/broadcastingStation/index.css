@@ -1,0 +1,58 @@
+.dy_module{
+    margin: 84px 0 0 0;
+}
+.dy_module h3 span{
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: yellow;
+    font-size: 52px;
+    margin: 39px 10px 0 0;
+  
+}
+.dy_module h3 img{
+    float: left;
+    width: 52px;
+    height: 52px;
+    background: yellow;
+  
+}
+.dy_module h3 i{
+   
+    color: red;
+}
+.dy_module h3{
+    width:100%;
+    font-size: 45px;
+    line-height: 136px; 
+}
+.dy_module .dy_module_content ul li{
+    width: 215px;
+    height:286px;
+    float: left;
+    margin: 20px 0px 20px 25px;
+}
+.dy_module .dy_module_content ul li img{
+    display: block;
+    width:215px;
+    height:215px;
+    border-radius:10px;
+    background: yellow;
+}
+.dy_module .dy_module_content ul li p{
+    font-size: 33px;
+    text-align:center;
+    margin-top: 7px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.dy_module .load_more{
+    width: 300px;
+    height:80px;
+    font-size: 32px;
+    border: 1px solid #d9d9d9;
+    border-radius:40px;
+    background: floralwhite;
+    margin-left:200px; 
+}
