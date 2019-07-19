@@ -9,7 +9,7 @@ export default class recentlyPlay extends Component {
     render() {
         return (
             <div>
-               <Header teim="最近播放"></Header>
+               <Header {...this.props} teim="最近播放"></Header>
                 <div>
                 <Router>
                         <div className={"recentlyPlay"}>

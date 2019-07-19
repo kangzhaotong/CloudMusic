@@ -36,6 +36,7 @@ import Login from './views/login';
 
 
 
+
 // import router from "./router";
 
 class App extends React.Component {
@@ -81,7 +82,10 @@ class App extends React.Component {
 							<Route path="/album" component={Album} />
 				
 							<Route path="/search" component={Search} />
-							<Route path="/my/collection"component={Collection} />
+							{/* <Redirect from="/my/collection" to="/my/collection/album" >
+								<Route path="/my/collection" component={Collection} />
+							</Redirect> */}
+							<Route path="/my/collection" component={Collection} />
 							<Route path="/my/broadcastingStation"component={BroadcastingStation} />
 							<Route path="/my/recentlyPlay"component={RecentlyPlay} />
 							
