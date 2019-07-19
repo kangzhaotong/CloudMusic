@@ -32,10 +32,12 @@
   height:70px;
   text-align:center;
   line-height:65px;
+  color:black;
   font-size:30px;
   border-radius:10px;
-  background: greenyellow;
+  background: red;
   margin-top:100px;
+  opacity: 0.6;
 }
 #login .form>input:nth-of-type(1){
   display: inline-block;

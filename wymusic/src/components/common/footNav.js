@@ -11,7 +11,9 @@ class footNav extends React.Component{
   render(){
     return (
       <div>
-          <Router>
+        <Router>
+          
+        </Router>
               <div className="nav">
                 <NavLink to="/discover" activeClassName="activeStyle">
                   <i className="iconfont icon-musiccloud"></i>
@@ -44,7 +46,7 @@ class footNav extends React.Component{
                             <Route path="/account" component={Account} />
                           </Switch>
                         </div>
-              </Router>
+        
       </div>
       
     )

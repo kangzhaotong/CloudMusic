@@ -7,8 +7,6 @@ import Video from './components/video/video';
 import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
-// import Run from "./components/discover/run";
-//import Search from "./components/discover/search";
 import Collection from "./views/My/Collection";//我的收藏
 import BroadcastingStation from "./views/My/broadcastingStation";//我的电台
 import RecentlyPlay from "./views/My/recentlyPlay";//最近播放

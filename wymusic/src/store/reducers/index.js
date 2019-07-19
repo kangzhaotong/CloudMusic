@@ -9,6 +9,8 @@ import RankReducers from "./rank"
 //新碟
 import AlbumList from "./AlbumList";
 import my from './discovermy'
+import userInfo from './userReducer';
+
 let reducer = combineReducers({
     discover: DiscoverReducer,
     player: PlayerReducer,
@@ -17,6 +19,7 @@ let reducer = combineReducers({
     Rank:RankReducers,
     AlbumList,
     my,
+    userInfo
 })
 
 
