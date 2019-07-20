@@ -9,7 +9,7 @@ class RadioClassification extends React.Component{
         return (
             <div>
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>电台分类</span>
                 </div>

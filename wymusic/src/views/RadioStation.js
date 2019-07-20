@@ -17,7 +17,7 @@ class Radio extends Component{
         return (
             <div className="warp-radio">
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>电台</span>
                 </div>

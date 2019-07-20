@@ -20,7 +20,7 @@ class RadioInfo extends Component{
         return (
             <div className="class-box">
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>{this.props.location.state.name}</span>
                 </div>  

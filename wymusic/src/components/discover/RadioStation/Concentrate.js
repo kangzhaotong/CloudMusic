@@ -13,7 +13,7 @@ class Concentrate extends React.Component{
             <div className="wrap-payment" >
                  
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>付费精品</span>
                 </div>  
