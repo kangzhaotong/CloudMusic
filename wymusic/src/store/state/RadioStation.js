@@ -9,5 +9,8 @@ export default{
     limit:20,
     i:0,
     radioClassInfoList:[],
-    playMp3:[]
+    playMp3:[],
+    musicUrl:[],
+    programList:[],
+    isLoading:true
 }

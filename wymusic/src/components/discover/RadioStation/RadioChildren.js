@@ -49,23 +49,15 @@ class RadioChildren extends Component{
                                         })
                                     } 
                                     </div>
-                            </div>
-                            
+                            </div>    
                         )
                     })
                     }
-                
             </div>
         )
     }
-    addDiv(){
-        // let radioChildren = document.querySelector(".radio-children");
-        // let one = radioChildren.firstChild
-        // console.log(radioChildren)
-    }
     componentDidMount(){
         this.props.getPopularList();
-        this.addDiv();
     }
 }
 function mapStateToProps(state){

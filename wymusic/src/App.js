@@ -18,7 +18,8 @@ import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
 import RadioInfo from "./components/discover/RadioStation/RadioInfo";
-import RsInfo from "./components/discover/RadioStation/RsInfo"
+import RsInfo from "./components/discover/RadioStation/RsInfo";
+import RmProgram from "./components/discover/RadioStation/RmProgram";
 
 
 
@@ -51,6 +52,7 @@ class App extends React.Component {
 						</NavLink>
 
 					</div>
+
 					<div className="view">
 						<Switch>
 							<Redirect from="/" to="/discover" exact/>
@@ -72,6 +74,7 @@ class App extends React.Component {
 							<Route path="/radio/concentrate" component={Concentrate}/>
 							<Route exact path="/radio/radioinfo" component={RadioInfo}/>
 							<Route path="/radio/radioinfo/rsinfo/:id" component={RsInfo}/>
+							<Route path="/radio/radioinfo/RmProgram" component={RmProgram}/>
 						</Switch>
 					</div>
 				</div>

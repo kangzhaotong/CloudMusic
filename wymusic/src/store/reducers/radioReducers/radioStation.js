@@ -7,7 +7,10 @@ import {
     UP_SORTLIST,
     UP_PAYMENTLIST,
     UP_CLASSINFOLIST,
-    UP_PLAYLIST
+    UP_PLAYLIST,
+    UP_MUSICURL,
+    UP_PROGRAMLIST,
+    CHANGE_IS_LOADING
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
@@ -29,6 +32,12 @@ export default function (state=stateInit,{type,payload}) {
         state.radioClassInfoList = payload.radioClassInfoList
     }else if (type === UP_PLAYLIST) {
         state.playMp3 = payload.playMp3
+    }else if (type === UP_MUSICURL){
+        state.musicUrl = payload.musicUrl
+    }else if (type === UP_PROGRAMLIST){
+        state.programList = payload.programList
+    }else if (type === CHANGE_IS_LOADING) {
+        state.isLoading = payload.isLoading
     }
     return state;
 }

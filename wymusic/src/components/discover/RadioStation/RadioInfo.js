@@ -5,52 +5,65 @@ import {
     withRouter,
   } from "react-router-dom";
 import radioCreator from "../../../store/actionCreator/radioStation";
-import "../../../assets/css/RadioStation/rsClass.css"
+import "../../../assets/css/RadioStation/rsClass.css";
+import RmProgram from "./RmProgram";
+import RmRadio from "./RmRadio";
 class RadioInfo extends Component{
+    constructor(){
+        super();
+        this.state = {
+            isColor:true,
+            index:1
+        }
+    }
     render(){
         return (
             <div className="class-box">
-                <div>{this.props.location.state.name}</div>
-                <div>
-                    {/* <div>热门节目</div>//http://www.qmsdalao.com:3000/dj/program?rid=792451385&limit=40 */}
+                <div className="back">
+                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                        this.props.history.go(-1)
+                    }}></i><span>{this.props.location.state.name}</span>
+                </div>  
+                <div></div>
+                <div className="class-nav">
+                    <div ref="rmjm" className="class-nav1" onClick={()=>{
+                        this.changeIndex(1)
+                    }} style={{color:this.state.index===1?"red":"",borderBottom:this.state.index===1?"3px solid red":""}}>热门电台</div>
+                    <div onClick={()=>{
+                        this.changeIndex(2)
+                    }} style={{color:this.state.index===2?"red":"",borderBottom:this.state.index===2?"3px solid red":""}}>热门节目</div>
                 </div>
-                <div className="class-abc">
-                    {
-                        this.props.radioClassInfoList.map((v,i) => {
-                            return (
-                                <div key={i} className="class-aaaa">
-                                    <div className="class-b">
-                                        <div className="class-img1"><img width="50px" src={v.picUrl} alt=""></img></div>
-                                        <div>
-                                            <div className="class-c">{v.name}</div>
-                                            <div className="class-img2">
-                                                <img width="20px" src={v.dj.avatarUrl} alt=""/>
-                                                <span>{v.dj.nickname}</span>
-                                                <span>|</span>
-                                                <span>热度{v.subCount}</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div onClick={()=>{
-                                    this.props.history.push("/radio/radioinfo/rsinfo/"+v.id)
-                                }}>播放</div>
-                                </div>
-                            )
-                        })
-                    }
+                <div style={{display:this.state.index===1?"block":"none"}}>
+                    <RmRadio radioClassInfoList={this.props.radioClassInfoList}></RmRadio>
                 </div>
+                <div style={{display:this.state.index===2?"block":"none"}}>
+                    <RmProgram programList={this.props.programList}></RmProgram>
+                </div>
+                
             </div>
         )
     }
+    changeIndex(q){
+        this.setState({
+            index:q
+        }) 
+    }
+    playMusicUrl(mainSongId){
+        this.props.getMusicUrl(mainSongId);
+        
+    }
     componentDidMount(){
-        // console.log( this.props.location.state.id)
+        // console.log( this.props.location.state.id,this.state.isColor)
         this.props.getRadioClassInfoList(this.props.location.state.id);
+        this.props.getRadioProgramList(this.props.location.state.id);
+
     }
 }
 function mapStateToProps(state){
-    console.log(state)
+    // console.log(state)
     return {
         radioClassInfoList:state.radioStation.radioClassInfoList,
+        programList:state.radioStation.programList
     }
 }
 export default withRouter(connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(RadioInfo));

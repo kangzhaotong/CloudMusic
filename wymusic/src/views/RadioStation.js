@@ -15,7 +15,7 @@ import radioCreator from '../store/actionCreator/radioStation';
 class Radio extends Component{
     render(){
         return (
-            <div>
+            <div className="warp-radio">
                 <div className="back">
                     <i className="iconfont icon-arrow-right" onClick={()=>{
                         this.props.history.go(-1)
@@ -112,7 +112,6 @@ class Radio extends Component{
     componentDidMount(){ 
         this.props.getConcentrateList();
         this.props.getRadioRecommendList(this.props.i);
-        console.log(this.props);
     }
 }
 function mapStateToProps(state){

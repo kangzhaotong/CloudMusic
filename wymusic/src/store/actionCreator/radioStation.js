@@ -12,7 +12,6 @@ export default{
                 const radioRecommendList1 = data.djRadios.splice(i,i+3);
                 if(radioRecommendList1.length>3){
                     const radioRecommendList = radioRecommendList1.slice(0,3);
-                    // console.log(555,radioRecommendList)
                     dispatch({
                         type: "UP_RADIORECOMEENDIST",
                         payload: {
@@ -22,7 +21,6 @@ export default{
                     })
                 }else{
                     const radioRecommendList = radioRecommendList1;
-                    // console.log(333,radioRecommendList)
                     dispatch({
                         type: "UP_RADIORECOMEENDIST",
                         payload: {
@@ -41,7 +39,6 @@ export default{
             axios.get(baseUrl+"/dj/paygift?limit=3&offset=20")
             .then(({data})=>{     
                 const concentrateList = data.data.list;
-                // console.log(2222,data)
                 dispatch({
                     type: "UP_CONCENTRATELIST",
                     payload: {
@@ -97,15 +94,26 @@ export default{
     },
     getPaymentList(limit = 20){
         return (dispatch) => {
+            dispatch({
+                type:"CHANGE_IS_LOADING",
+                payload:{
+                    isLoading:true
+                }
+            })  
             axios.get(baseUrl+"/dj/paygift?limit="+limit+"&offset=20")
-            .then(({data})=>{
-                // console.log(data)     
+            .then(({data})=>{   
                 const rsPaymentList = data.data.list;
                 dispatch({
                     type: "UP_PAYMENTLIST",
                     payload: {
                         rsPaymentList,
                         limit    
+                    }
+                })
+                dispatch({
+                    type:"CHANGE_IS_LOADING",
+                    payload:{
+                        isLoading:false
                     }
                 })
             })
@@ -116,7 +124,6 @@ export default{
             axios.get(baseUrl+"/dj/recommend/type?type="+id)
                 .then(({data})=>{
                     const radioClassInfoList = data.djRadios
-                    // console.log(1111,radioClassInfoList);
                     dispatch({
                         type: "UP_CLASSINFOLIST",
                         payload: {
@@ -126,17 +133,43 @@ export default{
                 })
         }
     },
+    getRadioProgramList(id){
+        return (dispatch) => {
+            axios.get(baseUrl+"/dj/program?rid="+id+"&limit=20")
+                .then(({data})=>{
+                    const programList = data.programs
+                    dispatch({
+                        type: "UP_PROGRAMLIST",
+                        payload: {
+                            programList,  
+                        }
+                    })
+                })
+        }
+    },
     getPlayList(id){
-        console.log(111,id)
         return (dispatch) => {
             axios.get(baseUrl+"/dj/program?rid="+id+"&limit=20")
                 .then(({data})=>{
                     const playMp3 = data.programs
-                    // console.log(playMp3)
                     dispatch({
                         type: "UP_PLAYLIST",
                         payload: {
                             playMp3
+                        }
+                    })
+                })
+        }
+    },
+    getMusicUrl(mainSongId){
+        return (dispatch) => {
+            axios.get(baseUrl+"/song/url?id="+mainSongId)
+                .then(({data})=>{
+                    const musicUrl = data.data[0].url;
+                    dispatch({
+                        type: "UP_MUSICURL",
+                        payload: {
+                            musicUrl
                         }
                     })
                 })

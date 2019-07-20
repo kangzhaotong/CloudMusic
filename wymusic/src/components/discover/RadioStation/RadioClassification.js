@@ -20,7 +20,9 @@ class RadioClassification extends React.Component{
                     {
                         this.props.radioSortList.slice(0,6).map(v => {
                         return (
-                            <div key={v.id} className="hotClass-box">
+                            <div key={v.id} className="hotClass-box" onClick={()=>{
+                                this.goRadioInfo(v.id,v.name)
+                            }}>
                                 <div className="hotClass"><img src={v.pic56x56Url} alt=""></img><p>{v.name}</p></div>
                             </div>
                         )
@@ -34,7 +36,9 @@ class RadioClassification extends React.Component{
                     {
                         this.props.radioSortList.slice(6).map(v => {
                         return (
-                            <div key={v.id} className="hotClass-box">
+                            <div key={v.id} className="hotClass-box" onClick={()=>{
+                                this.goRadioInfo(v.id,v.name)
+                            }}>
                                 <div className="hotClass"><img src={v.pic56x56Url} alt=""></img><p>{v.name}</p></div>
                             </div>
                         )
@@ -44,14 +48,20 @@ class RadioClassification extends React.Component{
             </div>
         )
     }
-
+    goRadioInfo(id,name){
+        this.props.history.push({
+            pathname:"/radio/radioinfo",
+            state:{
+                id,
+                name
+            }
+        })
+    }
     componentDidMount() {
         this.props.getRadioSortList();
-        console.log(this.props)
     }
 }
 function mapStateToProps(state) {
-    console.log(state);
     return {
         radioSortList:state.radioStation.radioSortList,
         rsPaymentList:state.radioStation.rsPaymentList
@@ -59,6 +69,5 @@ function mapStateToProps(state) {
 }
 function mapDispatchToProps(dispatch){
     return bindActionCreators(radioCreator,dispatch)
-
 }
 export default connect(mapStateToProps,mapDispatchToProps)(RadioClassification);
