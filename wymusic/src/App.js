@@ -4,7 +4,7 @@ import Account from './components/account/account'
 import My from './views/My/index';
 import Discover from "./components/discover/discover";
 import Video from './components/video/video';
-import Friend from './components/friends/Friend';
+import Friend from './components/friends/friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
