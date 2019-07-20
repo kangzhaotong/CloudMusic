@@ -13,35 +13,35 @@ body{
     width:100%;
     overflow: hidden;
     position: relative;
-  
+
 }
 #result .resultTop>i:nth-of-type(1){
   font-size:44px;
-  position: relative;
+  position: absolute;
   top:18px;
-  margin-left:41px;
   color:black;
   float: left;
 }
 #result .resultTop>input{
-  margin-left:40px;
-  margin-top:4px;
+  display: block;
+  margin-top:8px;
   border:none;
+  margin-left:110px;
   border-radius:39px;
   width:604px;
   height:72px;
   background: #f7f7f7;
   text-align:left;
-  padding-left:69px;
-  line-height:72px;
+  padding-left:85px;
+  line-height:65px;
   float: left;
-  font-size:24px;
+  font-size:26px;
 }
 #result .resultTop>span{
   float: left;
   position: absolute;
   top:25px;
-  left:674px;
+  left:664px;
   font-size:20px;
   width:28px;
   height:28px;
@@ -57,7 +57,7 @@ body{
   position: absolute;
   top:26px;
   left:160px;
-  font-size:28px;
+  font-size:28px !important;
   color:#999999;
 }
 
@@ -96,7 +96,7 @@ body{
   padding-bottom:98px;
 }
 #result .content{
-  width:680px;
+ width:684px;
   height:121px;
   margin-left:32px;
   margin-right:32px;
@@ -106,21 +106,37 @@ body{
 #result .content span:nth-of-type(1){
     font-size:29px;
     color:#5f88b6;
-    margin-top:28px;
+    margin-top:23px;
     display: inline-block;
     width:500px;
 }
+#result .content .com>span:nth-of-type(1){
+  font-size:21px;
+  color:#808080;
+  margin-top:12px;
+  display: inline-block;
+  float: left;
+}
+#result .content span:nth-of-type(2){
+  font-size:20px;
+  color:black;;
+  margin-top:10px;
+  margin-left:10px;
+  display: inline-block;
+  float: left;
+  
+}
 #result .content>i:nth-of-type(1){
-  font-size:37px;
+  font-size:37px !important;
   color:#b3b3b3;
   position: absolute;
-  left:589px;
-  top:37px;
+  left:570px;
+  top:45px;
 }
 #result .content>i:nth-of-type(2){
   font-size:30px;
   color:#b3b3b3;
   position: absolute;
-  left:650px;
-  top:45px;
+  left:640px;
+  top:42px;
 }

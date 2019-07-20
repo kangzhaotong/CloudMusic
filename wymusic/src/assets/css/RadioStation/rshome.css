@@ -18,19 +18,27 @@ body{
     margin-right:20px;
 }
 .swiper-container{
-    width: 100%;
-    height: 400px; 
-}
+    width: 686px;
+    height: 270px; 
     
-.swiper-slide{
-    padding: 20px;
-    width: 100%;
-    height: 400px;
-}   
-.swiper-slide img{
-    width: 100%;
-    height: 90%;
 }
+.swiper-container .swiper-pagination{
+   position: absolute;
+   top:230px;
+    height:8.8px;
+}  
+.swiper-slide{
+        width: 686px;
+        border-radius:20px !important;
+        overflow: hidden;
+        height: 270px;
+    }
+           
+.swiper-slide img{
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+    }
 .radio-nav{
     display: flex;
     justify-content: space-around;

@@ -1,8 +1,8 @@
 import React,{ Component } from 'react';
 import {connect} from 'react-redux'
-import actionCreate from '../../store/actionCreator'
+import actionCreate from '../../../store/actionCreator'
 import {withRouter} from 'react-router-dom';
-import "../../assets/css/result.css"
+import "../../../assets/css/result.css"
 
 class Result extends Component{
     constructor(props){
@@ -19,6 +19,7 @@ class Result extends Component{
         this.setState({val:arr});
       
     }
+   
     back(){
         this.props.history.go(-1);
     }
@@ -30,25 +31,29 @@ class Result extends Component{
         return( 
             <div id="result">
                 <div className="resultTop">
-                    <i className="iconfont icon-arrow-right" onClick={this.back.bind(this)}></i>
+                    <i className="iconfont iconarrow-right" onClick={this.back.bind(this)}></i>
                     <input type="text" defaultValue={this.state.val} /><span onClick={this.remove.bind(this)}>x</span>
-                    <i className="iconfont icon-fangdajing"></i>
+                    <i className="iconfont iconfangdajing"></i>
                 </div>
             
                 
                 <div className="resultDan">
                     <span>单曲</span>
-                    <i className="iconfont icon-arrow-right1"></i>
+                    <i className="iconfont iconarrow-right1"></i>
                     <div>播放全部</div>
                 </div>
                 <div className="conend">
                     {
                         (music || []).map((item,index) => {
                             return (<p className='content' key={index}>
-                                <span>{item.name}</span><br />
-                                
-                                <i className="iconfont icon-bofang"></i>
-                                <i className="iconfont icon-shudian"></i>
+                                <span onClick={()=>{
+                                    this.props.history.push("/player/"+item.id);
+                                }}>{item.name}</span>
+                                <div className="com">
+                                      <span>-{item.album.name}</span>  
+                                </div>
+                                <i className="iconfont iconshipin"></i>
+                                <i className="iconfont iconshudian"></i>
                             </p>)
                         })
                     } 

@@ -223,7 +223,7 @@ class Player extends Component {
                                         <div className={"player-songDetail-img"} style={{display:this.state.isLyric?"none":"block",animationPlayState:this.state.isPlay?"running":"paused"}}>
                                             <img src={item.al.picUrl===null?require("../../assets/images/zanwu.jpg"):item.al.picUrl} alt=""/>
                                         </div>
-                                        <div className={"gengmafan"}></div>
+                                        {/*<div className={"gengmafan"}></div>*/}
                                        <div className={"mafan"}>
                                            <div className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"block":"none"}}>
                                                <div  ref={"geci"}>

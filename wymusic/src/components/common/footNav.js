@@ -5,13 +5,15 @@ import Account from '../account/account'
 import My from '../my/my';
 import Discover from "../discover/discover";
 import Video from '../video/video';
-import Friend from '../friends/friend';
+import Friend from '../friends/Friend';
 class footNav extends React.Component{
 
   render(){
     return (
       <div>
-          <Router>
+        <Router>
+          
+        </Router>
               <div className="nav">
                 <NavLink to="/discover" activeClassName="activeStyle">
                   <i className="iconfont icon-musiccloud"></i>
@@ -44,7 +46,7 @@ class footNav extends React.Component{
                             <Route path="/account" component={Account} />
                           </Switch>
                         </div>
-              </Router>
+        
       </div>
       
     )

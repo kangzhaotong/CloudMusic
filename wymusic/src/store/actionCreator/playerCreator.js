@@ -5,7 +5,7 @@ import {GETSONGLYRIC, GETSONGPLAY,GETSONGDETAIL} from "../actionType/player"
 export default {
     getSongPlay(id){
         return (dispatch)=>{
-                axios.get(baseUrl+"/song/url?id="+id)
+                axios.get("/wymusic/song/url?id="+id)
                     .then(({data})=>{
                         dispatch({
                             type:GETSONGPLAY,
@@ -18,7 +18,7 @@ export default {
     },
     getSongDetail(ids){
         return (dispatch)=>{
-            axios.get(baseUrl+"/song/detail?ids="+ids)
+            axios.get("/wymusic/song/detail?ids="+ids)
                 .then(({data})=>{
                     dispatch({
                         type:GETSONGDETAIL,
@@ -61,7 +61,7 @@ export default {
             return lrcList;
         }
         return (dispatch)=>{
-            axios.get(baseUrl+"/lyric?id="+id)
+            axios.get("/wymusic/lyric?id="+id)
                 .then(({data})=>{
                     let lrcList = [];
                     if(data.lrc)

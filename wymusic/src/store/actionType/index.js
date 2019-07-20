@@ -5,3 +5,5 @@ export const GETTUIJIAN = "GETTUIJIAN";
 export const GETRUN = "GETRUN";
 export const GETHOT = "GETHOT";
 export const RES = "RES";
+export const GETSONGLIST = "GETSONGLIST";
+export const GETMV = "GETMV";

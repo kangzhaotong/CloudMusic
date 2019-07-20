@@ -149,19 +149,20 @@ body, #root, .App, .view {
     color: #fff;
     z-index: 999;
 }
-.gengmafan{
-    height: 200px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #494748;
-    z-index: 99;
-}
+/*.gengmafan{*/
+    /*height: 200px;*/
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*background: #494748;*/
+    /*z-index: 99;*/
+/*}*/
 .mafan{
     /*margin-top: 200px;*/
     overflow: hidden;
     background-color:#494748 ;
+    margin-top: 200px;
     /*height: 100%;*/
 }
 .player-songDetail-lyric {

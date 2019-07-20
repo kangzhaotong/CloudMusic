@@ -15,7 +15,7 @@ body{
 }
 .nav {
   height: 98px;
-  background-color: #edeee3;
+  background-color:rgb(232,233,234);
   width: 100%;
   overflow-x:hidden;
   display: flex;
@@ -34,9 +34,9 @@ body{
   color: #999;
 
 }
-.iconfont {
-   font-size: 40px;
-   color: #ccc;
+.nav .iconfont{
+   font-size: 40px !important;
+   color:black !important;
  }
 .activeStyle {
   color: #eb5444 !important;
