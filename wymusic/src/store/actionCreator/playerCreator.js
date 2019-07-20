@@ -31,7 +31,7 @@ export default {
     },
     getSongLyric(id){
         function parseLyric(lrc) {
-            if(lrc === '') return '';
+            if(lrc === '') return -1;
             var lyrics = lrc.split("\n");
             var lrcObj = {};
             var lrcList = [];
@@ -63,7 +63,9 @@ export default {
         return (dispatch)=>{
             axios.get(baseUrl+"/lyric?id="+id)
                 .then(({data})=>{
-                    const lrcList = parseLyric(data.lrc.lyric);
+                    let lrcList = [];
+                    if(data.lrc)
+                        lrcList = parseLyric(data.lrc.lyric)
                     dispatch({
                         type:GETSONGLYRIC,
                         payload:{

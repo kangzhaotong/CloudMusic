@@ -70,7 +70,7 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
-							<Route path="/radio/radiodetail" component={RadioDetail}/>
+							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 						</Switch>
 					</div>
 				</div>

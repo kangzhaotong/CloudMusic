@@ -5,16 +5,17 @@ import playCreator from '../../store/actionCreator/playerCreator'
 import {
     bindActionCreators
 } from "redux"
-import swiper from"swiper"
 
 class Player extends Component {
     constructor() {
         super();
         this.state = {
+            //是否播放
             isPlay: true,
             //切换歌词
             isLyric:false,
             // 当前播放时间
+            touching:true,
             timeCurrent: "00:00",
             // audio currentTime
             currentTime: 0,
@@ -26,10 +27,10 @@ class Player extends Component {
     play() {
         let self = this;
         let audio = this.refs.audioTag;
-        let timeline = this.refs.timeline;
-        let playhead = this.refs.playhead;
-        let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-        let playPercent = timelineWidth * (this.state.currentTime / audio.duration);
+        // let timeline = this.refs.timeline;
+        // let playhead = this.refs.playhead;
+        // let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+        // let playPercent = timelineWidth * (this.state.currentTime / audio.duration);
         audio.currentTime = this.state.currentTime;
         this.setState({
             isPlay: !this.state.isPlay
@@ -38,7 +39,7 @@ class Player extends Component {
         if (!this.state.isPlay) {
             audio.play();
             //如果没有加载出时间
-            if (this.state.voiceDuration == "00:00") {
+            if (this.state.voiceDuration === "00:00") {
                 window.setTimeout(() => {
                     self.loadVideo();
                 }, 300);
@@ -54,9 +55,12 @@ class Player extends Component {
         let timeline = this.refs.timeline;
         let playhead = this.refs.playhead;
         let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
+        let geciHeight = this.refs.geci.offsetHeight;
+        let geciPercent = geciHeight*(audio.currentTime / audio.duration)
         let playPercent = timelineWidth * (audio.currentTime / audio.duration);
         playhead.style.webkitTransform = "translateX(" + playPercent + "px)";
         playhead.style.transform = "translateX(" + playPercent + "px)";
+        this.refs.geci.style.transform = "translateY(-" + geciPercent + "px)";
         let timeCurrent = this.transTime(audio.currentTime);
         this.setState({
             timeCurrent: timeCurrent,
@@ -68,11 +72,11 @@ class Player extends Component {
         let self = this;
         let audio = this.refs.audioTag;
         let duration = this.transTime(audio.duration);
-        let time = duration == "NaN:NaN" ? "00:00" : duration;
+        let time = duration === "NaN:NaN" ? "00:00" : duration;
         let initAudio = false;
         // alert(audio.duration);
 
-        if (time == "00:00" && duration != "NaN:NaN" && !!initAudio) {
+        if (time === "00:00" && duration !== "NaN:NaN" && !!initAudio) {
             audio.play();
             audio.pause();
             window.setTimeout(() => {
@@ -90,12 +94,12 @@ class Player extends Component {
         let minute = parseInt(duration / 60);
         let sec = duration % 60 + '';
         let isM0 = ':';
-        if (minute == 0) {
+        if (minute === 0) {
             minute = '00';
         } else if (minute < 10) {
             minute = '0' + minute;
         }
-        if (sec.length == 1) {
+        if (sec.length === 1) {
             sec = '0' + sec;
         }
         return minute + isM0 + sec
@@ -174,6 +178,12 @@ class Player extends Component {
         })
     }
 
+    componentDidMount() {
+        this.props.getSongPlay(this.props.match.params.id);
+        this.props.getSongDetail(this.props.match.params.id);
+        this.props.getSongLyric(this.props.match.params.id);
+    }
+
     render() {
         return (
             <div className="player">
@@ -186,36 +196,48 @@ class Player extends Component {
                             return (
                                 <div key={index}>
                                     <div className={"play-songDetail-songname"}>
-                                        <span>{item.name}</span>
+                                        <span>{item.name?item.name:"佚名"}</span>
                                     </div>
                                     <div className={"player-songDetail-name"}>
                                         {
                                             item.ar.map((v, i) => {
-                                                if (item.ar.length === 1) {
-                                                    return (
-                                                        <span key={i}>{v.name}</span>
+                                                if(!v.name){
+                                                    return(
+                                                        <span key={i}>{"佚名"}</span>
                                                     )
-                                                } else {
-                                                    return (
-                                                        <span key={i}>{v.name}></span>
-                                                    )
+                                                }else {
+                                                    if (item.ar.length === 1) {
+                                                        return (
+                                                            <span key={i}>{v.name}</span>
+                                                        )
+                                                    } else {
+                                                        return (
+                                                            <span key={i}>{v.name}></span>
+                                                        )
+                                                    }
                                                 }
                                             })
                                         }
                                     </div>
                                     <div onClick={this.handoverLyric.bind(this)} className={"player-lrc-img"}>
                                         <div className={"player-songDetail-img"} style={{display:this.state.isLyric?"none":"block",animationPlayState:this.state.isPlay?"running":"paused"}}>
-                                            <img src={item.al.picUrl} alt=""/>
+                                            <img src={item.al.picUrl===null?require("../../assets/images/zanwu.jpg"):item.al.picUrl} alt=""/>
                                         </div>
-                                        <div className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"block":"none"}}>
-                                            {
-                                                this.props.songLyric.map((v,i)=>{
-                                                    return(
-                                                        <p className={"player-songDetail-lyric-1"} ref="lrc" key={i}>{v.type}</p>
-                                                    )
-                                                })
-                                            }
-                                        </div>
+                                        <div className={"gengmafan"}></div>
+                                       <div className={"mafan"}>
+                                           <div className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"block":"none"}}>
+                                               <div  ref={"geci"}>
+                                                   {
+                                                       this.props.songLyric.map((v,i)=>{
+                                                           return(
+                                                               <p className={"player-songDetail-lyric-1"} ref="lrc" key={i}>{v.type}</p>
+                                                           )
+                                                       })
+                                                   }
+                                               </div>
+                                               <div className={"zanwugeci"} style={{display:this.props.songLyric.length?"none":"block"}}>{"暂无歌词哦"}</div>
+                                           </div>
+                                       </div>
                                     </div>
 
                                 </div>
@@ -242,7 +264,8 @@ class Player extends Component {
                                                             <div ref="playhead" className="playhead"
                                                                  onTouchStart={(e) => this.touchStart(e)}
                                                                  onTouchMove={(e) => this.touchMove(e)}
-                                                                 onTouchEnd={(e) => this.touchEnd(e)}></div>
+                                                                 onTouchEnd={(e)=>this.touchEnd(e)}
+                                                                 ></div>
                                                         </div>
                                                         <div className="inline-block audio-time"
                                                              id="audioTime">{this.state.voiceDuration}</div>
@@ -272,11 +295,6 @@ class Player extends Component {
         )
     }
 
-    componentDidMount() {
-        this.props.getSongPlay(this.props.match.params.id);
-        this.props.getSongDetail(this.props.match.params.id);
-        this.props.getSongLyric(this.props.match.params.id);
-    }
 }
 
 function mapStateToProps(state) {
