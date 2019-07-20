@@ -39,11 +39,12 @@ class Song extends Component {
                         {
                             this.props.my.recent_songs.map((v, i) => {
                                 return (
-                                    <li key={i} >
-                                        {/* <i className="iconfont iconbofang1 one"></i> */}
+                                    <li key={i} onClick={()=>{
+                                        this.props.history.push("/player/"+v.song.id)
+                                    }}>
                                         <div className="song_top_song_name">
                                             <span>{v.song.name}</span><br />
-                                            <i>{v.song.ar[0].name}</i>
+                                            <div className="songSQ">SQ</div><i>{v.song.ar[0].name}</i>
                                         </div>
                                         <div className="tubiao">
                                             

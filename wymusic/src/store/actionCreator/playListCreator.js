@@ -6,6 +6,7 @@ export default {
         //歌单详情列表
         return (dispatch) => {
             axios.get("/wymusic/playlist/detail?id="+id).then(({data}) => {
+                console.log(data,"我是获取的是详细信息")
                 dispatch({
                     type: PLAYlISTDETAIL,
                     payload: {
@@ -15,7 +16,6 @@ export default {
             })
         }
     },
-
     albumList(albumId) {
         //新歌详情列表
         return dispatch => {

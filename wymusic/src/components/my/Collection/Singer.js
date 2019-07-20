@@ -58,7 +58,7 @@ class Singer extends Component {
                 <div className="singer_recommend" ref='btn'>
                 <h3>
                         <span>
-                        <img src={require("../../../assets/images/22.gif")} alt="" srcset=""/>
+                        <img src={require("../../../assets/images/22.gif")} alt="" />
                         </span>
                         为你推荐
                         <i onClick={this.conceal.bind(this)}>X</i>

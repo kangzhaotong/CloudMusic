@@ -3,12 +3,17 @@ import baseUrl from '../../baseUrl';
 import { USER_PLAYLIST, COLLECT, COLLECT_ALBUM, COLLECT_SINGER, COLLECT_VIDEO } from '../actionType/actionTypemy';
 export default {
     //用户歌单
-    user_playlist() {
+    user_playlist(id) {
+        console.log(id,11111)
         return (dispatch) => {
-            axios.get("/wymusic/user/playlist?uid=32953014").then(({ data }) => {
+            axios.get("/wymusic/user/playlist",{
+                params:{uid:id}
+            }).then(({ data }) => {
                 console.log(data.playlist)
+               
+                let my = data.playlist.filter(v=>v.userId ===id)
                 dispatch({
-                    playlist: data.playlist,
+                    playlist: my,
                     type: USER_PLAYLIST,
                     id: data.province
                 })
@@ -16,12 +21,22 @@ export default {
         }
     },
     //收藏
-    collete() {
+    collete(id) {
         return (dispatch) => {
-            axios.get(baseUrl + "/playlist/subscribers?id=544215255&limit=30").then(({ data }) => {
-                console.log(data)
+            axios.get("/wymusic/user/playlist",{
+                params:{uid:id}
+            }).then(({ data }) => {
+                console.log(data,'啦啦啦')
+                var bbs = []
+                data.playlist.map((v,i)=>{
+                     if(v.userId===id){
+                     }else{
+                         bbs.push(v)
+                     }
+                 })
+                 console.log(bbs)
                 dispatch({
-                    collete: data.subscribers,
+                    collete:bbs,
                     type: COLLECT,
                     id: data.province
                 })
@@ -32,7 +47,7 @@ export default {
     //收藏专辑
     collect_album() {
         return (dispatch) => {
-            axios.get(baseUrl + "/album/sublist").then(({ data }) => {
+            axios.get("/wymusic/album/sublist").then(({ data }) => {
                 console.log(data, "我是收藏的专辑")
                 dispatch({
                     type: COLLECT_ALBUM,
@@ -45,7 +60,7 @@ export default {
     //收藏歌手
     collect_singer() {
         return (dispatch) => {
-            axios.get(baseUrl + "/artist/sublist").then(({ data }) => {
+            axios.get("/wymusic/artist/sublist").then(({ data }) => {
                 console.log(data, "我是收藏的专辑")
                 dispatch({
                     type: COLLECT_SINGER,
@@ -58,7 +73,7 @@ export default {
     //收藏视频
     collect_video() {
         return (dispatch) => {
-            axios.get(baseUrl + "/related/allvideo?id=89ADDE33C0AAE8EC14B99F6750DB954D").then(({ data }) => {
+            axios.get("/wymusic/related/allvideo?id=89ADDE33C0AAE8EC14B99F6750DB954D").then(({ data }) => {
                 console.log("www")
                 console.log(data.data, "视频")
                 dispatch({
@@ -72,7 +87,7 @@ export default {
     recommend_content(a) {
         console.log(a)
         return (dispatch) => {
-            axios.get(baseUrl + "/album/newest").then(({ data }) => {
+            axios.get("/wymusic/album/newest").then(({ data }) => {
                 console.log("www")
                 console.log((data.albums).slice(1, 5), "推荐专辑")
                 dispatch({
@@ -86,7 +101,7 @@ export default {
     singer_recommend(i) {
         console.log(i)
         return (dispatch) => {
-            axios.get(baseUrl + "/top/artists",{
+            axios.get("/wymusic/top/artists",{
                 params:{offset:0,limit:6}
             }).then(({ data }) => {
                
@@ -101,7 +116,7 @@ export default {
     //推荐电台
     recommend_radio(){
         return (dispatch) => {
-            axios.get(baseUrl + "/personalized/djprogram").then(({ data }) => {
+            axios.get("/wymusic/personalized/djprogram").then(({ data }) => {
                 console.log(data, "推荐电台")
                 dispatch({
                     type: 'RECOMMEND_RADIO',
@@ -113,7 +128,7 @@ export default {
     //订阅电台
     subscribe(){
         return (dispatch) => {
-            axios.get(baseUrl + "/dj/sublist").then(({ data }) => {
+            axios.get("/wymusic/dj/sublist").then(({ data }) => {
                 console.log(data, "订阅电台")
                 dispatch({
                     type: 'SUBSCRIBE',
@@ -126,7 +141,7 @@ export default {
     recent_songs(id){
         console.log(id)
         return (dispatch) => {
-            axios.get(baseUrl + "/user/record",{
+            axios.get("/wymusic/user/record",{
                 params:{uid:id,type:1}
             }
             ).then(({ data }) => {
@@ -138,4 +153,5 @@ export default {
             })
         }
     }
+    //取消收藏歌单
 }
