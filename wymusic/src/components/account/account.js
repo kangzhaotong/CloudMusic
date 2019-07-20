@@ -10,8 +10,7 @@ class Card extends Component{
         super(props);
         this.state={
             avatarUrl:this.props.user.avatarUrl,
-            nickname:this.props.user.nickname
-         
+            nickname:this.props.user.nickname   
         }
         console.log(this.props)
       }
@@ -35,7 +34,7 @@ class Card extends Component{
             fontSize:'25px',textAlign:'cneter',marginTop:"6px",lineHeight:'70px',marginLeft:'20px',paddingLeft:'100px'}}
                 onClick={() => {
                     this.props.history.push('/login');
- 
+
                 }}
                 >
                     还未登录哦！
