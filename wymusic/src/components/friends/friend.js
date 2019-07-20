@@ -119,7 +119,7 @@ class Friend extends Component {
 }
 
 function mapStateToProps({friend, loading}) {
-    // console.log(11111, friend.events);
+    console.log(11111, friend.event);
     return {
         event: friend.event,
         lasttime: friend.lasttime,
