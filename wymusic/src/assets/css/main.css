@@ -34,7 +34,7 @@ body{
   color: #999;
 
 }
-.nav>.iconfont{
+.nav .iconfont{
    font-size: 40px !important;
    color:black !important;
  }

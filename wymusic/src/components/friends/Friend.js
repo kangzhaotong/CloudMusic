@@ -3,8 +3,31 @@ import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import '../../assets/css/friend.css';
 import friendCreator from '../../store/actionCreator/friendCreator';
+import loadingCreator from '../../store/actionCreator/loading';
 
 class Friend extends Component {
+    constructor(props) {
+        super(props);     
+        this.handlerScroll = this.handlerScroll.bind(this);
+        this.state = {
+            pageSize: 10
+        }
+    }
+
+    handlerScroll(e) {
+        let scrollTop = document.body.scrollTop;
+        let scrollHeight = document.body.clientHeight;
+        let clientHeight = this.refs.frInfo.clientHeight;
+        
+        if(clientHeight < (scrollHeight+scrollTop-150) && this.state.pageSize < this.props.event.length) {
+            this.setState({
+                pageSize: this.state.pageSize + 10
+            }, () => {
+                this.props.getFriends(this.props.lasttime, this.state.pageSize);
+            })
+        }
+    }
+    
     render(){
         return(
             <div id="friendWrap">
@@ -28,7 +51,7 @@ class Friend extends Component {
                     </div>
                 </div>
             
-                <div>
+                <div ref="frInfo" onScroll={this.handlerScroll}>
                     {
                         this.props.event.map((v, i) => {
                             return (
@@ -74,30 +97,37 @@ class Friend extends Component {
                                             <i className="iconfont iconshudian"></i>
                                         </div>
                                     </div>
-
+                                    
                                 </div>
                             )
                         })
                     }
                 </div>
-
+                <div className="isLoading" style={{display:this.props.isLoading?'block':'none'}}>加载中....</div>
             </div>
         )
     }
 
     componentDidMount() {
         this.props.getFriends(this.props.lasttime);
+        window.addEventListener("scroll", this.handlerScroll, true);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener("scroll", this.handlerScroll, true);
     }
 }
 
-function mapStateToProps({friend}) {
-    console.log(11111, friend.events);
+function mapStateToProps({friend, loading}) {
+    // console.log(11111, friend.events);
     return {
-        event: friend.events.event,
-        lasttime: friend.events.lasttime
+        event: friend.event,
+        lasttime: friend.lasttime,
+        isLoading: loading.isLoading
     }
 }
 
 export default connect(mapStateToProps, dispatch => bindActionCreators({
-    ...friendCreator
+    ...friendCreator,
+    ...loadingCreator
 }, dispatch))(Friend)

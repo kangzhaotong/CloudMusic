@@ -100,13 +100,11 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 							<Route path="/song" component={Song} />
 							<Route path="/rank" component={Rank} />
-
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
-							
 							<Route path="/login" component={Login}/>
-
 						</Switch>
 					</div>
 				</div>

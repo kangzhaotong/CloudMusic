@@ -43,7 +43,7 @@ class Home extends Component{
     }
     render(){
         let firstbannerlist=this.props.discover.firstbannerlist;
-        console.log(firstbannerlist)
+        // console.log(firstbannerlist)
         let SellPoints=this.props.discover.SellPoints;
         let newSongs=this.props.discover.newSongs;
         return(
@@ -98,7 +98,9 @@ class Home extends Component{
                 {/*推荐歌单*/}
                 <div className="sellPoints">
                     <p>推荐歌单</p>
-                    <p>歌单广场</p>
+                    <p onClick={()=>{
+                        this.props.history.push("/song")
+                    }}>歌单广场</p>
                     <div>{
                         SellPoints.map((item,index) => {
                             return <p className='content' key={index} onClick={() => {

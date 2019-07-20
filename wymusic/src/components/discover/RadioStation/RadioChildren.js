@@ -2,6 +2,9 @@ import React,{Component} from "react";
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
 import radioCreator from "../../../store/actionCreator/radioStation"
+import {
+    withRouter,
+} from "react-router-dom"
 
 class RadioChildren extends Component{
     render() {
@@ -21,7 +24,9 @@ class RadioChildren extends Component{
                                     {
                                         this.props.popularList[i].radios.map( v=> {
                                             return (
-                                                <div key={v.id} className="sing">
+                                                <div key={v.id} className="sing" onClick={()=>{
+                                                    this.props.history.push("/radio/radiodetail/"+v.id)
+                                                }}>
                                                     <div className="radio-ps">
                                                         <img src={v.picUrl} alt=""></img>
                                                         <p>{v.name}</p>
@@ -62,4 +67,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(RadioChildren);
+export default connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(withRouter(RadioChildren));

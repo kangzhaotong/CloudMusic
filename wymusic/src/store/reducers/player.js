@@ -1,5 +1,5 @@
 import initState from "../state/player"
-import {GETSONGDETAIL, GETSONGLyric, GETSONGPLAY,GETSONGLYRIC} from "../actionType/player"
+import {GETSONGDETAIL,GETSONGPLAY,GETSONGLYRIC} from "../actionType/player"
 
 let reducer = (state = initState,{type,payload})=>{
     state = JSON.parse(JSON.stringify(state));

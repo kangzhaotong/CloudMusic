@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {CHANGE_USERINFO_TOKEN} from "../actionType/userInfo"
 export default {
-   
+
     logout() {
         console.log("11111")
         return (dispatch) => {

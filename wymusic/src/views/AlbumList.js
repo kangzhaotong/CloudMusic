@@ -4,6 +4,7 @@ import {bindActionCreators} from 'redux';
 import {withRouter} from 'react-router-dom';
 import '../assets/css/albumList.css';
 import playListCreator from '../store/actionCreator/playListCreator';
+import loadingCreator from '../store/actionCreator/loading';
 
 class AlbumList extends Component {
     date(v){
@@ -96,6 +97,7 @@ class AlbumList extends Component {
                             <span>+ 收藏({this.props.albums.album.info.shareCount})</span>
                         </div>
                     </div>
+                    <div className="isLoading" style={{display:this.props.isLoading?'block':'none'}}>加载中....</div>
                     
                     {
                         this.props.albums.songs.map((v, i) => {
@@ -142,13 +144,15 @@ class AlbumList extends Component {
     }
 }
 
-function mapStateToProps({playList}) {
+function mapStateToProps({playList, loading}) {
     // console.log("22222222", playList.albumList);
     return {
-        albums: playList.albumList
+        albums: playList.albumList,
+        isLoading: loading.isLoading
     }
 }
 
 export default connect(mapStateToProps, dispatch => bindActionCreators({
-    ...playListCreator
+    ...playListCreator,
+    ...loadingCreator
 }, dispatch))(withRouter(AlbumList));
