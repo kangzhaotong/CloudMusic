@@ -5,7 +5,7 @@ import Account from '../account/account'
 import My from '../my/my';
 import Discover from "../discover/discover";
 import Video from '../video/video';
-import Friend from '../friends/friend';
+import Friend from '../friends/Friend';
 class footNav extends React.Component{
 
   render(){

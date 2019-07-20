@@ -1,6 +1,4 @@
 export default {
-    events: {
-        event: [],
-        lasttime: -1
-    }
+    event: [],
+    lasttime: -1
 }

@@ -1,5 +1,5 @@
 import initState from "../state/statemy";
-import {USER_PLAYLIST,COLLECT,COLLECT_ALBUM,COLLECT_SINGER,COLLECT_VIDEO,RECOMMEND_CONTENT,SINGER_RECOMMEND,RECOMMEND_RADIO,SUBSCRIBE} from "../actionType/actionTypemy";
+import {USER_PLAYLIST,COLLECT,COLLECT_ALBUM,COLLECT_SINGER,COLLECT_VIDEO,RECOMMEND_CONTENT,SINGER_RECOMMEND,RECOMMEND_RADIO,SUBSCRIBE,REAENT_SONGS} from "../actionType/actionTypemy";
 let reducer=(state=initState,action)=>{
     let newState= JSON.parse(JSON.stringify(state));
     //获取的我的歌单
@@ -45,6 +45,10 @@ let reducer=(state=initState,action)=>{
     if(action.type===SUBSCRIBE){
         
         newState.subscribe = action.subscribe  
+    }
+    if(action.type===REAENT_SONGS){
+      
+        newState.recent_songs = action.recent_songs  
     }
     return newState;
 }

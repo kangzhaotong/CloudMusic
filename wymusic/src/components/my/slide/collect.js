@@ -76,7 +76,7 @@ export default function CustomizedExpansionPanels(props) {
       <ExpansionPanel   square expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <ExpansionPanelSummary aria-controls="panel1d-content" id="panel1d-header" >
           <Typography>
-            <div className="collect_a">
+            <li className="collect_a">
               <span>
               <img src={bbs?require('../../../assets/images/a6.gif'):require('../../../assets/images/a5.gif')} alt=""/>
               </span>
@@ -87,23 +87,20 @@ export default function CustomizedExpansionPanels(props) {
               <span className="collect_settings">
               <img src={require('../../../assets/images/a4.gif')} alt=""/>
               </span>
-            </div>
+            </li>
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
           {props.my.user_playlist.details.map((item, index) => {
               return (
-                <div key={index} className="user_playlist">
-                  <img src={item.coverImgUrl} alt="" />
-                  <div>
+                <li key={index} className="user_playlist">
+                  <img src={item.coverImgUrl} alt="" />               
                   <a>{item.name}</a>
-                  <p>{item.playCount}首</p>
-                  </div>
-                  
-                  
+                  <br/>
+                  <b>{item.playCount}首</b>         
                   <span> <img src={require('../../../assets/images/a4.gif')} alt=""/></span>
-               </div>
+               </li>
               )
             })}
           </Typography>
@@ -112,26 +109,26 @@ export default function CustomizedExpansionPanels(props) {
       <ExpansionPanel  square expanded={expanded === 'panel2'} onChange={handleChange2('panel2')}>
         <ExpansionPanelSummary aria-controls="panel2d-content" id="panel2d-header">
           <Typography>
-            <div className="collect_a">
+            <li className="collect_a">
               <span> <img src={bba?require('../../../assets/images/a6.gif'):require('../../../assets/images/a5.gif')}  alt=""/></span>
               <a>收藏歌单</a>
               <span className="collect_add">   <img src={require('../../../assets/images/a3.gif')} alt=""/></span>
               <span className="collect_settings">   <img src={require('../../../assets/images/a4.gif')} alt=""/></span>
-            </div>
+            </li>
           </Typography>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
           <Typography>
           {props.my.collet.details.map((item, index) => {
               return (
-                <div key={index} className="user_playlist">
-                  <img src={item.backgroundUrl} alt="" />
-                  <div>
+                
+                <li key={index} className="user_playlist">
+                  <img src={item.backgroundUrl} alt="" />               
                   <a>{item.nickname}</a>
-                  <p>{item.gender}首</p>
-                  </div>
-                  <span> <img src={require('../../../assets/images/a4.gif')} alt=""/></span>
-               </div>
+                  <br/>
+                 <b>{item.gender}首</b>         
+                <span> <img src={require('../../../assets/images/a4.gif')} alt=""/></span>
+             </li>
               )
             })}
           </Typography>

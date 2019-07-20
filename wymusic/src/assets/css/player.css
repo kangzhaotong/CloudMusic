@@ -12,10 +12,10 @@ body, #root, .App, .view {
 }
 
 .player {
-    display: flex;
+    /*display: flex;*/
     height: 100%;
     background-color: #494748 !important;
-    padding: 25px 50px;
+    padding: 25px 0px;
     flex-direction: column;
     align-items: center;
 }
@@ -23,10 +23,10 @@ body, #root, .App, .view {
 .player-songDetail-img {
     width: 400px;
     height: 400px;
-    border: 10px solid #837f80;
     border-radius: 50%;
-    margin-top: 300px;
+    margin-top: 350px;
     animation: rotate 60s linear infinite;
+    margin-left:180px;
 }
 
 @keyframes rotate {
@@ -41,6 +41,7 @@ body, #root, .App, .view {
 .player-songDetail-img img {
     width: 100%;
     border-radius: 50%;
+    border: 10px solid #837f80;
 }
 
 .player-songDetail-name {
@@ -48,6 +49,7 @@ body, #root, .App, .view {
     position: fixed;
     top: 70px;
     left: 100px;
+    z-index: 999;
 }
 
 .player-songDetail-name span {
@@ -59,18 +61,26 @@ body, #root, .App, .view {
     position: fixed;
     top: 30px;
     left: 100px;
+    z-index: 999;
 }
 
 .play-songDetail-songname span {
+    display: block;
     font-size: 30px;
-    color: #fff
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 500px;
 }
 
 .player-control {
     width: 100%;
-    position: absolute;
-    bottom: 200px;
-    padding: 0 50px;
+    position: fixed;
+    bottom: 0px;
+    padding: 0 30px 50px 50px;
+    z-index: 999;
+    background: #494748;
 }
 
 .voice-title {
@@ -116,10 +126,6 @@ body, #root, .App, .view {
     color: #fffdef;
     font-size: 20px;
 }
-.iconfont{
-    font-size: 50px!important;
-    color: #fff
-}
 .played-time {
     margin-top: -12px;
     margin-right: 10px;
@@ -139,41 +145,44 @@ body, #root, .App, .view {
     position: fixed;
     top: 50px;
     left: 30px;
+    font-size: 50px!important;
+    color: #fff;
+    z-index: 999;
 }
-
-.player-songDetail-lyric {
+/*.gengmafan{*/
+    /*height: 200px;*/
+    /*width: 100%;*/
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*background: #494748;*/
+    /*z-index: 99;*/
+/*}*/
+.mafan{
+    /*margin-top: 200px;*/
+    overflow: hidden;
+    background-color:#494748 ;
     margin-top: 200px;
-    height: 600px;
+    /*height: 100%;*/
+}
+.player-songDetail-lyric {
+    min-width: 500px;
     text-align: center;
     color: #ddd;
     font-size: 24px;
-    overflow-y: scroll;
 }
-.player-songDetail-lyric-1{
-    /*animation: scrollText 3s linear infinite;*/
-}
-/*@keyframes scrollText {*/
-    /*0% {*/
-        /*transform: translateY(0px);*/
-    /*}*/
-    /*20% {*/
-        /*transform: translateY(-30px);*/
-    /*}*/
-    /*40% {*/
-        /*transform: translateY(-60px);*/
-    /*}*/
-    /*60% {*/
-        /*transform: translateY(-90px);*/
-    /*}*/
-    /*80% {*/
-        /*transform: translateY(-120px);*/
-    /*}*/
-    /*100% {*/
-        /*transform: translateY(-150px);*/
-    /*}*/
-/*}*/
-
 .player-songDetail-lyric p {
     line-height: 46px;
     font-size: 26px;
+}
+.iconshangyishou,.iconzanting,.iconnext-chapter,.iconbofang1{
+    font-size: 50px!important;
+    color: #fff
+}
+.zanwugeci{
+    padding: 50px 50px;
+    font-size: 40px;
+    position: fixed;
+    top:45%;
+    left: 30%;
 }

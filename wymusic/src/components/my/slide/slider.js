@@ -3,6 +3,7 @@ import './slide.css'
 import Collect from "./collect"
 import {connect} from 'react-redux'
 import Header from './header'
+
 import actionCreate from '../../../store/actionCreator/actionCreatormy'
 import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react-router-dom';
 class Slider extends Component {
@@ -69,30 +70,31 @@ class Slider extends Component {
                 <div className="slide_list">
                    <ul>
                        <li>
-                           <span className="iconfont icon-musiccloud"></span> 
-                           <i>本地音乐(99+)</i>
+                           <i className="iconfont iconyinyue"></i> 
+                           
+                           <span>本地音乐(99+)</span>
                            
                        </li>
                        <li>
                        <NavLink to={`${this.props.match.url}/recentlyPlay`}>
-                           <span className="iconfont icon-yinyue"></span> 
-                           <i>最近播放(9)</i>
+                           <i className={"iconfont iconzuijinbofang"}></i> 
+                           <span>最近播放(9)</span>
                         </NavLink>
                        </li>
                        <li>
-                           <span className="iconfont icon-pengyou"></span> 
-                           <i>下载管理(0)</i>
+                           <i className="iconfont iconxiazai"></i> 
+                           <span>下载管理(0)</span>
                        </li>
                        <li>
                        <NavLink to={`${this.props.match.url}/broadcastingStation`}>
-                           <span className="iconfont icon-shipin"></span> 
-                           <i>我的电台(66)</i>
+                           <i className="iconfont icondiantai"></i> 
+                           <span>我的电台(66)</span>
                         </NavLink>
                        </li>
                        <li>
                             <NavLink to={`${this.props.match.url}/collection`}>
-                                <span className="iconfont icon-zhanghao"></span> 
-                                <i>我的收藏(99+)</i>
+                                <i className="iconfont iconwodeshoucang"></i> 
+                                <span>我的收藏(99+)</span>
                            </NavLink>
                        </li>
                    </ul>

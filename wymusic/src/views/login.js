@@ -53,8 +53,6 @@ class Login extends React.Component {
                               localStorage.userInfo = JSON.stringify(data.profile);
                               localStorage.token = true;
                               this.props.history.push('/account');
-                            
-                             
                           }).catch((msg)=>{console.log(msg)});
                       }
                   })

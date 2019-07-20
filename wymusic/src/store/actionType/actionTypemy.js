@@ -7,3 +7,4 @@ export const RECOMMEND_CONTENT ="RECOMMEND_CONTENT"//推荐专辑
 export const SINGER_RECOMMEND ="SINGER_RECOMMEND"//推荐歌手
 export const RECOMMEND_RADIO ="RECOMMEND_RADIO"//推荐电台
 export const SUBSCRIBE ="SUBSCRIBE"//订阅电台
+export const REAENT_SONGS ="REAENT_SONGS"//最近播放音乐

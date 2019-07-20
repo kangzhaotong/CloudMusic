@@ -5,7 +5,10 @@ import {
     UP_POPULARLIST,
     UP_RSBANNER_LIST,
     UP_SORTLIST,
-    UP_PAYMENTLIST
+    UP_PAYMENTLIST,
+    UP_RADIODJDETAIL,
+    UP_RADIODJPROGRAM,
+    CHANGE_IS_LOADING
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
@@ -23,6 +26,13 @@ export default function (state=stateInit,{type,payload}) {
     }else if (type === UP_PAYMENTLIST) {
         state.rsPaymentList = payload.rsPaymentList;
         state.limit = payload.limit;
+    }else if (type === UP_RADIODJDETAIL) {
+        state.djRadio = payload.djRadio;
+    } else if(type === UP_RADIODJPROGRAM){
+        state.djProgram = payload.djProgram;
+        state.limit = payload.limit;
+    }else if(type === CHANGE_IS_LOADING){
+        state.isLoading = payload.isLoading
     }
     return state;
 }

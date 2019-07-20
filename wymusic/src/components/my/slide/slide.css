@@ -1,5 +1,5 @@
 
-@import '../../../../public/iconfont/iconfont.css'
+/* @import '../../../assets/iconfont/iconfont.css' */
 body,
 p {
     margin: 0;
@@ -34,7 +34,7 @@ p {
     width:106px;
     height: 110px;
 }
-.slide-box::-webkit-scrollbar {
+.slide-box:-webkit-scrollbar {
     width: 0;
     height: 0;
     display: none;
@@ -50,22 +50,29 @@ p {
     padding: 40px 0px 0px 30px;
 }
 .slide_list ul li span{
-    display: block;
+    /* display: block;
     width:62px;
     height:58px;
    
     float: left;
     margin-right:64px; 
-   font-size: 54px;
+   font-size: 54px; */
+   float: left;
+   height:88px;
+   width:580px;
+   font-size: 34px;
+   border-bottom: 1px solid #e6e6e6;
+   color: #000;
+   line-height: 58px;
 }
 .slide_list ul li i{
     display: block;
     float: left;
-    height:88px;
-    width:580px;
-    border-bottom: 1px solid #e6e6e6;
-    line-height: 58px;
-    font-size: 34px;
+    /* height:88px;
+    width:580px; */
+    /* border-bottom: 1px solid #e6e6e6; */
+    margin-right:64px;
+    font-size: 54px;
     color: #000;
 }
 .collect{
@@ -112,7 +119,7 @@ p {
     margin: 10px 0px 0px 30px;
 }
 .user_playlist{
-    width:100%;
+    width:650px;
     height:159px;
    
   
@@ -122,22 +129,23 @@ p {
     width:132px;
     height:132px;
     border-radius:20px;
+    margin: 0px 16px 0px 1px
 }
-.user_playlist div a{
+.user_playlist a{
     width:500px;
-    float: left;
+    display: block;
     font-size: 38px;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px -40px 0px;
     overflow: hidden;
 text-overflow:ellipsis;
 white-space: nowrap;
 }
-.user_playlist div{
+/* .user_playlist div{
     padding: 15px 0px 0px 0px;
-}
-.user_playlist div p{
+} */
+.user_playlist b{
     width:505px;
-    margin: 0px 0px 0px 160px;
+    /* margin: 0px 0px 0px 20px; */
     font-size: 20px;
     color: #808080;
 }
@@ -147,7 +155,7 @@ white-space: nowrap;
     width:42px;
     height:42px;
  
-    margin: -77px 0px 0px 28px;
+    margin: -17px 0px 0px 28px;
 }
 .user_playlist span img{
     width:42px;

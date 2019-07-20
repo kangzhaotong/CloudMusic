@@ -11,7 +11,9 @@ import AlbumList from "./AlbumList";
 //朋友
 import friend from './friend';
 
-import my from './discovermy'
+import my from './discovermy';
+//是否显示加载中
+import loading from './isLoading';
 import userInfo from './userReducer';
 
 let reducer = combineReducers({
@@ -23,6 +25,7 @@ let reducer = combineReducers({
     friend,
     Rank:RankReducers,
     my,
+    loading,
     userInfo
 })
 

@@ -10,8 +10,12 @@
     display: flex;
     justify-content: space-between;
     height: 100px;
+    width: 100%;
     align-items: center;
     padding: 0 30px;
+    position: fixed;
+    top: 0;
+    background: #ffffff;
 }
 .frDongtai{
     display: flex;
@@ -40,6 +44,7 @@
     justify-content: space-between;
     padding: 0 80px;
     height: 110px;
+    margin-top: 100px;
     align-items: center;
     border-bottom: 10px solid #f3ecec;
 }
@@ -133,4 +138,13 @@
 .frInfoBottom span{
     font-size: 27px;
     margin-left: 10px;
+}
+
+.isLoading{
+    font-size: 24px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    color: #666666;
 }

@@ -38,7 +38,7 @@ export default class Commona extends Component {
                         </span>
                         <a>{this.props.init}</a>
 
-                        <i className="iconfont icon-arrow-right1"></i>
+                        <i className="iconfont iconarrow-right1"></i>
                     </h3>
                     <div className="dy_module_content">
                         <ul>

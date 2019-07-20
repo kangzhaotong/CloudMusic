@@ -4,7 +4,7 @@ import Account from './components/account/account'
 import My from './views/My/index';
 import Discover from "./components/discover/discover";
 import Video from './components/video/video';
-import Friend from './components/friends/friend';
+import Friend from './components/friends/Friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
 import Player from "./components/discover/player";
@@ -33,6 +33,7 @@ import Rank from "./components/discover/rank";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
 //登录
 import Login from './views/login';
+
 
 
 
@@ -81,7 +82,10 @@ class App extends React.Component {
 							<Route path="/album" component={Album} />
 				
 							<Route path="/search" component={Search} />
-							<Route path="/my/collection"component={Collection} />
+							{/* <Redirect from="/my/collection" to="/my/collection/album" >
+								<Route path="/my/collection" component={Collection} />
+							</Redirect> */}
+							<Route path="/my/collection" component={Collection} />
 							<Route path="/my/broadcastingStation"component={BroadcastingStation} />
 							<Route path="/my/recentlyPlay"component={RecentlyPlay} />
 							
@@ -96,13 +100,11 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 							<Route path="/song" component={Song} />
 							<Route path="/rank" component={Rank} />
-
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
-							
 							<Route path="/login" component={Login}/>
-
 						</Switch>
 					</div>
 				</div>
