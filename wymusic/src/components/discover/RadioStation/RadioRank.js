@@ -8,7 +8,13 @@ import "../../../assets/css/RadioStation/rsPrice.css"
 class RadioRank extends React.Component{
     render(){
         return (
-            <div>电台排行</div>
+            <div>
+                <div className="back">
+                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                        this.props.history.go(-1)
+                    }}></i><span>电台排行</span>
+                </div>  
+            </div>
         )
     }
 

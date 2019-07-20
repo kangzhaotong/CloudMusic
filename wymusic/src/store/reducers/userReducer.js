@@ -8,6 +8,7 @@ export default function (state = userState, {type, payload}) {
         state.nickname = payload.nickname;
     } else if(type === CHANGE_USERINFO_TOKEN) {
         localStorage.clear();
+        localStorage.userId = payload.userId;
         state.avatarUrl = localStorage.avatarUrl;
         state.nickname = localStorage.nickname;
     }

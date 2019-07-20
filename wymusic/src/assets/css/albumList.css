@@ -30,6 +30,9 @@
     font-size: 40px;
     padding: 0 20px;
     color: #ffffff;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 }
 .albumName div .iconfont:nth-of-type(1){
     margin-right: 15px;
@@ -38,7 +41,7 @@
 .listMiddle1{
     display: flex;
     padding: 0 25px;
-    margin-top: 55px;
+    margin-top: 135px;
 }
 .middleLeft img{
     width: 270px;

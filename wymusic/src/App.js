@@ -13,6 +13,7 @@ import PlayListDetail from './views/PlayListDetail';
 //新歌列表
 import AlbumList from './views/AlbumList';
 
+
 // import router from "./router";
 // import Run from "./components/discover/run";
 //import Search from "./components/discover/search";
@@ -28,6 +29,8 @@ import RadioClassification from "./components/discover/RadioStation/RadioClassif
 import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
+import RadioInfo from "./components/discover/RadioStation/RadioInfo";
+import RmProgram from "./components/discover/RadioStation/RmProgram";
 import Song from "./components/discover/song";
 import Rank from "./components/discover/rank";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
@@ -67,6 +70,7 @@ class App extends React.Component {
 						</NavLink>
 
 					</div>
+
 					<div className="view">
 						<Switch>
 							<Redirect from="/" to="/discover" exact/>
@@ -100,13 +104,12 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route exact path="/radio/radioinfo" component={RadioInfo}/>
+							<Route path="/radio/radioinfo/RmProgram" component={RmProgram}/>
+							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 							<Route path="/song" component={Song} />
 							<Route path="/rank" component={Rank} />
-
-							<Route path="/radio/radiodetail" component={RadioDetail}/>
-							
 							<Route path="/login" component={Login}/>
-
 						</Switch>
 					</div>
 				</div>

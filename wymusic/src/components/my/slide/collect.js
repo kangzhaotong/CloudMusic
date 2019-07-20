@@ -46,17 +46,13 @@ const ExpansionPanelDetails = withStyles(theme => ({
 let bbs = false
 let bba = false
 export default function CustomizedExpansionPanels(props) {
-  console.log(props)
+  // console.log(this.props,"未达到")
   
   const [expanded, setExpanded] = React.useState('panel1');
   const handleChange = panel => (event, newExpanded) => {
-    console.log(2222)
-    
     if(newExpanded){
-      console.log(bbs)
       bbs = true;
     }else{
-      console.log(bbs)
       bbs = false;
     }
     setExpanded(newExpanded ? panel : false);
@@ -66,7 +62,6 @@ export default function CustomizedExpansionPanels(props) {
     if(newExpanded){
       bba = true;
     }else{
-      
       bba = false;
     }
     setExpanded(newExpanded ? panel : false);
@@ -94,7 +89,9 @@ export default function CustomizedExpansionPanels(props) {
           <Typography>
           {props.my.user_playlist.details.map((item, index) => {
               return (
-                <li key={index} className="user_playlist">
+                <li key={index} className="user_playlist" onClick={()=>{
+                  props.history.push("/playListDetails/"+item.id)  
+                }}>
                   <img src={item.coverImgUrl} alt="" />               
                   <a>{item.name}</a>
                   <br/>
@@ -122,11 +119,13 @@ export default function CustomizedExpansionPanels(props) {
           {props.my.collet.details.map((item, index) => {
               return (
                 
-                <li key={index} className="user_playlist">
-                  <img src={item.backgroundUrl} alt="" />               
-                  <a>{item.nickname}</a>
+                <li key={index} className="user_playlist" onClick={()=>{
+                  props.history.push("/playListDetails/"+item.id)  
+                }}>
+                  <img src={item.coverImgUrl} alt="" />               
+                  <a>{item.name}</a>
                   <br/>
-                 <b>{item.gender}首</b>         
+                 <b>{item.trackCount}首{item.creator.nickname}</b>         
                 <span> <img src={require('../../../assets/images/a4.gif')} alt=""/></span>
              </li>
               )

@@ -15,9 +15,9 @@ import radioCreator from '../store/actionCreator/radioStation';
 class Radio extends Component{
     render(){
         return (
-            <div>
+            <div className="warp-radio">
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>电台</span>
                 </div>
@@ -82,13 +82,17 @@ class Radio extends Component{
                 <div className="concentrateList-box">
                     <div className="concentrateList-all">
                         <h3>精品推荐<span>你值得拥有的优质内容</span></h3>
-                        <p>全部精品</p>
+                        <p  onClick={()=>{
+                        this.props.history.push("/radio/concentrate")
+                    }}>全部精品</p>
                     </div>
                     <div className="concentrateList">
                         {
                             this.props.concentrateList.map(v => {
                                 return (
-                                    <div key={v.id} className="qqq">
+                                    <div key={v.id} className="qqq" onClick={()=>{
+                                        this.props.history.push("/radio/radiodetail/"+v.id)
+                                    }}>
                                         <div className="concentrate-ps">
                                             <img src={v.picUrl} alt=""></img>
                                             <p>{v.name}</p>
@@ -112,7 +116,6 @@ class Radio extends Component{
     componentDidMount(){ 
         this.props.getConcentrateList();
         this.props.getRadioRecommendList(this.props.i);
-        console.log(this.props);
     }
 }
 function mapStateToProps(state){

@@ -12,6 +12,7 @@ export default {
                     loginStatus().then((v) => {
                         localStorage.avatarUrl = data.profile.avatarUrl;
                         localStorage.nickname = data.profile.nickname;
+                        localStorage.userId = data.profile.userId;
                         localStorage.userToken = 1;
                         dispatch({
                             type: CHANGEUSERINFO,
@@ -34,7 +35,9 @@ export default {
                 if(data.code === 200){
                     dispatch({
                         type: CHANGE_USERINFO_TOKEN,
-                        payload: {}
+                        payload: {
+                            userId: localStorage.userId
+                        }
                     })
                 }
             })
