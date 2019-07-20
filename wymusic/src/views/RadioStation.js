@@ -63,7 +63,9 @@ class Radio extends Component{
                         {
                             this.props.radioRecommendList.map(v => {
                                 return (
-                                    <div key={v.id} className="recommend-box">
+                                    <div key={v.id} className="recommend-box" onClick={()=>{
+                                        this.props.history.push("/radio/radiodetail/"+v.id)
+                                    }}>
                                         <div className="radio-recommend-ps">
                                             <img  src={v.picUrl} alt=""></img>
                                             <p>{v.name}</p>
@@ -88,7 +90,9 @@ class Radio extends Component{
                         {
                             this.props.concentrateList.map(v => {
                                 return (
-                                    <div key={v.id} className="qqq">
+                                    <div key={v.id} className="qqq" onClick={()=>{
+                                        this.props.history.push("/radio/radiodetail/"+v.id)
+                                    }}>
                                         <div className="concentrate-ps">
                                             <img src={v.picUrl} alt=""></img>
                                             <p>{v.name}</p>

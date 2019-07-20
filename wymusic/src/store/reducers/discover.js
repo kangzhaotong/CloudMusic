@@ -6,6 +6,9 @@ import {GETTUIJIAN} from "../actionType/index";
 import {GETRUN} from "../actionType/index";
 import {GETHOT} from "../actionType/index";
 import {RES} from "../actionType/index";
+import {GETSONGLIST} from "../actionType/index";
+import {GETMV} from "../actionType/index";
+
 
 let reducer=(state=initState,action)=>{
     let newState= JSON.parse(JSON.stringify(state));
@@ -30,6 +33,13 @@ let reducer=(state=initState,action)=>{
     if(action.type===RES){
         newState.music=action.music;
     }
+    if(action.type===GETSONGLIST){
+        newState.songList=action.songList
+    }
+    if(action.type===GETMV){
+        newState.mvList=action.mvList
+    }
+    
     return newState;
 }
 

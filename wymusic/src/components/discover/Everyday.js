@@ -19,36 +19,37 @@ class Everyday extends Component{
             <div id="tuijian">
                 <div className="head">
                     <p>
-                        <i className="iconfont icon-arrow-right" onClick={this.back}></i>
-                        <i className="iconfont icon-wenhao"></i>
-                        <i className="iconfont icon-gedan"></i>
+                        <i className="iconfont iconfanhui" onClick={this.back}></i>
+                        <i className="iconfont iconwenhao"></i>
+                        <i className="iconfont iconyinlebofangxuanlvjiezou"></i>
                     </p>
                     <div>
                         <p>根据你的音乐口味，为你推荐好朋友、好音乐</p>
                         <img src={require("../../assets/images/6.jpg")} alt=""/>
-                        <i className="iconfont icon-arrow-right1"></i>
+                        <i className="iconfont iconyou"></i>
 
                     </div>
                 </div>
                 {/*每日推荐*/}
 
                 <div className="tuijianc">
-                    <i className="iconfont icon-bofang1"></i>
+                    <i className="iconfont iconbofang1"></i>
                     <p>播放全部</p>
                     <p>
-                        <i className="iconfont icon-duoxuan"></i>
+                        <i className="iconfont iconduoxuan"></i>
                         <span>多选</span>
                     </p> <br />
                     <div>
                         {
                             tuijian.map( (item,index) => {
                                 return (<p className='content' key={index} onClick={()=>{
-                                    this.props.history.push("/player/"+item.id);
+                                    this.props.history.push("/player/"+item.id)
                                 }}>
-                                    <img width={'60px'} key={index}  src={item.song.artists[0].picUrl}  alt="完美"/>
+                                    <img width={'60px'} key={index}  src={item.song.album.blurPicUrl}  alt="完美"/>
                                     <span>{item.song.name}</span>
-                                    <i className="iconfont icon-bofang"></i>
-                                    <i className="iconfont icon-shudian"></i>
+                                    <span>{item.song.artists[0].name}</span>
+                                    <i className="iconfont iconbofang1"></i>
+                                    <i className="iconfont iconshudian"></i>
                                 </p>)
                             })
                         }

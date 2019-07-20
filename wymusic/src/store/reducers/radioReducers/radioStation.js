@@ -10,6 +10,8 @@ import {
     UP_PLAYLIST,
     UP_MUSICURL,
     UP_PROGRAMLIST,
+    UP_RADIODJDETAIL,
+    UP_RADIODJPROGRAM,
     CHANGE_IS_LOADING
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
@@ -36,7 +38,12 @@ export default function (state=stateInit,{type,payload}) {
         state.musicUrl = payload.musicUrl
     }else if (type === UP_PROGRAMLIST){
         state.programList = payload.programList
-    }else if (type === CHANGE_IS_LOADING) {
+    }else if (type === UP_RADIODJDETAIL) {
+        state.djRadio = payload.djRadio;
+    } else if(type === UP_RADIODJPROGRAM){
+        state.djProgram = payload.djProgram;
+        state.limit = payload.limit;
+    }else if(type === CHANGE_IS_LOADING){
         state.isLoading = payload.isLoading
     }
     return state;

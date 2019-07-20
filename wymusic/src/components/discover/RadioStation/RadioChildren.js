@@ -5,7 +5,6 @@ import {
     withRouter,
   } from "react-router-dom";
 import radioCreator from "../../../store/actionCreator/radioStation"
-
 class RadioChildren extends Component{
     render() {
         return (
@@ -34,7 +33,9 @@ class RadioChildren extends Component{
                                     {
                                         this.props.popularList[i].radios.map( v=> {
                                             return (
-                                                <div key={v.id} className="sing">
+                                                <div key={v.id} className="sing" onClick={()=>{
+                                                    this.props.history.push("/radio/radiodetail/"+v.id)
+                                                }}>
                                                     <div className="radio-ps">
 
                                                         <img src={v.picUrl} alt=""></img>
@@ -67,4 +68,4 @@ function mapStateToProps(state){
     }
 }
 
-export default withRouter(connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(RadioChildren));
+export default connect(mapStateToProps,dispatch=>bindActionCreators(radioCreator,dispatch))(withRouter(RadioChildren));

@@ -12,5 +12,16 @@ export default{
     playMp3:[],
     musicUrl:[],
     programList:[],
-    isLoading:true
+    
+    djRadio: {
+        dj: {
+            avatarUrl: "",
+            nickname:"",
+            experts:{
+            },
+        },
+        commentDatas:[]
+    },
+    djProgram: {programs: []},
+    isLoading:false
 }

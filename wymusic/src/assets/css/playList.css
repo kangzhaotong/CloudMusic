@@ -1,10 +1,14 @@
+#playListWrap{
+    position: relative;
+}
+
 .playListTopWrap{
     height:550px;
     width: 100%;
     position: relative;
 }
 .coverWrap{
-    filter: blur(20px);
+    filter: blur(60px);
     position: absolute;
     top: 0;
 }
@@ -28,6 +32,8 @@
     padding: 0 20px;
     position: fixed;
     top: 0;
+    z-index: 1;
+    background: rgba(110, 157, 228, 1);
 }
 .listTop span{
     font-size: 40px;
@@ -35,25 +41,30 @@
     font-weight: 600;
     letter-spacing: 6px;
 }
+.listTopIcon i:nth-child(1){
+    padding-right: 10px;
+}
 
 .listMiddle{
     margin-top: 120px;
     display: flex;
-    padding: 0 10px 0 25px;
+    padding: 0 20px 0 25px;
 }
 .listCover{
-    height: 256px;
+    height: 270px;
     border-radius: 7px;
 }
 .listInfoWrap{
     margin-left: 30px;
 }
 .listName{
-    font-size: 38px;
+    font-size: 36px;
     color: #ffffff;
     letter-spacing: 3px;
     font-weight: 500;
     margin-bottom: 15px;
+    height: 106px;
+    overflow: hidden;
 }
 .listCreator{
     display: flex;
@@ -65,13 +76,21 @@
 }
 .listCreator span{
     color: #dad1d1;
+    font-size: 35px;
     margin: 0 20px 0 7px;
 }
 .listDescription{
-    margin-top: 48px;
+    margin-top: 15px;
+    height: 80px;
+    overflow: hidden;
     line-height: 43px;
     font-size: 30px;
     color: rgb(218, 209, 209);
+    letter-spacing: 2px;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
 }
 
 .listBottom{
@@ -82,7 +101,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     width: 25%;
 }
 .listBottom div span{
@@ -90,13 +108,18 @@
     color: #dad1d1;
     letter-spacing: 2px;
 }
+#playListWrap .listBottom .iconfont{
+    font-size: 46px !important;
+}
 
 .playListBottomWrap{
+    position: absolute;
+    top: 600px;
+    width: 100%;
     background: #ffffff;
-    border: 3px solid #ffffff;
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    padding-bottom: 100px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    padding-bottom: 110px;
 }
 .playListBottomWrap .topMsg{
     display: flex;
@@ -110,7 +133,14 @@
     font-size: 34px;
     letter-spacing: 2px;
 }
+.topMsg div:nth-of-type(1) .iconyinyue1{
+    margin-right: 10px;
+    color: rgb(235, 30, 30);
+}
 .topMsg div:nth-of-type(2) span{
+    color: #a79e9e;
+}
+.topMsg .iconarrow-right1{
     color: #a79e9e;
 }
 .playAll{
@@ -118,7 +148,11 @@
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    padding: 0 4px 0 22px;
+    padding: 0 8px 0 22px;
+}
+.playAllOne .iconshipin1{
+    color: #000000;
+    margin-right: 10px;
 }
 .playAllOne span{
     font-weight: 600;
@@ -132,11 +166,13 @@
 }
 .playAllTwo{
     background: rgb(235, 30, 30);
-    line-height: 80px;
-    color: #ebe1e1;
-    border-radius: 20px;
+    line-height: 80px;  
+    border-radius: 40px;
     text-align: center;
-    width: 280px;
+    width: 280px; 
+}
+.playAllTwo span{
+    color: #ebe1e1;
     letter-spacing: 1px;
     font-size: 30px;
 }
@@ -147,6 +183,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
+}
+.songItem .iconshipin1{
+    color: #000000;
+}
+.songItem .iconshudian{
+    color: #a79e9e;
 }
 .songInfo{
     display: flex;
@@ -168,6 +210,11 @@
     font-size: 38px;
     letter-spacing: 2px;
     font-weight: 500;
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #0c0c0c;
 }
 .songAr{
     display: flex;
@@ -184,19 +231,50 @@
     text-align: center;
     margin-right: 10px;
 }
-.songAr span{
+.songAuthor{
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.songAuthor span{
     font-size: 28px;
     letter-spacing: 1px;
     color: #948f8f;
 }
+.songAuthor span:last-child{
+    margin-left: 8px;
+    width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 .subscriberWrap{
     display: flex;
-    padding-left: 30px;
-    margin: 20px 0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    margin: 30px 0 40px;
+}
+.subscriber{
+    width: 300px;
+    height: 60px;
+    overflow: hidden;
 }
 .subscriber img{
     height: 60px;
     border-radius: 50%;
     padding-right: 10px;
+}
+.shareCount{
+    color: #948f8f;
+    letter-spacing: 1px;
+    font-size: 32px;
+}
+
+/* iconfont样式 */
+#playListWrap .iconfont{
+    font-size: 38px !important;
 }

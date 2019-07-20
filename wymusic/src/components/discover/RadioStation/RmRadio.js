@@ -11,7 +11,7 @@ class RmRadio extends Component{
                         this.props.radioClassInfoList.map((v,i) => {
                             return (
                                 <div key={i} className="rm-radio-a" onClick={()=>{
-                                    this.props.history.push("/radio/radioinfo/rsinfo/"+v.id)
+                                    this.props.history.push("/radio/radiodetail/"+v.id)
                                 }}>
                             
                                         <div className="rm-radio-b"><img  src={v.picUrl} alt=""></img></div>

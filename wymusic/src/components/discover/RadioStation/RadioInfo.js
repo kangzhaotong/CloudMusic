@@ -29,7 +29,7 @@ class RadioInfo extends Component{
                     <div ref="rmjm" className="class-nav1" onClick={()=>{
                         this.changeIndex(1)
                     }} style={{color:this.state.index===1?"red":"",borderBottom:this.state.index===1?"3px solid red":""}}>热门电台</div>
-                    <div onClick={()=>{
+                    <div className="class-nav2" onClick={()=>{
                         this.changeIndex(2)
                     }} style={{color:this.state.index===2?"red":"",borderBottom:this.state.index===2?"3px solid red":""}}>热门节目</div>
                 </div>

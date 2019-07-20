@@ -10,7 +10,7 @@ class Concentrate extends React.Component{
     }
     render(){
         return (
-            <div className="wrap-payment">
+            <div className="wrap-payment" >
                  
                 <div className="back">
                     <i className="iconfont icon-arrow-right" onClick={()=>{
@@ -21,7 +21,9 @@ class Concentrate extends React.Component{
                     {
                         this.props.rsPaymentList.map(v => {
                             return (
-                                <div key={v.id} className="payment">
+                                <div key={v.id} className="payment" onClick={()=>{
+                                    this.props.history.push("/radio/radiodetail/"+v.id)
+                                }}>
                                     <div><img src={v.picUrl} alt=""></img></div>
                                     <div className="payment-price">
                                         <h3>{v.name}</h3>

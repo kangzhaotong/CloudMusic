@@ -31,8 +31,8 @@ body{
     margin-right:20px;
     font-size:24px;
 }
-#search1 .container>.icon-fangdajing{
-    font-size:28px;
+#search1 .container>i{
+    font-size:28px !important;
     color: #949595;
     position: relative;
     left:-454px;
@@ -67,7 +67,7 @@ body{
 
 #search1 .hotSearch>.content>span:nth-of-type(1){
     color:red;
-    font-size:24px;
+    font-size:24px ;
     font-weight:700;
     line-height:66px;
     text-align:center;
