@@ -82,9 +82,10 @@ class ClassificationMv extends React.Component {
 
                     </div>
 
-                    <div className="category-mv-box" ref="category-mv-box">
+                    <div className="category-mv-box" ref="aaaa">
                         {
                             this.props.categoryMvData.map(item => {
+                               
                                 return (
                                     <div key={item.id} className="category-mv-content">
                                         <img onClick={this.playMv.bind(this,item)} src={item.cover} alt="" />
@@ -160,7 +161,8 @@ class ClassificationMv extends React.Component {
     handleScroll(e) {
         const scrollTop = document.body.scrollTop;
         const scrollHeight = document.body.clientHeight;
-        const clientHeight = this.refs['category-mv-box'].clientHeight;
+        // console.log(this.refs.aaaa)
+        const clientHeight = this.refs.aaaa.clientHeight;
         if (clientHeight < (scrollHeight + scrollTop + 50)) {
             this.setState({
                 num: this.state.num + 20
@@ -177,6 +179,7 @@ class ClassificationMv extends React.Component {
         this.props.history.push({
             pathname: "/playMy",
             state: {
+                id:item.id,
                 mvInfo: data.data,
                 playCount,
                 name

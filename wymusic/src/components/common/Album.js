@@ -11,7 +11,7 @@ class Album extends Component{
 
   }
   back(){
-    this.props.history.go(-1);
+    this.props.history.push("/discover");
   }
   
    componentDidMount(){

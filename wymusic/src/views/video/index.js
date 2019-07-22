@@ -60,7 +60,7 @@ class Video extends Component {
                         {
                             this.props.navData.map((item, index) => {
                                 return (
-                                    <NavLink to={`${this.props.match.path}` + item.pathName} className={"list" + (this.state.index === index ? " active" : "")} key={index} onClick={this.fn.bind(this, index)} >{item.navtype}</NavLink>
+                                    <NavLink activeClassName={"active"} to={`${this.props.match.path}` + item.pathName} className="list" key={index} onClick={this.fn.bind(this, index)} >{item.navtype}</NavLink>
                                 )
                             })
                         }

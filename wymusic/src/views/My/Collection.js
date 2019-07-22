@@ -19,10 +19,9 @@ export default class Collection extends Component {
     }
     render() {
         return (
-            <div>
+            <div  key={this.props.location.key}>
             <Header {...this.props} teim="我的收藏"></Header>
-                <div>
-                    <Router>
+                <div>          
                         <div className={"lint"}>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/album`}>专辑</NavLink>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/singer`}>歌手</NavLink>
@@ -30,15 +29,12 @@ export default class Collection extends Component {
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/column`}>专栏</NavLink>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/theme`}>主题</NavLink>
                         </div>
-                        
-                        <Switch>
+                        {this.props.match.path===this.props.location.pathname?( <Redirect to={`${this.props.match.url}/album`}></Redirect>):''}              
 							<Route path="/my/collection/album" component={Album}/>
                             <Route path="/my/collection/singer" component={Singer}/>
                             <Route path="/my/collection/video" component={Video}/>
                             <Route path="/my/collection/column" component={Column}/>
-                            <Route path="/my/collection/theme" component={Theme}/>
-						</Switch>
-                    </Router>
+                            <Route path="/my/collection/theme" component={Theme}/> 
                 </div>
             </div>
         )

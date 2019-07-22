@@ -4,26 +4,26 @@ import "~/video-react/dist/video-react.css"
 import "./playMv.css"
 class PlayMv extends React.Component {
     render() {
-        var data = this.props.location.state
-        var url = data.mvInfo.url
-        var playCount = data.playCount
-        var name = data.name
+        let data = this.props.location.state
+        let url = data.mvInfo.url
+        let playCount = data.playCount
+        let name = data.name
+
         return (
             <div>
-                <div>
-                <Player autoPlay={true} ref={(player) => { this.player = player }}>
-                    <source src={url} />
-                </Player>
+                <div className="sp-mv">
+                    <Player autoPlay={true} ref={(player) => { this.player = player }}>
+                        <source src={url} />
+                    </Player>
                 </div>
                 <div className="mv-data">
                     <p>{name}</p>
-                    <p>{playCount+'次观看'}</p>
+                    <p>{playCount + '次观看'}</p>
                 </div>
             </div>
         )
-    }
-    componentDidMount(){
-        console.log(this.player.getState())
+
+
     }
 }
 export default PlayMv
