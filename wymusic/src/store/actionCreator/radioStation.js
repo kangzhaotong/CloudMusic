@@ -1,6 +1,6 @@
 import axios from 'axios';
 import baseUrl from '../../baseUrl';
-import {UP_RADIODJDETAIL, UP_RADIODJPROGRAM, CHANGE_IS_LOADING} from "../actionType/radioStation";
+import {UP_RADIODJDETAIL, UP_RADIODJPROGRAM, CHANGE_IS_LOADING, CHANGE_ASC} from "../actionType/radioStation";
 
 export default {
     getRadioRecommendList(i) {
@@ -35,10 +35,10 @@ export default {
         }
 
     },
-    getConcentrateList(){
+    getConcentrateList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/paygift?limit=3&offset=20")
-                .then(({data})=>{
+                .then(({data}) => {
                     const concentrateList = data.data.list;
                     dispatch({
                         type: "UP_CONCENTRATELIST",
@@ -64,7 +64,7 @@ export default {
                 })
         }
     },
-    getPopularList(){
+    getPopularList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/category/recommend")
                 .then(({data})=>{
@@ -79,10 +79,10 @@ export default {
         }
     },
 
-    getRadioSortList(){
+    getRadioSortList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/catelist")
-                .then(({data})=>{
+                .then(({data}) => {
                     const radioSortList = data.categories;
                     dispatch({
                         type: "UP_SORTLIST",
@@ -94,14 +94,8 @@ export default {
 
         }
     },
-    getPaymentList(limit = 20){
+    getPaymentList(limit = 20) {
         return (dispatch) => {
-            dispatch({
-                type:"CHANGE_IS_LOADING",
-                payload:{
-                    isLoading:true
-                }
-            })  
             axios.get("/wymusic/dj/paygift?limit="+limit+"&offset=20")
                 .then(({data})=>{
                     const rsPaymentList = data.data.list;
@@ -124,7 +118,7 @@ export default {
     },
     getDjRadioDetail(rid) {
         return (dispatch) => {
-            axios.get(baseUrl + "/dj/detail?rid=" + rid)
+            axios.get("/wymusic/dj/detail?rid=" + rid)
                 .then(({data}) => {
                     dispatch({
                         type: UP_RADIODJDETAIL,
@@ -135,7 +129,7 @@ export default {
                 })
         }
     },
-    getDjRadioProgram(rid, limit = 30) {
+    getDjRadioProgram(rid, limit = 30, asc) {
         return (dispatch) => {
             dispatch({
                 type: CHANGE_IS_LOADING,
@@ -143,13 +137,19 @@ export default {
                     isLoading: true
                 }
             })
-            axios.get(baseUrl + "/dj/program?rid=" + rid + "&limit=" + limit)
+            dispatch({
+                type: CHANGE_ASC,
+                payload: {
+                    asc: !asc
+                }
+            })
+            axios.get("/wymusic/dj/program?rid=" + rid + "&limit=" + limit + "&asc=" + asc)
                 .then(({data}) => {
                     dispatch({
                         type: UP_RADIODJPROGRAM,
                         payload: {
                             djProgram: data,
-                            limit
+                            limit,
                         }
                     })
                     dispatch({

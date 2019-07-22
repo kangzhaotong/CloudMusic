@@ -12,7 +12,6 @@ export default{
     playMp3:[],
     musicUrl:[],
     programList:[],
-    
     djRadio: {
         dj: {
             avatarUrl: "",
