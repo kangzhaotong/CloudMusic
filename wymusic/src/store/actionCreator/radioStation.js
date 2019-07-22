@@ -1,6 +1,6 @@
 import axios from 'axios';
 import baseUrl from '../../baseUrl';
-import {UP_RADIODJDETAIL, UP_RADIODJPROGRAM, CHANGE_IS_LOADING} from "../actionType/radioStation";
+import {UP_RADIODJDETAIL, UP_RADIODJPROGRAM, CHANGE_IS_LOADING, CHANGE_ASC} from "../actionType/radioStation";
 
 export default {
     getRadioRecommendList(i) {
@@ -37,12 +37,12 @@ export default {
         }
 
     },
-    getConcentrateList(){
+    getConcentrateList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/paygift?limit=3&offset=20")
-                .then(({data})=>{
+                .then(({data}) => {
                     const concentrateList = data.data.list;
-                    console.log(2222,data)
+                    console.log(2222, data)
                     dispatch({
                         type: "UP_CONCENTRATELIST",
                         payload: {
@@ -67,11 +67,11 @@ export default {
                 })
         }
     },
-    getPopularList(){
+    getPopularList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/category/recommend")
-                .then(({data})=>{
-                    const popularList = data.data.splice(0,9);
+                .then(({data}) => {
+                    const popularList = data.data.splice(0, 9);
                     dispatch({
                         type: "UP_POPULARLIST",
                         payload: {
@@ -82,10 +82,10 @@ export default {
         }
     },
 
-    getRadioSortList(){
+    getRadioSortList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/catelist")
-                .then(({data})=>{
+                .then(({data}) => {
                     const radioSortList = data.categories;
                     dispatch({
                         type: "UP_SORTLIST",
@@ -97,10 +97,10 @@ export default {
 
         }
     },
-    getPaymentList(limit = 20){
+    getPaymentList(limit = 20) {
         return (dispatch) => {
-            axios.get("/wymusic/dj/paygift?limit="+limit+"&offset=20")
-                .then(({data})=>{
+            axios.get("/wymusic/dj/paygift?limit=" + limit + "&offset=20")
+                .then(({data}) => {
                     console.log(data)
                     const rsPaymentList = data.data.list;
                     dispatch({
@@ -116,7 +116,7 @@ export default {
     },
     getDjRadioDetail(rid) {
         return (dispatch) => {
-            axios.get(baseUrl + "/dj/detail?rid=" + rid)
+            axios.get("/wymusic/dj/detail?rid=" + rid)
                 .then(({data}) => {
                     dispatch({
                         type: UP_RADIODJDETAIL,
@@ -127,7 +127,7 @@ export default {
                 })
         }
     },
-    getDjRadioProgram(rid, limit = 30) {
+    getDjRadioProgram(rid, limit = 30, asc) {
         return (dispatch) => {
             dispatch({
                 type: CHANGE_IS_LOADING,
@@ -135,22 +135,21 @@ export default {
                     isLoading: true
                 }
             })
-            axios.get(baseUrl + "/dj/program?rid=" + rid + "&limit=" + limit)
+            dispatch({
+                type: CHANGE_ASC,
+                payload: {
+                    asc: !asc
+                }
+            })
+            axios.get("/wymusic/dj/program?rid=" + rid + "&limit=" + limit + "&asc=" + asc)
                 .then(({data}) => {
-                    let playTime = 0;
-                    data.programs.map(v=>{
-                        // console.log(999999,v.mainSong);
-
-                    })
-
                     dispatch({
                         type: UP_RADIODJPROGRAM,
                         payload: {
                             djProgram: data,
-                            limit
+                            limit,
                         }
                     })
-                    if(limit > data.count+20) return
                     dispatch({
                         type: CHANGE_IS_LOADING,
                         payload: {

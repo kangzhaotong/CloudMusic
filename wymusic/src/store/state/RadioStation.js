@@ -7,6 +7,7 @@ export default {
     radioSortList: [],
     rsPaymentList: [],
     limit: 20,
+    asc:true,
     i: 0,
     djRadio: {
         dj: {

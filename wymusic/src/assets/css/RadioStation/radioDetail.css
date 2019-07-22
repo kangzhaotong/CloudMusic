@@ -167,6 +167,7 @@
 .iconbofang{
     font-size: 28px!important;
     margin-right: 8px;
+    color: #aaabab;
 }
 .radio-detail-touxiang{
     display: flex;
@@ -208,9 +209,10 @@
 .fenlei{
     margin-top: 20px;
     margin-bottom: 20px;
+    font-size: 26px;
 }
 .category{
-    padding: 4px 10px;
+    padding: 5px 10px;
     border:2px solid #f33b43;
     text-align: center;
     color: #f33b43;
@@ -250,8 +252,10 @@
 .neirong-foot{
     display: inline-block;
     font-size: 28px;
-    color: #a7a7a7;
     margin-top: 10px;
+}
+.neirong-foot span{
+    color: #a7a7a7;
 }
 .neirong-foot span:nth-child(2){
     letter-spacing: 5px;
@@ -267,4 +271,8 @@
     text-align: center;
     color: #333434;
     font-size: 36px;
+}
+.zz{
+    font-size: 30px;
+    color: #666666;
 }

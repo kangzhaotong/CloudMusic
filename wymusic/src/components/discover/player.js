@@ -11,7 +11,7 @@ class Player extends Component {
         super();
         this.state = {
             //是否播放
-            isPlay: true,
+            isPlay: false,
             //切换歌词
             isLyric:false,
             // 当前播放时间
@@ -23,19 +23,13 @@ class Player extends Component {
             voiceDuration: "00:00",
         }
     }
-
-    play() {
+    plays() {
         let self = this;
         let audio = this.refs.audioTag;
-        // let timeline = this.refs.timeline;
-        // let playhead = this.refs.playhead;
-        // let timelineWidth = timeline.offsetWidth - playhead.offsetWidth;
-        // let playPercent = timelineWidth * (this.state.currentTime / audio.duration);
         audio.currentTime = this.state.currentTime;
         this.setState({
             isPlay: !this.state.isPlay
         })
-
         if (!this.state.isPlay) {
             audio.play();
             //如果没有加载出时间
@@ -223,7 +217,7 @@ class Player extends Component {
                                         <div className={"player-songDetail-img"} style={{display:this.state.isLyric?"none":"block",animationPlayState:this.state.isPlay?"running":"paused"}}>
                                             <img src={item.al.picUrl===null?require("../../assets/images/zanwu.jpg"):item.al.picUrl} alt=""/>
                                         </div>
-                                        {/*<div className={"gengmafan"}></div>*/}
+                                        <div className={"gengmafan"}></div>
                                        <div className={"mafan"}>
                                            <div className={"player-songDetail-lyric"} style={{display:this.state.isLyric?"block":"none"}}>
                                                <div  ref={"geci"}>
@@ -251,8 +245,8 @@ class Player extends Component {
                             return (
                                 <div className='content' key={index}>
                                     <div className="voice-container">
-                                        <audio autoPlay={"autoPlay"} ref="audioTag" src={item.url} onTimeUpdate={() => this.timeUpdate()}
-                                               onLoadedMetadata={() => this.loadVideo()}/>
+                                        <audio ref="audioTag" src={item.url} onTimeUpdate={() => this.timeUpdate()}
+                                               onLoadedMetadata={() => this.loadVideo()} id={"a"}/>
                                         <div className="controls">
                                             <div className="fake-control">
                                                 <div className="inline-block fake-control-timeline">
@@ -278,7 +272,7 @@ class Player extends Component {
                                                 <i className={"iconfont iconshangyishou"}></i>
                                             </div>
                                             <div className="play-icon">
-                                                <i className={this.state.isPlay?"iconfont iconzanting":"iconfont iconbofang1"} onClick={() => this.play()}></i>
+                                                <i className={this.state.isPlay?"iconfont iconzanting":"iconfont iconbofang1"} onClick={() => this.plays()}></i>
                                             </div>
                                             <div onClick={this.handlerPreps.bind(this)}>
                                                 <i className={"iconfont iconnext-chapter"}></i>
