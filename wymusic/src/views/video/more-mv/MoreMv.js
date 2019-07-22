@@ -16,10 +16,8 @@ class PlayMv extends React.Component {
     }
     render() {
         if (!this.state.isLoading) {
-            console.log("我也执行了")
             return (<div>Loading...</div>)
         } else {
-            console.log("我执行了")
             const titleArr = ["网易", "内地", "港台", "欧美", "韩国", "日本"]
             const moreMvData = this.props.moreMvData
             return (
@@ -68,14 +66,13 @@ class PlayMv extends React.Component {
 
     }
     componentDidMount() {
-        console.log(this.props.moreMvData.length)
         if (this.props.moreMvData.length === 0) {
             this.props.getMoreMv().then(() => {
                 this.setState({
                     isLoading: true
                 })
             })
-        }else if(this.props.moreMvData.length){
+        }else{
             this.setState({
                 isLoading: true
             })

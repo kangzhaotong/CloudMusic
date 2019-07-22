@@ -1,3 +1,6 @@
+.mv-bag-box{
+    padding-bottom:100px;
+}
 .mv-box{
     position:relative;
 }
@@ -64,15 +67,16 @@
 .mv-content .play-num{
     position: absolute;
     right:10px;
-    top:0;
+    top:10px;
     color:white;
     font-size:28px;
+}
+.mv-content .play-num span{
+    color:white;
 }
 .play-num span:nth-child(1){
     margin-right:5px;
 }
-
-
 .mv-ranking{
     position: relative;
     padding:40px 20px;
@@ -94,3 +98,49 @@
     -webkit-transform: scaleY(.2);
     transform:scaleY(.2);
 }
+.mv-more-marvellous{
+    padding:0 20px;
+}
+.more-marvellous-mv{
+    width:95%;
+    margin:0 auto;
+    position: relative;
+    margin-bottom:30px;
+}
+.more-marvellous-mv img{
+    width:100%;
+    border-radius:15px 15px;
+}
+.more-marvellous-num{
+    position: absolute;
+    bottom:65px;
+    left:15px;
+}
+.more-marvellous-num span{
+    color:white;
+}
+.more-marvellous-num span:nth-child(1){
+    margin-right:10px;
+    font-size:30px;
+}
+.more-marvellous-name{
+    height: 30px;
+    line-height:30px;
+    margin-top:20px;
+}
+.mv-sjx{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid #ddd;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left:45%;
+    top:45%;
+  }
+  .time-mv{
+    position: absolute;
+    bottom:75px;
+    right:20px;
+    color:white;
+  }

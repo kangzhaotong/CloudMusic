@@ -1,0 +1,138 @@
+
+html,body{
+  height: 100%;
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  height: 100%;
+  width:100%;
+  background-color: #fff;
+}
+
+#album .albumTop{
+  width:100%;
+  height:97px;
+  background: #ffffff;;
+  padding:18px 21px 35px 21px;
+  
+}
+#album .albumTop>i:nth-of-type(1){
+  font-size:44px !important;
+  color:#000001;
+  margin-top:-30px;
+}
+#album .albumTop>span{
+  font-size:34px;
+  color:#333334;
+  font-weight:700;
+  margin-left:260px;
+}
+#album .albumTop>i:nth-of-type(2){
+  font-size:42px !important;
+  color:#000001;
+  margin-left:190px;
+}
+/* 轮播图 */
+#album #first-swiper{
+  width:701px;
+  height:274px;
+  border-radius:20px;
+}
+#album #first-swiper #lunBox{
+  width:701px;
+  height:274px;
+  border-radius:20px;
+}
+#album #first-swiper img{
+  width:100%;
+  height:100%;
+}
+.swiper-container .swiper-pagination{
+  position: absolute;
+  top:230px;
+   height:8.8px;
+}  
+
+/* 导航 */
+#album .Anav{
+  width:100%;
+  height:206px;
+  padding:33px 71px 33px 71px;
+  background: #fbfcfc;
+  display: flex;
+  justify-content: space-between;
+  border-bottom:1px solid #e2e3e3;
+}
+#album .Anav li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* display: inline-block; */
+}
+#album .Anav li>img{
+  width:96px;
+  height:96px;
+  display: block;
+  margin-bottom:17px;
+}
+#album .Anav li>span{
+  font-size:24px;
+  color:#333334;
+}
+
+/* 最新上架 */
+#album .putaway .head{
+  overflow: hidden;
+}
+#album .putaway .head>span{
+    font-size:33px;
+    font-weight:700;
+    margin-top:68px;
+    margin-left:20px;
+    display: inline-block;
+}
+#album .putaway .head>i{
+  font-size:26px;
+  color:black;
+  display: inline-block;
+  margin-left:15px;
+}
+#album .putaway .con{
+    padding:30px 30px 98px 30px;
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap:wrap;
+
+}
+#album .putaway .content{
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  width:30%;
+  margin-bottom:38px;
+}
+#album .putaway .content>img{
+  width:194px;
+  height:194px;
+  border-radius:10px;
+}
+#album .putaway .content>span{
+  font-size:25px;
+  color:#333333;
+  margin-top:12px;
+}
+#album .putaway .content>.nei{
+  font-size:20px;
+  color:#9c9d9d;
+  margin-top:11px;
+}
+#album .putaway .content .price{
+  font-size:17px;
+  color:red;
+  margin-top:12px;
+  font-weight:800;
+}

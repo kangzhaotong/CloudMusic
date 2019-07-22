@@ -11,7 +11,7 @@ class PlayMv extends React.Component {
         return (
             <div>
                 <div>
-                <Player autoPlay={true}>
+                <Player autoPlay={true} ref={(player) => { this.player = player }}>
                     <source src={url} />
                 </Player>
                 </div>
@@ -21,6 +21,9 @@ class PlayMv extends React.Component {
                 </div>
             </div>
         )
+    }
+    componentDidMount(){
+        console.log(this.player.getState())
     }
 }
 export default PlayMv

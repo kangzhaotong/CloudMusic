@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"
-import { NavLink, BrowserRouter as Router, Route,Redirect} from "react-router-dom"
+import { NavLink, BrowserRouter as Router, Route, Redirect } from "react-router-dom"
 import { bindActionCreators } from "redux"
 // import * as videoAction from "../../"
 import * as videoAction from "../../store/actionCreator/video"
@@ -35,8 +35,8 @@ const map = {
     Life,
     Music,
     Zuijia
-}  
-function getComponent(file){
+}
+function getComponent(file) {
     return map[file] || null
 }
 class Video extends Component {
@@ -67,15 +67,18 @@ class Video extends Component {
                     </nav>
                 </div >
                 <div>
-                    {/* { <Router> 子路由不加Router 默认子路由*/}
-                       <Redirect to={`${this.props.match.path}` + "/tuijian"}></Redirect>
-                        {  
-                            this.props.navData.map((item, index) => {
-                                return (
-                                    <Route key={index} path={`${this.props.match.path}` + item.pathName} component={getComponent(item.component)}></Route>
-                                )
-                            })
-                        }
+                    {/*  <Router> 子路由不加Router 默认子路由 */}
+                    {
+                        this.props.match.path === this.props.location.pathname ? (<Redirect to={`${this.props.match.path}/tuijian`} />) : ""
+                    }
+                    {
+
+                        this.props.navData.map((item, index) => {
+                            return (
+                                <Route key={index} path={`${this.props.match.path}` + item.pathName} component={getComponent(item.component)}></Route>
+                            )
+                        })
+                    }
                 </div>
             </div>
         )
@@ -84,6 +87,9 @@ class Video extends Component {
         if (this.props.navData.length === 0) {
             this.props.getNavList()
         }
+    }
+    componentDidMount() {
+        console.log(this.props.match.path)
     }
 }
 function mapStateToProps(state) {

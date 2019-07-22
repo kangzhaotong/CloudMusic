@@ -5,16 +5,18 @@ import {GETSONG} from "../actionType/index";
 import {GETTUIJIAN} from "../actionType/index";
 import {GETRUN} from "../actionType/index";
 import {GETHOT} from "../actionType/index";
+import {RES} from "../actionType/index";
+import {GETSONGLIST} from "../actionType/index";
+import {GETMV} from "../actionType/index";
+
 
 let reducer=(state=initState,action)=>{
     let newState= JSON.parse(JSON.stringify(state));
     if(action.type=== GETBANNER){
-        console.log(action.firstbannerlist);
         newState.firstbannerlist=action.firstbannerlist
     }
     if(action.type===GETDATA){
         newState.SellPoints=action.SellPoints;
-        console.log( newState.SellPoints)
     }
     if(action.type===GETSONG){
         newState.newSongs=action.newSongs;
@@ -28,6 +30,16 @@ let reducer=(state=initState,action)=>{
     if(action.type===GETHOT){
         newState.list=action.list;
     }
+    if(action.type===RES){
+        newState.music=action.music;
+    }
+    if(action.type===GETSONGLIST){
+        newState.songList=action.songList
+    }
+    if(action.type===GETMV){
+        newState.mvList=action.mvList
+    }
+    
     return newState;
 }
 

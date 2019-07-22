@@ -6,8 +6,14 @@ export const selectMvInfoList = {
     mvSelectedList: [],//mv精选
 }
 export const moreMvList = {
-    moreMvList: []
+    moreMvList: [] //更多mv
 }
 export const rankingMvList = {
-    rankingMvList:[]
+    rankingMvList:[] //mv排行
+}
+export const marvellousMvList = {
+    marvellousMvList:[] // 更多精彩MV
+}
+export const categoryMvList = {
+    categoryMvList:[] //分类
 }

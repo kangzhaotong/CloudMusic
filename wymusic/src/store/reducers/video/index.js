@@ -39,3 +39,21 @@ export const rankingMvData = (state=initState.rankingMvList,action)=>{
             return state
     }
 }
+// 更多精彩MV
+export const  morvellousMvData = (state=initState.marvellousMvList,action)=>{
+    switch(action.type){
+        case pro.MARVELLOUS_MV_LIST:
+            return {...state,...action}
+        default:
+            return state
+    }
+}
+//分类MV
+export const categoryMvData = (state = initState.categoryMvList,action)=>{
+    switch(action.type){
+        case pro.CATEGORY_MV_LIST:
+            return {...state,...action}
+        default:
+            return state
+    }
+}
