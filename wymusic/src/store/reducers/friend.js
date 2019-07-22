@@ -5,7 +5,7 @@ export default function (state=initState, {type, payload}) {
     state = JSON.parse(JSON.stringify(state));
 
     if(type === GETFRIENDS) {
-        state.event = payload.event
+        state.event = state.event.concat(payload.event);
         state.lasttime = payload.lasttime;
     } 
 

@@ -66,7 +66,7 @@
 }
 .song_top_song .song_top_song_name i{
     display: block;
-    margin: -28px 0 0 0;
+    margin: -30px 0 0 42px;
     font-size: 24px;
     
 }
@@ -77,6 +77,7 @@
     width:100%;
     float: left;
     margin: 10px 0 0 0 ;
+   /* // border-bottom: 1px solid #b3b3b3; */
 }
 .song_top_song {
     margin-left:39px; 

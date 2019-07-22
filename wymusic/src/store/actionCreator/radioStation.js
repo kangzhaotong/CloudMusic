@@ -13,7 +13,6 @@ export default {
                     const radioRecommendList1 = data.djRadios.splice(i, i + 3);
                     if (radioRecommendList1.length > 3) {
                         const radioRecommendList = radioRecommendList1.slice(0, 3);
-                        console.log(555, radioRecommendList)
                         dispatch({
                             type: "UP_RADIORECOMEENDIST",
                             payload: {
@@ -23,7 +22,6 @@ export default {
                         })
                     } else {
                         const radioRecommendList = radioRecommendList1;
-                        console.log(333, radioRecommendList)
                         dispatch({
                             type: "UP_RADIORECOMEENDIST",
                             payload: {
@@ -42,7 +40,6 @@ export default {
             axios.get("/wymusic/dj/paygift?limit=3&offset=20")
                 .then(({data}) => {
                     const concentrateList = data.data.list;
-                    console.log(2222, data)
                     dispatch({
                         type: "UP_CONCENTRATELIST",
                         payload: {
@@ -70,8 +67,8 @@ export default {
     getPopularList() {
         return (dispatch) => {
             axios.get("/wymusic/dj/category/recommend")
-                .then(({data}) => {
-                    const popularList = data.data.splice(0, 9);
+                .then(({data})=>{
+                    const popularList = data.data;
                     dispatch({
                         type: "UP_POPULARLIST",
                         payload: {
@@ -99,15 +96,20 @@ export default {
     },
     getPaymentList(limit = 20) {
         return (dispatch) => {
-            axios.get("/wymusic/dj/paygift?limit=" + limit + "&offset=20")
-                .then(({data}) => {
-                    console.log(data)
+            axios.get("/wymusic/dj/paygift?limit="+limit+"&offset=20")
+                .then(({data})=>{
                     const rsPaymentList = data.data.list;
                     dispatch({
                         type: "UP_PAYMENTLIST",
                         payload: {
                             rsPaymentList,
                             limit
+                        }
+                    })
+                    dispatch({
+                        type:"CHANGE_IS_LOADING",
+                        payload:{
+                            isLoading:false
                         }
                     })
                 })
@@ -158,6 +160,61 @@ export default {
                     })
                 })
         }
+    },
+    getRadioClassInfoList(id){
+        return (dispatch) => {
+            axios.get("/wymusic/dj/recommend/type?type="+id)
+                .then(({data})=>{
+                    const radioClassInfoList = data.djRadios
+                    dispatch({
+                        type: "UP_CLASSINFOLIST",
+                        payload: {
+                            radioClassInfoList,  
+                        }
+                    })
+                })
+        }
+    },
+    getRadioProgramList(id){
+        return (dispatch) => {
+            axios.get("/wymusic/dj/program?rid="+id+"&limit=20")
+                .then(({data})=>{
+                    const programList = data.programs
+                    dispatch({
+                        type: "UP_PROGRAMLIST",
+                        payload: {
+                            programList,  
+                        }
+                    })
+                })
+        }
+    },
+    getPlayList(id){
+        return (dispatch) => {
+            axios.get("/wymusic/dj/program?rid="+id+"&limit=20")
+                .then(({data})=>{
+                    const playMp3 = data.programs
+                    dispatch({
+                        type: "UP_PLAYLIST",
+                        payload: {
+                            playMp3
+                        }
+                    })
+                })
+        }
+    },
+    getMusicUrl(mainSongId){
+        return (dispatch) => {
+            axios.get("/wymusic/song/url?id="+mainSongId)
+                .then(({data})=>{
+                    const musicUrl = data.data[0].url;
+                    dispatch({
+                        type: "UP_MUSICURL",
+                        payload: {
+                            musicUrl
+                        }
+                    })
+                })
+        }
     }
 }
-

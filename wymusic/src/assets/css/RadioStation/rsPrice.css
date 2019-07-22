@@ -1,3 +1,9 @@
+.wrap-payment{
+    padding:20px;
+}
+.payment-box{
+    margin-bottom: 80px;
+}
 .payment{
     display: flex;
     margin-top:20px;
@@ -25,4 +31,8 @@
     font-size: 20px;
     color: red;
     margin-top:15px;
+}
+.is-load{
+    text-align: center;
+    font-size: 30px;
 }

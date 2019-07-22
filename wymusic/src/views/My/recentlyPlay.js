@@ -11,19 +11,19 @@ export default class recentlyPlay extends Component {
             <div>
                <Header {...this.props} teim="最近播放"></Header>
                 <div>
-                <Router>
+             
                         <div className={"recentlyPlay"}>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/song`}>歌曲</NavLink>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/liveStreaming`}>直播</NavLink>
                             <NavLink activeClassName={"collection"} to={`${this.props.match.url}/video`}>视频</NavLink>
                         </div>
-                        
-                        <Switch>
+                        {this.props.match.path===this.props.location.pathname?( <Redirect to={`${this.props.match.url}/song`}></Redirect>):''}  
+                       
 							<Route path="/my/recentlyPlay/song" component={Song}/>
                             <Route path="/my/recentlyPlay/liveStreaming" component={LiveStreaming}/>
                             <Route path="/my/recentlyPlay/video" component={Video}/>
-						</Switch>
-                    </Router>
+						
+                   
                 </div>
             </div>
         )

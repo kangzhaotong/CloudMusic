@@ -4,18 +4,7 @@ import {bindActionCreators} from 'redux';
 import "../../assets/css/account.css";
 import userCreator from '../../store/actionCreator/userCreator';
 
-
 class Card extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            avatarUrl:this.props.user.avatarUrl,
-            nickname:this.props.user.nickname
-         
-        }
-        console.log(this.props)
-      }
-     
     render(){
         return(
         <div id="account">
@@ -24,21 +13,16 @@ class Card extends Component{
                 <i className="iconfont iconyinlebofangxuanlvjiezou" style={{color:'#000001',fontSize:'25px'}}></i>
             </div>
             <div className="banner">
-                <div style= {{display:localStorage.token?'block':'none',width:'100px',height:'50px'}}>
-                    <img src={this.state.avatarUrl} alt="头像" />
-                    <span>{this.state.nickname}</span>
-                    <img src={require("../../assets/images/banner_3.jpg")} />
-
-                    <img src={require("../../assets/images/banner_4.jpg")} />
+                <div style= {{display:localStorage.userToken?'block':'none'}}>
+                    <img src={this.props.avatarUrl} alt="头像" />
+                    <span>{this.props.nickname}</span>
+                    <img src={require("../../assets/images/banner_3.jpg")} alt="" />
+                    <img src={require("../../assets/images/banner_4.jpg")} alt="" />
                 </div>
-                <div style= {{display:localStorage.token?'none':'block',borderRadius:'30px',width:'90%',height:'70px',background:'red',opacity:0.5,
-            fontSize:'25px',textAlign:'cneter',marginTop:"6px",lineHeight:'70px',marginLeft:'20px',paddingLeft:'100px'}}
-                onClick={() => {
+                <div style= {{display:localStorage.userToken?'none':'block'}} onClick={() => {
                     this.props.history.push('/login');
-
-                }}
-                >
-                    还未登录哦！
+                }}>
+                    点击此处登录
                 </div>
             </div>
             <div className="nav2">
@@ -176,23 +160,18 @@ class Card extends Component{
             </div>
             <div className="exit">
                 <input type="button" value="退出登录" onClick={() => {
-           
-            this.props.logout();
-                      
+                    this.props.logout();                   
                 }}></input>
             </div>
         </div>
         )
     }
-    componentDidMount(){ 
-        this.forceUpdate();
-    }
 }
 
 function mapStateToProps({userInfo}) {
-    console.log(666, userInfo);
     return {
-        user: userInfo.userInfo
+        avatarUrl: userInfo.avatarUrl,
+        nickname: userInfo.nickname
     }
 }
 
