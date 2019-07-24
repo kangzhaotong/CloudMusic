@@ -18,7 +18,6 @@ class Friend extends Component {
         let scrollTop = document.body.scrollTop;
         let scrollHeight = document.body.clientHeight;
         let clientHeight = this.refs.frInfo.clientHeight;
-        
         if(clientHeight < (scrollHeight+scrollTop-150) && this.state.pageSize < this.props.event.length) {
             this.setState({
                 pageSize: this.state.pageSize + 10
@@ -119,7 +118,7 @@ class Friend extends Component {
 }
 
 function mapStateToProps({friend, loading}) {
-    // console.log(11111, friend.events);
+    // console.log(11111, friend.event);
     return {
         event: friend.event,
         lasttime: friend.lasttime,

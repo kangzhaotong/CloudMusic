@@ -10,12 +10,14 @@ class Slider extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            myid:localStorage.userId
         }
+        console.log(this.state.myid)
     }
     componentDidMount() {
-        this.props.user_playlist()
-        this.props.collete()
-        console.log(this.props)
+        this.props.user_playlist(this.state.myid)
+        this.props.collete(this.state.myid)
+        console.log(this.state.myid,22222)
     }
     render() {
         return (
@@ -111,11 +113,11 @@ class Slider extends Component {
 let mapState=(state)=>state;
 let mapAction=(dispatch)=>{
     return {
-        user_playlist(){
-            dispatch(actionCreate.user_playlist())
+        user_playlist(id){
+            dispatch(actionCreate.user_playlist(id))
         },
-        collete(){
-            dispatch(actionCreate.collete())
+        collete(id){
+            dispatch(actionCreate.collete(id))
         }
         
     }

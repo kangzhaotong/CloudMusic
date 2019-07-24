@@ -4,45 +4,47 @@ import { connect } from 'react-redux'
 import actionCreate from '../../../store/actionCreator/actionCreatormy'
 import axios from 'axios';
 import baseUrl from '../../../baseUrl';
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
 class Album extends Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.state={
-            index:1,
-            collect_album:[]
+        this.state = {
+            index: 1,
+            collect_album: []
         }
     }
     componentDidMount() {
         this.props.collect_album()
-        this.props.recommend_content(this.state.index) 
+        this.props.recommend_content(this.state.index)
     }
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         this.setState({
-            collect_album:nextProps.my.album.collect_album
-        },()=>{
-           console.log(this.state.collect_album.length)
-           if(this.state.collect_album.length==0){
-            this.refs.btn.style.display="block"
-        }else{
-            this.refs.btn.style.display="none"
-        }
+            collect_album: nextProps.my.album.collect_album
+        }, () => {
+            console.log(this.state.collect_album)
+            if (this.state.collect_album.length == 0) {
+                this.refs.btn.style.display = "block"
+            } else {
+                this.refs.btn.style.display = "none"
+            }
         })
     }
-    load_more(){
+    load_more() {
         this.setState({
-            index:this.state.index++
+            index: this.state.index++
         })
         this.props.recommend_content(this.state.index)
     }
-    conceal(){
+    conceal() {
         console.log(this.refs.btn)
-        this.refs.btn.style.display="none"
+        this.refs.btn.style.display = "none"
     }
     render() {
+       
         //console.log(this.state.collect_album)
         //let collect_album = this.props.my.album.collect_album
-       // let recommend_content = this.props.my.recommend_content
-       
+        // let recommend_content = this.props.my.recommend_content
+
         return (
             <div className="album">
                 {/* 数字专辑 */}
@@ -56,7 +58,10 @@ class Album extends Component {
                     <ul>
                         {this.state.collect_album.map((v, i) => {
                             return (
-                                <li key={i}>
+
+                                <li key={i} onClick={() => {
+                                    this.props.history.push('/albumList/' + v.id);
+                                }}>
                                     <div className="outer_img">
                                         <img src={v.picUrl} alt="" />
                                     </div>
@@ -69,12 +74,12 @@ class Album extends Component {
                     </ul>
 
                 </div>
-                
+
                 <div className="collect_album_recommend" ref='btn'>
-                   
+
                     <h3>
                         <span>
-                            <img src={require("../../../assets/images/22.gif")} alt="" srcset=""/>
+                            <img src={require("../../../assets/images/22.gif")} alt="" />
                         </span>
                         为你推荐
                         <i onClick={this.conceal.bind(this)}>X</i>
@@ -82,17 +87,19 @@ class Album extends Component {
                     <div className="recommend_content">
                         <ul>
                             {
-                                this.props.my.recommend_content.map((v,i) => {
-                                    return(
-                                        <li key={i}>
-                                        <div className="outer_img">
-                                            <img src={v.picUrl} alt="" />
-                                        </div>
-                                        <span>{v.name}</span>
-                                        <p>{v.company}</p>
-                                    </li> 
+                                this.props.my.recommend_content.map((v, i) => {
+                                    return (
+                                        <li key={i} onClick={() => {
+                                            this.props.history.push('/albumList/'+ v.id);
+                                        }}>
+                                            <div className="outer_img">
+                                                <img src={v.picUrl} alt="" />
+                                            </div>
+                                            <span>{v.name}</span>
+                                            <p>{v.company}</p>
+                                        </li>
                                     )
-                                   
+
                                 })
                             }
                             {/* <li>
@@ -104,10 +111,10 @@ class Album extends Component {
                                 </li> */}
                         </ul>
                     </div>
-                            
+
                     <button className="load_more" onClick={this.load_more.bind(this)}>更多专辑</button>
                 </div>
-                                
+
             </div>
         )
     }
@@ -115,8 +122,8 @@ class Album extends Component {
 let mapState = (state) => state;
 let mapAction = (dispatch) => {
     return {
-        collect_album() {
-            dispatch(actionCreate.collect_album())
+        collect_album(i) {
+            dispatch(actionCreate.collect_album(i))
         },
         recommend_content(i) {
             dispatch(actionCreate.recommend_content(i))

@@ -47,11 +47,11 @@ body{
     margin-right:14px;
 }
 
-#discover #header>i:nth-of-type(2){
+#header .iconyinlebofangxuanlvjiezou{
     float: left;
-    font-size:41px !important;
+    font-size:42px !important;
     color:#000001;
-    margin-top:10px !important;
+    margin-top:6px !important;
     font-weight:700;
 
 }

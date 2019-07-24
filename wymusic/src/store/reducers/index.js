@@ -1,5 +1,6 @@
 import {combineReducers} from 'redux'
 import DiscoverReducer from './discover'
+import * as  videoReduce from "./video/index"//viedeo reducers    
 //播放器
 import PlayerReducer from './player'
 //歌单、专辑
@@ -26,9 +27,8 @@ let reducer = combineReducers({
     Rank:RankReducers,
     my,
     loading,
-    userInfo
+    userInfo,
+    ...videoReduce
 })
-
-
 export default reducer;
 

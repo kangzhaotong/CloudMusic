@@ -6,9 +6,14 @@ import {
     UP_RSBANNER_LIST,
     UP_SORTLIST,
     UP_PAYMENTLIST,
+    UP_CLASSINFOLIST,
+    UP_PLAYLIST,
+    UP_MUSICURL,
+    UP_PROGRAMLIST,
     UP_RADIODJDETAIL,
     UP_RADIODJPROGRAM,
-    CHANGE_IS_LOADING
+    CHANGE_IS_LOADING,
+    CHANGE_ASC
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
@@ -26,6 +31,14 @@ export default function (state=stateInit,{type,payload}) {
     }else if (type === UP_PAYMENTLIST) {
         state.rsPaymentList = payload.rsPaymentList;
         state.limit = payload.limit;
+    }else if (type === UP_CLASSINFOLIST) {
+        state.radioClassInfoList = payload.radioClassInfoList
+    }else if (type === UP_PLAYLIST) {
+        state.playMp3 = payload.playMp3
+    }else if (type === UP_MUSICURL){
+        state.musicUrl = payload.musicUrl
+    }else if (type === UP_PROGRAMLIST){
+        state.programList = payload.programList
     }else if (type === UP_RADIODJDETAIL) {
         state.djRadio = payload.djRadio;
     } else if(type === UP_RADIODJPROGRAM){
@@ -33,6 +46,8 @@ export default function (state=stateInit,{type,payload}) {
         state.limit = payload.limit;
     }else if(type === CHANGE_IS_LOADING){
         state.isLoading = payload.isLoading
+    }else if(type === CHANGE_ASC){
+        state.asc = payload.asc;
     }
     return state;
 }

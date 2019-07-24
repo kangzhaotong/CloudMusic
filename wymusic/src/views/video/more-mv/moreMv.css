@@ -1,0 +1,74 @@
+
+.more-mv-container{
+    padding:0 20px;
+}
+.more-mv-container .more-nav{
+    position: fixed;
+    top:0;
+    left:20;
+    background: white;
+    z-index:99;
+    width: 100%;
+    line-height:100px;
+}
+.more-nav p{
+    font-size:40px;
+}
+.more-nav span{
+    font-size:50px;
+    margin-right:20px;
+}
+.more-mv-container h4{
+    line-height:100px;
+    margin-top:20px;
+}
+.more-mv-container .wy{
+    line-height:100px;
+    margin-top:100px;
+}
+.more-mv-content{
+    width:49%;
+    margin-bottom:30px;
+    position: relative;
+}
+.more-mv-content .name{
+    font-size:24px;
+    color: #8F8F8F;
+}
+.more-mv-title{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+.more-mv-box:nth-last-child(1){
+    margin-bottom:100px;
+}
+.more-mv-content img{
+    width:100%;
+    height:200px;
+    border-radius:10px 10px;
+}
+.more-mv-content p{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width:100%;
+    font-size:24px;
+}
+.more-play-num span{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    color: white;
+    font-size:24px;
+}
+.fmxx p{
+    color:white;
+    font-size:24px;
+    position: absolute;
+    left:10px;
+    bottom:100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}

@@ -3,7 +3,14 @@ import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react
 import Account from './components/account/account'
 import My from './views/My/index';
 import Discover from "./components/discover/discover";
-import Video from './components/video/video';
+
+// import Search from "./components/discover/search";
+// import ComSearch from "@/components/common/search/Search"
+import PlayMv from "@/views/video/play-mv/PlayMv";//播放组件
+import MoreMv from  "@/views/video/more-mv/MoreMv"//更多Mv
+import RankingMv from "@/views/video/ranking-mv/RankingMv" //mv 排行榜
+import ClassificationMv from "@/views/video/classification-mv/ClassificationMv"
+import Video from '@/views/video'; 
 import Friend from './components/friends/Friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
@@ -12,6 +19,7 @@ import Player from "./components/discover/player";
 import PlayListDetail from './views/PlayListDetail';
 //新歌列表
 import AlbumList from './views/AlbumList';
+
 
 // import router from "./router";
 // import Run from "./components/discover/run";
@@ -28,6 +36,8 @@ import RadioClassification from "./components/discover/RadioStation/RadioClassif
 import RadioRank from "./components/discover/RadioStation/RadioRank";
 import MusicClass from "./components/discover/RadioStation/MusicClass";
 import Concentrate from "./components/discover/RadioStation/Concentrate";
+import RadioInfo from "./components/discover/RadioStation/RadioInfo";
+import RmProgram from "./components/discover/RadioStation/RmProgram";
 import Song from "./components/discover/song";
 import Rank from "./components/discover/rank";
 import RadioDetail from "./components/discover/RadioStation/RadioDetail";
@@ -67,6 +77,7 @@ class App extends React.Component {
 						</NavLink>
 
 					</div>
+
 					<div className="view">
 						<Switch>
 							<Redirect from="/" to="/discover" exact/>
@@ -82,6 +93,9 @@ class App extends React.Component {
 							<Route path="/album" component={Album} />
 				
 							<Route path="/search" component={Search} />
+							<Route path="/playMy" component={PlayMv} />	
+							<Route path="/moreMv" component={MoreMv} />	
+							<Route path="/mvRanking" component={RankingMv} />	
 							{/* <Redirect from="/my/collection" to="/my/collection/album" >
 								<Route path="/my/collection" component={Collection} />
 							</Redirect> */}
@@ -100,9 +114,12 @@ class App extends React.Component {
 							<Route path="/radio/radiorank" component={RadioRank}/>
 							<Route path="/radio/musicclass" component={MusicClass}/>
 							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route exact path="/radio/radioinfo" component={RadioInfo}/>
+							<Route path="/radio/radioinfo/RmProgram" component={RmProgram}/>
 							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 							<Route path="/song" component={Song} />
 							<Route path="/rank" component={Rank} />
+							<Route path="/mvClassification" component={ClassificationMv} />
 							<Route path="/radio/radiodetail" component={RadioDetail}/>
 							<Route path="/login" component={Login}/>
 						</Switch>

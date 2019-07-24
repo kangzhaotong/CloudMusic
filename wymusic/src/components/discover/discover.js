@@ -32,7 +32,7 @@ class Home extends Component{
             centeredSlides: true,
             autoplay: 3000,
             autoplayDisableOnInteraction: false,
-        
+   
             // 如果需要分页器
             pagination: {
                el: '.swiper-pagination',

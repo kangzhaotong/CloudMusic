@@ -4,9 +4,30 @@ import {bindActionCreators} from 'redux';
 import {withRouter} from 'react-router-dom';
 import '../assets/css/playList.css';
 import playListCreator from '../store/actionCreator/playListCreator';
+import axios from 'axios'
 import loadingCreator from '../store/actionCreator/loading';
 
 class PlayListDetail extends Component {
+    git_collect(id){
+        axios.get("/wymusic/playlist/subscribe",{
+            params:{t:1,id}
+        }
+        ).then(({ data }) => {
+            if(data.code===200){
+                alert("收藏成功")
+            }
+        })
+    }
+    cancel_collect(id){
+        axios.get("/wymusic/playlist/subscribe",{
+            params:{t:2,id}
+        }
+        ).then(({ data }) => {
+            if(data.code===200){
+                alert("取消收藏成功")
+            }
+        })
+    }
     render() {
         return (
             <div id="playListWrap">
@@ -18,7 +39,7 @@ class PlayListDetail extends Component {
                     <div className="playListTop">
                         <div className="listTop">
                             <i className="iconfont iconfanhui" onClick={() => {
-                                this.props.history.push("/");
+                                this.props.history.go(-1);
                             }}></i>
                             <span>歌单</span>
                             <div className="listTopIcon">
@@ -79,11 +100,12 @@ class PlayListDetail extends Component {
                         <div className="playAllOne">
                             <i className="iconfont iconshipin1"></i>
                             <span>播放全部</span>
-                            <b>(共{this.props.playList.trackCount}首)</b>
+                            <b>(共{this.props.playList.subscribed}首)</b>
                         </div>
                         <div className="playAllTwo">
-                            <span style={{display:this.props.playList.subscribed?'none':'inline'}}>+ 收藏({this.props.playList.subscribedCount})</span>
-                            <span style={{display:this.props.playList.subscribed?'inline':'none'}}>- 已收藏({this.props.playList.subscribedCount})</span>
+                      
+                            <span style={{display:this.props.playList.subscribed?'none':'inline'}} onClick={this.git_collect.bind(this,this.props.playList.id)}>+ 收藏({this.props.playList.subscribedCount})</span>
+                            <span style={{display:this.props.playList.subscribed?'inline':'none'}} onClick={this.cancel_collect.bind(this,this.props.playList.id)}>- 已收藏({this.props.playList.subscribedCount})</span>
                         </div>
                     </div>
                     <div className="isLoading" style={{display:this.props.isLoading?'block':'none'}}>加载中....</div>
@@ -92,7 +114,7 @@ class PlayListDetail extends Component {
                         this.props.playList.tracks.map((v, i) => {
                             return (
                                 <div key={i} className="songItem" onClick={()=>{
-                                    this.props.history.push("/player/"+v.id)
+                                    this.props.history.push("/playListDetails/"+v.id)
                                 }}>
                                     <div className="songInfo">
                                         <span className="songNum">{i + 1}</span>

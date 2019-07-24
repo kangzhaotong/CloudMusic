@@ -6,26 +6,25 @@ import "../../../assets/css/RadioStation/rsPrice.css"
 class Concentrate extends React.Component{
     constructor(props) {
         super(props);
-        this.state = ({
-            limit:20,
-          isLoadingMore: false
-        });
+        this.handle = this.handle.bind(this)
     }
     render(){
         return (
-            <div>
+            <div className="wrap-payment" >
                  
                 <div className="back">
-                    <i className="iconfont icon-arrow-right" onClick={()=>{
+                    <i className="iconfont iconfanhui" onClick={()=>{
                         this.props.history.go(-1)
                     }}></i><span>付费精品</span>
                 </div>  
-                <div className="payment-box" ref="upPaymentBox" onTouchMove={this.handle.bind(this)}>
+                <div className="payment-box" ref="upPaymentBox" onScroll={this.handle}>
                     {
                         this.props.rsPaymentList.map(v => {
                             return (
-                                <div key={v.id} className="payment">
-                                    <div><img src={v.picUrl}></img></div>
+                                <div key={v.id} className="payment" onClick={()=>{
+                                    this.props.history.push("/radio/radiodetail/"+v.id)
+                                }}>
+                                    <div><img src={v.picUrl} alt=""></img></div>
                                     <div className="payment-price">
                                         <h3>{v.name}</h3>
                                         <p>{v.rcmdText}<br/>最新上架</p>
@@ -35,38 +34,37 @@ class Concentrate extends React.Component{
                             )
                         })
                     }
+                <div className="is-load" style={{display:this.props.isLoading?"block":"none"}}>
+                    加载中……
                 </div>
-                <input type="button" ref="wrapper" onClick={() => {
-                    this.props.getPaymentList(this.props.limit + 20)
-                    }} value={"加载更多"} />
-                    
-                    <p>1</p>
-                    <p>1</p>
-                    <p>1</p>
+                </div>
             </div>
         )
     }
-    handle(){
-        let upPaymentBoxHeight=this.refs.upPaymentBox.clientHeight;
+    handle(e){
+        // let upPaymentBoxHeight=this.refs.upPaymentBox.clientHeight;
+        let upPaymentBoxHeight = document.querySelector(".payment-box").clientHeight;
         let documentHeight=document.documentElement.clientHeight;
-        let documentTop=document.documentElement.scrollTop;
-        let documentHeight1=document.body.scrollHeight;
-        console.log(upPaymentBoxHeight,documentHeight,documentTop,documentHeight1)
-        if(upPaymentBoxHeight>documentHeight&&upPaymentBoxHeight===documentHeight+documentTop-5){
-            console.log("到底了");
+        let documentTop=document.body.scrollTop;
+        // console.log(upPaymentBoxHeight,documentHeight,documentTop)
+        if(upPaymentBoxHeight>documentHeight&&upPaymentBoxHeight < documentHeight+documentTop-50&&this.props.limit <= this.props.rsPaymentList.length){
+            // console.log("到底了",this.props.limit,this.props.rsPaymentList.length);
             this.props.getPaymentList(this.props.limit + 20);
-        }  
+        }
+    }
+    componentWillUnmount(){
+        document.removeEventListener("scroll",this.handle,true)
     }
     componentDidMount() {
         this.props.getPaymentList();
-        document.addEventListener("scroll",this.handle())   
+        document.addEventListener("scroll",this.handle,true)   
     }
 }
 function mapStateToProps(state){
-    // console.log(state)
     return {
         limit:state.radioStation.limit,
-        rsPaymentList:state.radioStation.rsPaymentList
+        rsPaymentList:state.radioStation.rsPaymentList,
+        isLoading:state.radioStation.isLoading
     }
 }
 export default connect(mapStateToProps, dispatch=>bindActionCreators(radioCreator,dispatch))(Concentrate);

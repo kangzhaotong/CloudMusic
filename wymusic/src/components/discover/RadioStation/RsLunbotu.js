@@ -14,7 +14,7 @@ class RsLunbotu extends Component{
                         this.props.rsBannerList.map((v,i)=>{
                             return (
                                 <div className="swiper-slide" key={i}>
-                                    <img  src={v.imageUrl}></img>
+                                    <img  src={v.imageUrl} alt=""></img>
                                 </div>
                             )
                         })
@@ -25,23 +25,15 @@ class RsLunbotu extends Component{
         )
     }
     lunbotu(){
-        var mySwiper11 = new Swiper ('.swiper-container', {
+        var mySwiper = new Swiper ('.swiper-container', {
             direction: 'horizontal', // 垂直切换选项horizontal
             loop: true, // 循环模式选项
             observer:true,
-            observeParents:true,  
-            paginationClickable :true,
-            centeredSlides: true,
-            autoplay: 3000,
-            autoplayDisableOnInteraction: false,
-        
+            autoplay:true,
             // 如果需要分页器
             pagination: {
                el: '.swiper-pagination',
             },
-            autoplay:{
-                stopOnLastSlide: true
-            },    
         })        
     }
     componentDidMount(){
