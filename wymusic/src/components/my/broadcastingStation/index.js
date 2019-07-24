@@ -47,14 +47,20 @@ export default class Commona extends Component {
                                 this.state.recommend_radio.map((v, i) => {
                                     if(v.picUrl){
                                         return (
-                                            <li key={i}>
+                                            <li key={i} onClick={()=>{
+                                                
+                                                // this.props.history.push("/radio/radiodetail/"+v.id)
+                                            }}>
                                                      <img src={v.picUrl} alt="" />
                                                    <p>{v.name}</p>
                                             </li>
                                         )
                                     }else{
                                         return (
-                                            <li key={i}>
+                                            <li key={i} onClick={()=>{
+                                                console.log(this.props)
+                                                // this.props.history.push("/radio/radiodetail/"+v.id)
+                                            }}>
                                                      <img src={v.coverUrl} alt="" />
                                                         <p>{v.title}</p>
     
