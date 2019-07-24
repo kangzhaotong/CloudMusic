@@ -11,6 +11,7 @@ class Album extends Component{
 
   }
   back(){
+    console.log(111111)
     this.props.history.push("/discover");
   }
   
@@ -72,14 +73,16 @@ class Album extends Component{
 
             {/*最新上架*/}
             <div className="putaway">
-                <div className="head">
+                <div className="heada">
                   <span>最新上架</span>
                   <i className="iconfont iconarrow-right1"></i>
                 </div>
                 <div className="con">
                   {
                     AlbumPut.map( (item,index) => {
-                        return <p className='content' key={index}>                         
+                        return <p className='content' key={index} onClick={()=>{
+                          this.props.history.push("/albumList/"+item.id)
+                      }}>                         
                           <img  src={item.blurPicUrl} alt="完美" />
                           <span>{item.name}</span>
                           

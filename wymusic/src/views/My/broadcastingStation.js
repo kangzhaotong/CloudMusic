@@ -48,7 +48,9 @@ class BroadcastingStation extends Component {
                         {
                             this.state.subscribe.map((v,i)=>{
                                 return(
-                                    <li key={i}>
+                                    <li key={i} onClick={()=>{
+                                        this.props.history.push("/radio/radiodetail/"+v.id)
+                                    }}>
                                     <img src={v.picUrl} alt=""/>
                                     <h5>{v.name}</h5>
                                     <p>{v.dj.nickname}</p>
@@ -61,9 +63,9 @@ class BroadcastingStation extends Component {
                         </ul>
                     </div>
                 </div>
-                <Commona init={"语音直播"} recommend_radio={this.state.collect_video}></Commona>
+                <Commona init={"语音直播"} recommend_radio={this.state.collect_video} ></Commona>
                 
-                <Commona init={"为你推荐"} recommend_radio={this.state.recommend_radio} name={1}></Commona>
+                <Commona init={"为你推荐"} recommend_radio={this.state.recommend_radio} name={1} ></Commona>
             </div>
         )
     }

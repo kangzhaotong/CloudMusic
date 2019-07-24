@@ -24,14 +24,22 @@ class Home extends Component{
     }
     componentDidUpdate(){
         new Swiper ('.swiper-container', {
-            loop: true,  //循环
-            autoplay: {   //滑动后继续播放（不写官方默认暂停）
-                disableOnInteraction: false,
-      
+
+            loop: true, // 循环模式选项
+            observer:true,
+            observeParents:true,  
+            paginationClickable :true,
+            centeredSlides: true,
+            autoplay: 3000,
+            autoplayDisableOnInteraction: false,
+   
+            // 如果需要分页器
+            pagination: {
+               el: '.swiper-pagination',
             },
-            pagination: {  //分页器
-                el: '.swiper-pagination'
-            }
+            autoplay:{
+                stopOnLastSlide: true
+            },  
         })
     }   
     

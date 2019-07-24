@@ -43,8 +43,8 @@ class Song extends Component {
                                         this.props.history.push("/player/"+v.song.id)
                                     }}>
                                         <div className="song_top_song_name">
-                                            <span>{v.song.name}</span><br />
-                                            <div className="songSQ">SQ</div><i>{v.song.ar[0].name}</i>
+                                            <span > {v.song.name}</span><br />
+                                            <i>{v.song.ar[0].name}</i>
                                         </div>
                                         <div className="tubiao">
                                             

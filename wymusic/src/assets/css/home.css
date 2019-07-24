@@ -50,14 +50,11 @@ body{
     font-size:28px;
     color:#c5c5c6;
 }
-.iconyinlebofangxuanlvjiezou{
-    font-size: 41px!important;
-}
-#header .icon-gedan{
+#header .iconyinlebofangxuanlvjiezou{
     float: left;
-    font-size:41px !important;
+    font-size:42px !important;
     color:#000001;
-    margin-top:10px !important;
+    margin-top:6px !important;
     font-weight:700;
 
 }
