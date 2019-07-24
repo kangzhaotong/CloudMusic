@@ -83,17 +83,17 @@ body{
 }
 
 /* 最新上架 */
-#album .putaway .head{
+#album .putaway>.heada{
   overflow: hidden;
 }
-#album .putaway .head>span{
+#album .putaway .heada>span{
     font-size:33px;
     font-weight:700;
     margin-top:68px;
-    margin-left:20px;
+    margin-left:40px;
     display: inline-block;
 }
-#album .putaway .head>i{
+#album .putaway .heada>i{
   font-size:26px;
   color:black;
   display: inline-block;

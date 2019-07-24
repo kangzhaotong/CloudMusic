@@ -34,7 +34,9 @@ class CD extends Component {
               <div className="con">
                 {
                   AlbumPut.map( (item,index) => {
-                      return <p className='content' key={index}>                         
+                      return <p className='content' key={index} onClick={()=>{
+                        this.props.history.push("/albumList/"+item.id)
+                    }}>                         
                         <img   src={item.blurPicUrl} alt="完美" />
                         <span>{item.name}</span>
                         
@@ -56,7 +58,9 @@ class CD extends Component {
                 <div className="new">
                 {
                   AlbumPut.map( (item,index) => {
-                      return <p className='content' key={index}>                         
+                      return <p className='content' key={index} onClick={()=>{
+                        this.props.history.push("/albumList/"+item.id)
+                    }}>                         
                         <img   src={item.blurPicUrl} alt="完美" />
                         <span>{item.name}</span>
                         
