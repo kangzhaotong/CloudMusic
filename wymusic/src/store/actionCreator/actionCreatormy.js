@@ -1,5 +1,4 @@
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
 import { USER_PLAYLIST, COLLECT, COLLECT_ALBUM, COLLECT_SINGER, COLLECT_VIDEO } from '../actionType/actionTypemy';
 export default {
     //用户歌单

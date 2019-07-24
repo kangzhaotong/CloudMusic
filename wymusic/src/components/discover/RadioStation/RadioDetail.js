@@ -29,7 +29,7 @@ class RadioDetail extends React.Component {
         let clientHeight = this.refs.lala.clientHeight;
         let scrollHeight = document.body.clientHeight;
         if (clientHeight<scrollTop+scrollHeight-200 && this.props.limit<this.props.djProgram.count) { // 如果滚动到接近底部，自动加载下一页
-            this.props.getDjRadioProgram(this.props.match.params.id,this.props.limit + 20)
+            this.props.getDjRadioProgram(this.props.match.params.id,this.props.limit + 20,!this.props.asc)
         }
     }
 
@@ -135,7 +135,9 @@ class RadioDetail extends React.Component {
                                 <span className={"jiemu-jieshao-1"}>共{this.props.djProgram.count}期</span>
                             </div>
                             <div style={{display: "flex"}}>
-                                <div className={"jiemu-jieshao-right"}>
+                                <div className={"jiemu-jieshao-right"} onClick={()=>{
+                                    this.props.getDjRadioProgram(this.props.match.params.id,this.props.limit,this.props.asc)
+                                }}>
                                     <i className={"iconfont iconjiantou"}></i>
                                     <span className={"jiemu-jieshao-2"}>排序</span>
                                 </div>
@@ -198,7 +200,7 @@ class RadioDetail extends React.Component {
                                 <div className={"fenlei"}>分类：
                                     <span className={"category"}>{this.props.djRadio.category}</span>
                                 </div>
-                                <div>
+                                <div className={"zz"}>
                                     {this.props.djRadio.desc}
                                 </div>
                             </div>
@@ -243,7 +245,6 @@ class RadioDetail extends React.Component {
 }
 
 function mapStateToProps(state) {
-    // console.log(state);
     let subCount = state.radioStation.djRadio.subCount;
     if (subCount > 10000) {
         subCount = parseInt(subCount / 10000) + "万"
@@ -253,7 +254,8 @@ function mapStateToProps(state) {
         djProgram: state.radioStation.djProgram,
         subCount,
         limit: state.radioStation.limit,
-        isLoading:state.radioStation.isLoading
+        isLoading:state.radioStation.isLoading,
+        asc:state.radioStation.asc
     }
 }
 

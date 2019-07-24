@@ -12,7 +12,8 @@ import {
     UP_PROGRAMLIST,
     UP_RADIODJDETAIL,
     UP_RADIODJPROGRAM,
-    CHANGE_IS_LOADING
+    CHANGE_IS_LOADING,
+    CHANGE_ASC
 } from "../../actionType/radioStation"; 
 export default function (state=stateInit,{type,payload}) {
     state = JSON.parse(JSON.stringify(state));
@@ -45,6 +46,8 @@ export default function (state=stateInit,{type,payload}) {
         state.limit = payload.limit;
     }else if(type === CHANGE_IS_LOADING){
         state.isLoading = payload.isLoading
+    }else if(type === CHANGE_ASC){
+        state.asc = payload.asc;
     }
     return state;
 }

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
 import {GETSONGLYRIC, GETSONGPLAY,GETSONGDETAIL} from "../actionType/player"
 
 export default {

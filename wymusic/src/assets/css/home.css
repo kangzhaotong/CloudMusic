@@ -46,8 +46,12 @@ body{
     color:#949595;
     margin-right:14px;
 }
-
-#discover #header>i:nth-of-type(2){
+#header .search input{
+    text-indent:150px;
+    font-size:28px;
+    color:#c5c5c6;
+}
+#header .icon-gedan{
     float: left;
     font-size:41px !important;
     color:#000001;

@@ -68,6 +68,7 @@
     "terser-webpack-plugin": "1.2.3",
     "ts-pnp": "1.1.2",
     "url-loader": "1.1.2",
+    "video-react": "^0.14.0",
     "webpack": "4.29.6",
     "webpack-dev-server": "3.2.1",
     "webpack-manifest-plugin": "2.0.4",
@@ -144,6 +145,7 @@
     ]
   },
   "devDependencies": {
+    "mockjs": "^1.0.1-beta3",
     "http-proxy-middleware": "^0.19.1"
   }
 }

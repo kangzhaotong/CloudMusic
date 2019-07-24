@@ -9,7 +9,8 @@ export const UP_MP3 = "UP_MP3";
 export const UP_PLAYLIST = "UP_PLAYLIST";
 export const UP_MUSICURL = "UP_MUSICURL";
 export const UP_PROGRAMLIST = "UP_PROGRAMLIST";
-export const CHANGE_IS_LOADING = "CHANGE_IS_LOADING"
 export const UP_RADIODJDETAIL = "UP_RADIODJDETAIL";
 export const UP_RADIODJPROGRAM = "UP_RADIODJPROGRAM";
+export const CHANGE_IS_LOADING = "CHANGE_IS_LOADING";
+export const CHANGE_ASC = "CHANGE_ASC";
 

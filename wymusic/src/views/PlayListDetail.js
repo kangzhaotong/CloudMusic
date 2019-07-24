@@ -9,31 +9,26 @@ import loadingCreator from '../store/actionCreator/loading';
 
 class PlayListDetail extends Component {
     git_collect(id){
-        console.log("收藏",id)
         axios.get("/wymusic/playlist/subscribe",{
             params:{t:1,id}
         }
         ).then(({ data }) => {
-            console.log(data,"2222")
             if(data.code===200){
                 alert("收藏成功")
             }
         })
     }
     cancel_collect(id){
-        console.log("取消收藏")
         axios.get("/wymusic/playlist/subscribe",{
             params:{t:2,id}
         }
         ).then(({ data }) => {
-            console.log(data,"2222")
             if(data.code===200){
                 alert("取消收藏成功")
             }
         })
     }
     render() {
-        console.log(this.props.playList.creator.userType)
         return (
             <div id="playListWrap">
                 <div className="playListTopWrap">

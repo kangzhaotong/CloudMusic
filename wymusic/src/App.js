@@ -3,7 +3,13 @@ import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react
 import Account from './components/account/account'
 import My from './views/My/index';
 import Discover from "./components/discover/discover";
-import Video from './components/video/video';
+// import Search from "./components/discover/search";
+// import ComSearch from "@/components/common/search/Search"
+import PlayMv from "@/views/video/play-mv/PlayMv";//播放组件
+import MoreMv from  "@/views/video/more-mv/MoreMv"//更多Mv
+import RankingMv from "@/views/video/ranking-mv/RankingMv" //mv 排行榜
+import ClassificationMv from "@/views/video/classification-mv/ClassificationMv"
+import Video from '@/views/video'; 
 import Friend from './components/friends/Friend';
 import './assets/css/main.css';
 import Everyday from "./components/discover/Everyday";
@@ -86,6 +92,9 @@ class App extends React.Component {
 							<Route path="/album" component={Album} />
 				
 							<Route path="/search" component={Search} />
+							<Route path="/playMy" component={PlayMv} />	
+							<Route path="/moreMv" component={MoreMv} />	
+							<Route path="/mvRanking" component={RankingMv} />	
 							{/* <Redirect from="/my/collection" to="/my/collection/album" >
 								<Route path="/my/collection" component={Collection} />
 							</Redirect> */}
@@ -109,6 +118,8 @@ class App extends React.Component {
 							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
 							<Route path="/song" component={Song} />
 							<Route path="/rank" component={Rank} />
+							<Route path="/mvClassification" component={ClassificationMv} />
+							<Route path="/radio/radiodetail" component={RadioDetail}/>
 							<Route path="/login" component={Login}/>
 						</Switch>
 					</div>

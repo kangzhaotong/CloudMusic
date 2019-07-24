@@ -10,7 +10,7 @@ class Slider extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            myid:JSON.parse(localStorage.userInfo).userId
+            myid:localStorage.userId
         }
         console.log(this.state.myid)
     }
