@@ -8,15 +8,16 @@ class Rank extends Component{
         super(props);
         //关键就是这里，把要使用this的函数  在构造函数中用bind方法传入this
         this.back = this.back.bind(this);
-        this.run = this.run.bind(this);
+        // this.run = this.run.bind(this);
   
     }
     back(){
         this.props.history.go(-1);
     }
-    run(){
-        this.props.history.push("/rank");
+    run(id){
+        this.props.history.push("/playListDetails/"+id)
     }
+
     componentDidMount(){
       this.props.getGf();
       this.props.getTj();
@@ -44,7 +45,9 @@ class Rank extends Component{
                 {
                   guanfang.map((item,index)=>{
                     return (
-                      <div className="content" key={index}>
+                      <div className="content" key={index}  onClick={()=>{
+                          this.run(item.id)
+                      }}>
                         <img src={item.coverImgUrl} style={{width:'130px',height:'130px',borderRadius:'10%'}} alt="" />
                         <p className="music">
                           {
@@ -52,7 +55,7 @@ class Rank extends Component{
                             return <span key={i}>
                                       {i+1}. {v.first} - {v.second}
                                   </span>
-                          })    
+                          })
                         }
                         </p>
                       </div>
@@ -66,7 +69,9 @@ class Rank extends Component{
                   {
                     tuijian.map((item,index)=>{
                       return (
-                        <div key={index}>
+                        <div key={index} onClick={()=>{
+                            this.run(item.id)
+                        }}>
                             <img src={item.coverImgUrl} style={{width:'100%',borderRadius:'10%'}} alt="" />
                             <p>{item.name}</p>
                             <p>{item.updateFrequency}</p>
@@ -81,7 +86,9 @@ class Rank extends Component{
                 <div className="content">
                  {
                   quanqiu.map((item,index)=>{
-                    return <div key={index} >
+                    return <div key={index} onClick={()=>{
+                        this.run(item.id)
+                    }}>
                             <img src={item.coverImgUrl} style={{width:'100%',borderRadius:'10%'}} alt="" />
                             <p>{item.name}</p>
                           </div>
@@ -94,7 +101,9 @@ class Rank extends Component{
                 <div className="content">
                 {
                   gengduo.map((item,index)=>{
-                    return <div key={index} >
+                    return <div key={index} onClick={()=>{
+                        this.run(item.id)
+                    }}>
                             <img src={item.coverImgUrl} style={{width:'100%',borderRadius:'10%'}} alt="" />
                             <p>{item.name}</p>
                           </div>

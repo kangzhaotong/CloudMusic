@@ -34,7 +34,6 @@ body{
     background: #f7f7f7;
     float: left;
     font-size:24px;
-    padding-left:125px;
     margin-right:26px;
     border:none;
 }
@@ -50,6 +49,9 @@ body{
     text-indent:150px;
     font-size:28px;
     color:#c5c5c6;
+}
+.iconyinlebofangxuanlvjiezou{
+    font-size: 41px!important;
 }
 #header .icon-gedan{
     float: left;
