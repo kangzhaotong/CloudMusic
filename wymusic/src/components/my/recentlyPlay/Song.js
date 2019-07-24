@@ -42,7 +42,7 @@ class Song extends Component {
                                     <li key={i} >
                                         {/* <i className="iconfont iconbofang1 one"></i> */}
                                         <div className="song_top_song_name">
-                                            <span>{v.song.name}</span><br />
+                                            <span > {v.song.name}</span><br />
                                             <i>{v.song.ar[0].name}</i>
                                         </div>
                                         <div className="tubiao">
