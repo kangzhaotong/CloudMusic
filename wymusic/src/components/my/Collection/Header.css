@@ -17,6 +17,7 @@ p {
 }
 .header_collect span{
     color: black;
+    font-size: 54px;
 }
 .header_collect_left{
     float: left;
