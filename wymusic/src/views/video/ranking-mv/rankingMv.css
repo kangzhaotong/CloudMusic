@@ -19,6 +19,7 @@
 .ranking-nav{
     margin-top:100px;
     position: relative;
+    font-size: 30px;
 }
 .ranking-nav::after{
     content: "  ";
@@ -93,6 +94,7 @@
 .works-name{
     margin-left:80px;
     color:#8F8F8F;
+    font-size: 22px;
 }
 .ranking-num-active{
     color:red;

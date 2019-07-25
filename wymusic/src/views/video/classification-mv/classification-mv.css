@@ -25,6 +25,7 @@
     z-index:10;
     padding-bottom:30px;
     padding-top:30px;
+    font-size: 30px;
 }
 .category-mv-box{
     padding:0 20px;
@@ -37,6 +38,7 @@
     position: relative;
     width:49%;
     margin-bottom:30px;
+    font-size: 26px;
 }
 .category-mv-content:nth-child(1),.category-mv-content:nth-child(2){
     margin-top:180px;
@@ -52,6 +54,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    color: #000000;
 }
 .category-mv-content>span{
     color: #8F8F8F;
@@ -80,6 +83,7 @@
 .category-xuanze-box p{
     height:30px;
     line-height:30px;
+    font-size: 30px;
 }
 .screen-mv-box{
     position: absolute;
