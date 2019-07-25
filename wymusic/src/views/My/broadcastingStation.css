@@ -1,0 +1,93 @@
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+span{
+    color: black;
+}
+.myBroadcastingStation{
+    margin-left: 44px;
+}
+.myBroadcastingStation h3{
+    width:100%;
+    height:122px;
+    /* background: red; */
+    line-height: 122px;
+    font-size: 34px;
+}
+.myBroadcastingStation .apply{
+    width:100%;
+    height:138px;
+    /* background: firebrick; */
+    line-height: 138px;
+}
+.myBroadcastingStation .apply span{
+    float: left;
+    width:82px;
+    height:82px;
+    margin-left:20px; 
+    margin-right:20px;
+    font-size: 82px;
+    color: black;
+}
+.myBroadcastingStation .apply h4{
+    float: left;
+    font-size: 36px;
+}
+.myBroadcastingStation .apply i{
+    float: right;
+    width:38px;
+    height:38px;
+    margin-right: 56px;
+    font-size: 38px;
+    color: black;
+}
+
+
+.myBroadcastingStation .content h3{
+    width:100%;
+    height:108px;
+    line-height: 108px;
+    font-size: 36px;
+}
+.myBroadcastingStation.content ul li{
+    width:100%;
+    height: 162px;
+   
+}
+
+.myBroadcastingStation .content ul li{
+    margin: 0px 0 30px 0;
+}
+.myBroadcastingStation .content ul li  img{
+    display: block;
+    width:172px;
+    height:172px;
+    margin: 13px 0px 0px 5px;
+    border-radius:9px;
+    background:yellow;
+    float: left;
+}
+.myBroadcastingStation .content ul li h5{
+    font-size: 34px;
+    padding-top:26px;
+    padding-bottom:15px;
+    margin-left:198px 
+}
+.myBroadcastingStation .content ul li p{
+    margin-left:198px ;
+
+    font-size: 28px;
+    color: #adadad;
+    
+}
+.myBroadcastingStation .content ul li span{
+    width:44px;
+    height:44px;
+    float: right;
+    margin: -80px 20px 0px 0px;
+    font-size: 44px;
+    color: black;
+
+}

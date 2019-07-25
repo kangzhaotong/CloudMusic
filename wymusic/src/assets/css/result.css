@@ -1,0 +1,142 @@
+html,body{
+  height: 100%;
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  display: flex;
+  flex-direction:column;
+}
+#result .resultTop{
+    height:75px;
+    width:100%;
+    overflow: hidden;
+    position: relative;
+
+}
+#result .resultTop>i:nth-of-type(1){
+  font-size:44px;
+  position: absolute;
+  top:18px;
+  color:black;
+  float: left;
+}
+#result .resultTop>input{
+  display: block;
+  margin-top:8px;
+  border:none;
+  margin-left:110px;
+  border-radius:39px;
+  width:604px;
+  height:72px;
+  background: #f7f7f7;
+  text-align:left;
+  padding-left:85px;
+  line-height:65px;
+  float: left;
+  font-size:26px;
+}
+#result .resultTop>span{
+  float: left;
+  position: absolute;
+  top:25px;
+  left:664px;
+  font-size:20px;
+  width:28px;
+  height:28px;
+  text-align: center;
+  line-height:23px;
+  color:white;
+  border-radius:50%;
+  background: #ccc;
+  float: left;
+}
+#result .resultTop>i:nth-of-type(2){
+  float: left;
+  position: absolute;
+  top:26px;
+  left:160px;
+  font-size:28px !important;
+  color:#999999;
+}
+
+#result .resultDan{
+  width:100%;
+  height:83px;
+  margin-top:20px;
+  overflow: hidden;
+}
+#result .resultDan>span{
+  font-size:34px;
+  color:#333334;
+  margin-top:15px;
+  margin-left:34px;
+  display: inline-block;
+}
+#result .resultDan>i{
+  font-size:26px;
+  margin-top:24px;
+  display: inline-block;
+} 
+#result .resultDan>div{
+  float: right;
+  width:156px;
+  height:52px;
+  border:2px solid #e6e6e6;
+  margin-top:10px;
+  margin-right:11px;
+  font-size:24px;
+  text-align:center;
+  line-height:45px;
+  border-radius:29px;
+}
+
+#result .conend{
+  padding-bottom:98px;
+}
+#result .content{
+ width:684px;
+  height:121px;
+  margin-left:32px;
+  margin-right:32px;
+  border-top:1px solid #e6e6e6;
+  position: relative;
+}
+#result .content span:nth-of-type(1){
+    font-size:29px;
+    color:#5f88b6;
+    margin-top:23px;
+    display: inline-block;
+    width:500px;
+}
+#result .content .com>span:nth-of-type(1){
+  font-size:21px;
+  color:#808080;
+  margin-top:12px;
+  display: inline-block;
+  float: left;
+}
+#result .content span:nth-of-type(2){
+  font-size:20px;
+  color:black;;
+  margin-top:10px;
+  margin-left:10px;
+  display: inline-block;
+  float: left;
+  
+}
+#result .content>i:nth-of-type(1){
+  font-size:37px !important;
+  color:#b3b3b3;
+  position: absolute;
+  left:570px;
+  top:45px;
+}
+#result .content>i:nth-of-type(2){
+  font-size:30px;
+  color:#b3b3b3;
+  position: absolute;
+  left:640px;
+  top:42px;
+}

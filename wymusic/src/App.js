@@ -1,14 +1,133 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react-router-dom';
+import Account from './components/account/account'
+import My from './views/My/index';
+import Discover from "./components/discover/discover";
+
+// import Search from "./components/discover/search";
+// import ComSearch from "@/components/common/search/Search"
+import PlayMv from "@/views/video/play-mv/PlayMv";//播放组件
+import MoreMv from  "@/views/video/more-mv/MoreMv"//更多Mv
+import RankingMv from "@/views/video/ranking-mv/RankingMv" //mv 排行榜
+import ClassificationMv from "@/views/video/classification-mv/ClassificationMv"
+import Video from '@/views/video'; 
+import Friend from './components/friends/Friend';
+import './assets/css/main.css';
+import Everyday from "./components/discover/Everyday";
+import Player from "./components/discover/player";
+//歌单列表
+import PlayListDetail from './views/PlayListDetail';
+//新歌列表
+import AlbumList from './views/AlbumList';
+
+
+// import router from "./router";
+// import Run from "./components/discover/run";
+//import Search from "./components/discover/search";
+import Collection from "./views/My/Collection";//我的收藏
+import BroadcastingStation from "./views/My/broadcastingStation";//我的电台
+import RecentlyPlay from "./views/My/recentlyPlay";//最近播放
+import Search from "./components/discover/search/search";
+import Result from "./components/discover/search/result";
+import Album from "./components/common/Album";
+import CD from "./components/common/CD";
+import Radio from "./views/RadioStation";
+import RadioClassification from "./components/discover/RadioStation/RadioClassification";
+import RadioRank from "./components/discover/RadioStation/RadioRank";
+import MusicClass from "./components/discover/RadioStation/MusicClass";
+import Concentrate from "./components/discover/RadioStation/Concentrate";
+import RadioInfo from "./components/discover/RadioStation/RadioInfo";
+import RmProgram from "./components/discover/RadioStation/RmProgram";
+import Song from "./components/discover/song";
+import Rank from "./components/discover/rank";
+import RadioDetail from "./components/discover/RadioStation/RadioDetail";
+//登录
+import Login from './views/login';
+
+
+
+
+// import router from "./router";
 
 class App extends React.Component {
-	
-	render() {
-		return (
-			<div>
+    render(){
+        return (
+			<Router>
+				<div className="App">
+					<div className="nav">
+						<NavLink to="/discover" activeClassName="activeStyle">
+							<i className="iconfont iconmusiccloud"></i>
+							<span>发现</span>
+						</NavLink>
+						<NavLink to="/video" activeClassName="activeStyle">
+							<i className="iconfont iconshipin1" aria-hidden="true"></i>
+							<span>视频</span>
+						</NavLink>
+						<NavLink to="/my" activeClassName="activeStyle">
+							<i className="iconfont  iconyinyue" aria-hidden="true"></i>
+							<span>我的</span>
+						</NavLink>
+						<NavLink to="/friend" activeClassName="activeStyle">
+							<i className="iconfont iconpengyou" aria-hidden="true"></i>
+							<span>朋友</span>
+						</NavLink>
+						<NavLink to="/account" activeClassName="activeStyle">
+							<i className="iconfont iconzhanghao" aria-hidden="true"></i>
+							<span>账号</span>
+						</NavLink>
+
+					</div>
+
+					<div className="view">
+						<Switch>
+							<Redirect from="/" to="/discover" exact/>
+							<Route path="/discover" component={Discover} />
+							<Route path="/video" component={Video} />
+							<Route path="/my" exact  component={My} />
+							<Route path="/friend" component={Friend} />
+							<Route path="/account" component={Account} />
+
+
+							<Route path="/everyday" component={Everyday} />
+							<Route path="/player/:id" component={Player} />
+							<Route path="/album" component={Album} />
 				
-			</div>
-		)
-	}
+							<Route path="/search" component={Search} />
+							<Route path="/playMy" component={PlayMv} />	
+							<Route path="/moreMv" component={MoreMv} />	
+							<Route path="/mvRanking" component={RankingMv} />	
+							{/* <Redirect from="/my/collection" to="/my/collection/album" >
+								<Route path="/my/collection" component={Collection} />
+							</Redirect> */}
+							<Route path="/my/collection" component={Collection} />
+							<Route path="/my/broadcastingStation"component={BroadcastingStation} />
+							<Route path="/my/recentlyPlay"component={RecentlyPlay} />
+							
+							<Route path="/result" component={Result} />
+							<Route path="/CD" component={CD} />
+							
+							<Route path='/playListDetails/:id' component={PlayListDetail}/>
+							<Route path='/albumList/:albumId' component={AlbumList}/>
+							
+							<Route exact path="/radio" component={Radio}/>
+							<Route path="/radio/radioclassification" component={RadioClassification}/>
+							<Route path="/radio/radiorank" component={RadioRank}/>
+							<Route path="/radio/musicclass" component={MusicClass}/>
+							<Route path="/radio/concentrate" component={Concentrate}/>
+							<Route exact path="/radio/radioinfo" component={RadioInfo}/>
+							<Route path="/radio/radioinfo/RmProgram" component={RmProgram}/>
+							<Route path="/radio/radiodetail/:id" component={RadioDetail}/>
+							<Route path="/song" component={Song} />
+							<Route path="/rank" component={Rank} />
+							<Route path="/mvClassification" component={ClassificationMv} />
+							<Route path="/radio/radiodetail" component={RadioDetail}/>
+							<Route path="/login" component={Login}/>
+						</Switch>
+					</div>
+				</div>
+			</Router>
+        )
+    }
 }
 
 export default App;

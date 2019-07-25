@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box;
+}
+.video-nav{
+    padding-top:10px;
+    width: 100%;
+}
+nav{
+    overflow-x:scroll;
+    white-space: nowrap; 
+}
+nav>.list{
+    font-size:30px;
+    height:80px;
+    line-height:80px;
+    display: inline-block;
+    padding:0 20px;
+    margin:0 20px;
+    color:black;
+}
+nav>a.active{
+    color:red;
+    border-bottom:3px solid red;
+}
+nav::-webkit-scrollbar {
+    background-color:#ddd;
+    height:1px;
+}
