@@ -7,11 +7,17 @@ export default {
             axios.get("/wymusic/user/playlist",{
                 params:{uid:id}
             }).then(({ data }) => {
-                // console.log(data.playlist)
-               
-                let my = data.playlist.filter(v=>v.userId ===id)
+                console.log(data.playlist)
+                var bbs = []
+                data.playlist.map((v,i)=>{
+                     if(v.userId===id/1){
+                        bbs.push(v)
+                     }
+                 })
+                // let my = data.playlist.filter(v=>v.userId ===id)
+                // console.log(id,"1111111")
                 dispatch({
-                    playlist: my,
+                    playlist: bbs,
                     type: USER_PLAYLIST,
                     id: data.province
                 })
@@ -24,15 +30,14 @@ export default {
             axios.get("/wymusic/user/playlist",{
                 params:{uid:id}
             }).then(({ data }) => {
-                // console.log(data,'啦啦啦')
                 var bbs = []
                 data.playlist.map((v,i)=>{
-                     if(v.userId===id){
+                    console.log(id,v.userId)
+                     if(v.userId===id/1){
                      }else{
                          bbs.push(v)
                      }
                  })
-                //  console.log(bbs)
                 dispatch({
                     collete:bbs,
                     type: COLLECT,
