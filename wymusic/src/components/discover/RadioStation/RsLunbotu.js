@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import Swiper from 'swiper';
+import 'swiper/dist/css/swiper.min.css'
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
 import radioCreator from '../../../store/actionCreator/radioStation'; 
@@ -24,12 +25,14 @@ class RsLunbotu extends Component{
             </div>
         )
     }
-    lunbotu(){
-        var mySwiper = new Swiper ('.swiper-container', {
-            direction: 'horizontal', // 垂直切换选项horizontal
+    componentDidUpdate(){
+        new Swiper ('.swiper-container', {
+            // direction: 'horizontal', // 垂直切换选项horizontal
             loop: true, // 循环模式选项
             observer:true,
-            autoplay:true,
+            autoplay: {   //滑动后继续播放（不写官方默认暂停）
+                disableOnInteraction: false
+            },
             // 如果需要分页器
             pagination: {
                el: '.swiper-pagination',
@@ -37,7 +40,7 @@ class RsLunbotu extends Component{
         })        
     }
     componentDidMount(){
-        this.lunbotu();
+        // this.lunbotu();
         this.props.getRsBannerList()
     }
 }

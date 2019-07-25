@@ -100,7 +100,7 @@ class PlayListDetail extends Component {
                         <div className="playAllOne">
                             <i className="iconfont iconshipin1"></i>
                             <span>播放全部</span>
-                            <b>(共{this.props.playList.subscribed}首)</b>
+                            <b>(共{this.props.playList.trackCount}首)</b>
                         </div>
                         <div className="playAllTwo">
                       
@@ -114,7 +114,7 @@ class PlayListDetail extends Component {
                         this.props.playList.tracks.map((v, i) => {
                             return (
                                 <div key={i} className="songItem" onClick={()=>{
-                                    this.props.history.push("/playListDetails/"+v.id)
+                                    this.props.history.push("/player/"+v.id)
                                 }}>
                                     <div className="songInfo">
                                         <span className="songNum">{i + 1}</span>

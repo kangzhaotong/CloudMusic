@@ -7,7 +7,7 @@ import actionCreate from '../../store/actionCreator/actionCreatormy'
 class BroadcastingStation extends Component {
     constructor(props){
         super(props)
-        console.log(props)
+        // console.log(props)
         this.state={
             recommend_radio:[],
             collect_video:[],
@@ -20,14 +20,14 @@ class BroadcastingStation extends Component {
         this.props.subscribe()
     }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
+        // console.log(nextProps)
         this.setState({
             recommend_radio:nextProps.my.recommend_radio,
             collect_video:(nextProps.my.collect_video).slice(0,3),
             subscribe:nextProps.my.subscribe,
         },()=>{
-            console.log(this.state.recommend_radio)
-            console.log(this.state.collect_video)
+            // console.log(this.state.recommend_radio)
+            // console.log(this.state.collect_video)
         })
       
     }

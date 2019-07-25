@@ -6,18 +6,18 @@ let reducer=(state=initState,action)=>{
     if(action.type===USER_PLAYLIST){
         newState.user_playlist.details=action.playlist; 
         newState.user_playlist.id=action.id; 
-        console.log(newState.user_playlist.details)
+        // console.log(newState.user_playlist.details)
     }
     //收藏
     if(action.type===COLLECT){
         newState.collet.details = action.collete
         newState.collet.id=action.id; 
-        console.log(newState.collet)
+        // console.log(newState.collet)
     }
     if(action.type===COLLECT_ALBUM){
         newState.album.collect_album=action.collect_album;
         newState.album.index = action.index
-        console.log(newState.album.index)
+        // console.log(newState.album.index)
     }
     if(action.type===COLLECT_SINGER){
         newState.singer.collect_singer=action.collect_singer;
@@ -38,7 +38,7 @@ let reducer=(state=initState,action)=>{
     }
     //推荐电台
     if(action.type===RECOMMEND_RADIO){
-        console.log(action.recommend_radio)
+        // console.log(action.recommend_radio)
         newState.recommend_radio = action.recommend_radio  
     }
     //订阅电台

@@ -1,5 +1,4 @@
 import axios from 'axios';
-import baseUrl from '../../baseUrl';
 import {UP_RADIODJDETAIL, UP_RADIODJPROGRAM, CHANGE_IS_LOADING, CHANGE_ASC} from "../actionType/radioStation";
 
 export default {

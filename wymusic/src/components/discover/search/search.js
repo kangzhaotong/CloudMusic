@@ -19,12 +19,12 @@ class Search extends Component{
     }
    
     handleKeyDown= (e)=>{
-        if (e.keyCode ===13){
+        if (e.keyCode === 13){
             this.props.history.push("result?keywords="+this.state.val);
         }
     }
      componentDidMount(){
-        console.log(this.props);
+        // console.log(this.props);
         this.props.getHot();
     }
 
@@ -35,7 +35,8 @@ class Search extends Component{
             <div id="search1">
                 {/*搜索*/}   
                 <div className='container'>
-                    <input type="text" defaultValue={this.state.val} onChange={this.handleChange.bind(this)}   onKeyDown={this.handleKeyDown.bind(this)} className='form-control' placeholder='那个女孩 最近很火哦'/>
+                    <input type="text" defaultValue={this.state.val} onChange={this.handleChange.bind(this)} 
+                        onKeyDown={this.handleKeyDown.bind(this)} className='form-control' placeholder='那个女孩 最近很火哦'/>
                      <i className="iconfont  iconfangdajing"></i>
                     <span onClick={this.go.bind(this)}>取消</span>
                 </div>   

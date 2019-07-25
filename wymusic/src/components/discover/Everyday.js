@@ -61,7 +61,6 @@ class Everyday extends Component{
     }
 
     componentDidMount() {
-        console.log(this.props);
         this.props.getTuijian();
     }
 

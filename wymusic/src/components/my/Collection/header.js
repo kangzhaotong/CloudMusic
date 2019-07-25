@@ -1,11 +1,8 @@
 import React, { Component } from 'react'
 import './Header.css'
 export default class Header extends Component {
-    constructor(props){
-        super(props)
-    }
     returna(){
-        console.log(this.props)
+        // console.log(this.props)
         this.props.history.push("/my");
     }
     render() {

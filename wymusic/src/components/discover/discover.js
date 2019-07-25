@@ -25,9 +25,9 @@ class Home extends Component{
     componentDidUpdate(){
         new Swiper ('.swiper-container', {
             loop: true,  //循环
+            observer:true,
             autoplay: {   //滑动后继续播放（不写官方默认暂停）
-                disableOnInteraction: false,
-      
+                disableOnInteraction: false
             },
             pagination: {  //分页器
                 el: '.swiper-pagination'

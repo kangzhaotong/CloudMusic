@@ -1,6 +1,5 @@
 import MVInfo from "./mvInfo"
 import Mock from "mockjs"
-import Tuijian from '@/components/video/Tuijian'
 
 const getNavList = "/getNavList" //获取导航列表
 const getMVInfo = "/getMVInfo"  //获取mv信息
@@ -10,9 +9,9 @@ function navInfo() {
         msg: "获取成功",
         data: [
             {
-                navtype: "推荐",
-                pathName: "/tuijian",
-                component:"Tuijian",
+                navtype: "MV",
+                pathName: "/mv",
+                component: "Mv"
             },
             {
                 navtype: "LOOK直播",
@@ -50,9 +49,9 @@ function navInfo() {
                 component: "Fanchang"
             },
             {
-                navtype: "MV",
-                pathName: "/mv",
-                component: "Mv"
+                navtype: "推荐",
+                pathName: "/tuijian",
+                component:"Tuijian",
             },
             {
                 navtype: "ACG音乐",

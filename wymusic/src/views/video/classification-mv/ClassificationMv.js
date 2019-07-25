@@ -1,10 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux"
-import { Player } from "video-react"
 import * as videoAction from "@/store/actionCreator/video"
 import { bindActionCreators } from "redux"
 import axios from "axios"
-import baseUrl from "@/baseUrl"
 import "./classification-mv.css"
 class ClassificationMv extends React.Component {
     constructor() {
@@ -172,8 +170,8 @@ class ClassificationMv extends React.Component {
         }
     }
     async playMv(item) {
-        console.log(item)
-        const {data} = await axios.get(baseUrl + "/mv/url?id=" + item.id)
+        // console.log(item)
+        const {data} = await axios.get("/wymusic/mv/url?id=" + item.id)
         var name = item.name
         var playCount = item.playCount > 10000 ? Math.round(item.playCount / 10000) + "万" : item.playCount
         this.props.history.push({

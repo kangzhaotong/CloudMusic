@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import './album.css'
 import { connect } from 'react-redux'
-import actionCreate from '../../../store/actionCreator/actionCreatormy'
-import axios from 'axios';
-import baseUrl from '../../../baseUrl';
-import { BrowserRouter as Router, Route, Link, Redirect, Switch } from 'react-router-dom';
+import actionCreate from '../../../store/actionCreator/actionCreatormy';
 class Album extends Component {
     constructor(props) {
         super(props)
@@ -21,7 +18,7 @@ class Album extends Component {
         this.setState({
             collect_album: nextProps.my.album.collect_album
         }, () => {
-            console.log(this.state.collect_album)
+            // console.log(this.state.collect_album)
             if (this.state.collect_album.length == 0) {
                 this.refs.btn.style.display = "block"
             } else {

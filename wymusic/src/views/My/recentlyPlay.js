@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Header from '../../components/my/Collection/header'
-import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, NavLink, Redirect } from 'react-router-dom';
 import Song from '../../components/my/recentlyPlay/Song'
 import LiveStreaming from '../../components/my/recentlyPlay/LiveStreaming'
 import Video from '../../components/my/recentlyPlay/Video'

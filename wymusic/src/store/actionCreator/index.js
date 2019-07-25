@@ -91,8 +91,6 @@ export default{
     
         return (dispatch)=>{
             axios.get("/wymusic/search?keywords="+keywords).then( res => {
-                console.log(res.data);
-                // console.log(res.data);
                 dispatch({
                     music:res.data.result.songs,
                     type:'RES'

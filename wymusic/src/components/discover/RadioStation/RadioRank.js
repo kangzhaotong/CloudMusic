@@ -18,9 +18,6 @@ class RadioRank extends React.Component{
         )
     }
 
-    componentDidMount() {
-        console.log(2062132164);
-    }
 }
 
 function mapStateToProps(state){

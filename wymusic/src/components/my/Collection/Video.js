@@ -5,7 +5,7 @@ import actionCreate from '../../../store/actionCreator/actionCreatormy'
 class Video extends Component {
     componentDidMount() {
         this.props.collect_video()
-        console.log(this.props.my.collect_video)
+        // console.log(this.props.my.collect_video)
     }
     render() {
         let collect_video = this.props.my.collect_video;

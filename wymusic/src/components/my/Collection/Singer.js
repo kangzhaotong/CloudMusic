@@ -12,17 +12,17 @@ class Singer extends Component {
         }
     }
     componentDidMount(){
-        console.log(this.props)
+        // console.log(this.props)
         this.props.collect_singer()
         this.props.singer_recommend()
     }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
+        // console.log(nextProps)
         this.setState({
             singer_recommend:nextProps.my.singer_recommend,
             collect_singer:nextProps.my.singer.collect_singer
         },()=>{
-            console.log(this.state.collect_singer.length)
+            // console.log(this.state.collect_singer.length)
             if(this.state.collect_singer.length===0){
                
                 this.refs.btn.style.display="block"

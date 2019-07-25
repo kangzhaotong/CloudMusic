@@ -1,11 +1,8 @@
 import React from "react"
 import { connect } from "react-redux"
-import { withRouter } from 'react-router-dom'
 import * as videoAction from "@/store/actionCreator/video"
 import { bindActionCreators } from "redux"
 import axios from "axios"
-import baseUrl from "@/baseUrl"
-import { Player } from "video-react"
 import "~/video-react/dist/video-react.css"
 import "./mv.css"
 
@@ -108,7 +105,7 @@ class Mv extends React.Component {
     }
 
     async playMv(item) {
-        const { data } = await axios.get(baseUrl + "/mv/url?id=" + item.id)
+        const { data } = await axios.get("/wymusic/mv/url?id=" + item.id)
         var name = item.name
         var playCount = item.playCount > 10000 ? Math.round(item.playCount / 10000) + "万" : item.playCount
         this.props.history.push({

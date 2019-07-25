@@ -69,7 +69,7 @@ class Video extends Component {
                 <div>
                     {/*  <Router> 子路由不加Router 默认子路由 */}
                     {
-                        this.props.match.path === this.props.location.pathname ? (<Redirect to={`${this.props.match.path}/tuijian`} />) : ""
+                        this.props.match.path === this.props.location.pathname ? (<Redirect to={`${this.props.match.path}/mv`} />) : ""
                     }
                     {
 
@@ -89,7 +89,7 @@ class Video extends Component {
         }
     }
     componentDidMount() {
-        console.log(this.props.match.path)
+        // console.log(this.props.match.path)
     }
 }
 function mapStateToProps(state) {

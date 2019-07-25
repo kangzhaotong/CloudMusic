@@ -12,12 +12,12 @@ class Slider extends Component {
         this.state = {
             myid:localStorage.userId
         }
-        console.log(this.state.myid)
+        // console.log(this.state.myid)
     }
     componentDidMount() {
         this.props.user_playlist(this.state.myid)
         this.props.collete(this.state.myid)
-        console.log(this.state.myid,22222)
+        // console.log(this.state.myid,22222)
     }
     render() {
         return (

@@ -45,7 +45,7 @@ class Result extends Component{
                 <div className="conend">
                     {
                         (music || []).map((item,index) => {
-                            return (<p className='content' key={index}>
+                            return (<div className='content' key={index}>
                                 <span onClick={()=>{
                                     this.props.history.push("/player/"+item.id);
                                 }}>{item.name}</span>
@@ -54,7 +54,7 @@ class Result extends Component{
                                 </div>
                                 <i className="iconfont iconshipin"></i>
                                 <i className="iconfont iconshudian"></i>
-                            </p>)
+                            </div>)
                         })
                     } 
                 </div>

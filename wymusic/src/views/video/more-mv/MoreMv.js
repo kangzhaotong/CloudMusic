@@ -4,7 +4,6 @@ import { Player } from "video-react"
 import * as videoAction from "@/store/actionCreator/video"
 import { bindActionCreators } from "redux"
 import axios from "axios"
-import baseUrl from "@/baseUrl"
 import "~/video-react/dist/video-react.css"
 import "./moreMv.css"
 class PlayMv extends React.Component {
@@ -82,7 +81,7 @@ class PlayMv extends React.Component {
         this.props.history.go(-1)
     }
     async playMv(item) {
-        const {data} = await axios.get(baseUrl + "/mv/url?id=" + item.id)
+        const {data} = await axios.get("/wymusic/mv/url?id=" + item.id)
         var name = item.name
         var playCount = item.playCount > 10000 ? Math.round(item.playCount / 10000) + "万" : item.playCount
         // console.log(playCount)

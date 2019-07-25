@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import axios from "axios"
-import baseUrl from "@/baseUrl"
 import * as videoAction from "@/store/actionCreator/video"
 import "./rankingMv.css"
 
@@ -95,7 +94,7 @@ class RankingMv extends React.Component {
         })
     }
     async playMv(item) {
-        const {data} = await axios.get(baseUrl + "/mv/url?id=" + item.id)
+        const {data} = await axios.get("/wymusic/mv/url?id=" + item.id)
         var name = item.name
         var playCount = item.playCount > 10000 ? Math.round(item.playCount / 10000) + "万" : item.playCount
         // console.log(playCount)
@@ -115,7 +114,7 @@ class RankingMv extends React.Component {
     }
 }
 function mapStateToProps(state) {
-    console.log(state)
+    // console.log(state)
     return {
         rankingMvList: state.rankingMvData.rankingMvList
     }

@@ -107,7 +107,7 @@ class Rank extends Component{
     }
 }
 let mapState=(state)=> {
-  console.log(1111, state)
+  // console.log(1111, state)
   return state;
 }
 let mapAction=(dispatch)=>{
