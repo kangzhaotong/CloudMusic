@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, NavLink, Redirect, Switch } from 'react
 import Account from './components/account/account'
 import My from './views/My/index';
 import Discover from "./components/discover/discover";
+
 // import Search from "./components/discover/search";
 // import ComSearch from "@/components/common/search/Search"
 import PlayMv from "@/views/video/play-mv/PlayMv";//播放组件

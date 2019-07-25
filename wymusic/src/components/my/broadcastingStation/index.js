@@ -3,23 +3,23 @@ import './index.css'
 export default class Commona extends Component {
     constructor(props) {
         super(props)
-        console.log(this.props)
+        // console.log(this.props)
         this.state={
             recommend_radio:[]
         }
     }
     componentWillReceiveProps(nextProps){
-        console.log(nextProps)
+        // console.log(nextProps)
         this.setState({
             recommend_radio:nextProps.recommend_radio
         },()=>{
            
-            console.log(this.state.recommend_radio)
+            // console.log(this.state.recommend_radio)
         })
       
     }
     shouldComponentUpdate(nextProps,nextState){
-        console.log(nextState.recommend_radio.length,nextState)
+        // console.log(nextState.recommend_radio.length,nextState)
         if(nextState.recommend_radio.length===0){
             return false
         }else{
@@ -47,14 +47,20 @@ export default class Commona extends Component {
                                 this.state.recommend_radio.map((v, i) => {
                                     if(v.picUrl){
                                         return (
-                                            <li key={i}>
+                                            <li key={i} onClick={()=>{
+                                                
+                                                // this.props.history.push("/radio/radiodetail/"+v.id)
+                                            }}>
                                                      <img src={v.picUrl} alt="" />
                                                    <p>{v.name}</p>
                                             </li>
                                         )
                                     }else{
                                         return (
-                                            <li key={i}>
+                                            <li key={i} onClick={()=>{
+                                                // console.log(this.props)
+                                                // this.props.history.push("/radio/radiodetail/"+v.id)
+                                            }}>
                                                      <img src={v.coverUrl} alt="" />
                                                         <p>{v.title}</p>
     

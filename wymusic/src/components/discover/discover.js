@@ -29,9 +29,10 @@ class Home extends Component{
             autoplay: {   //滑动后继续播放（不写官方默认暂停）
                 disableOnInteraction: false
             },
-            pagination: {  //分页器
-                el: '.swiper-pagination'
-            }
+            // 如果需要分页器
+            pagination: {
+               el: '.swiper-pagination',
+            }  
         })
     }   
     

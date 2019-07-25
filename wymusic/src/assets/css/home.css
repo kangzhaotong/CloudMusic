@@ -34,7 +34,6 @@ body{
     background: #f7f7f7;
     float: left;
     font-size:24px;
-    padding-left:125px;
     margin-right:26px;
     border:none;
 }
@@ -51,11 +50,11 @@ body{
     font-size:28px;
     color:#c5c5c6;
 }
-#header .icon-gedan{
+#header .iconyinlebofangxuanlvjiezou{
     float: left;
-    font-size:41px !important;
+    font-size:42px !important;
     color:#000001;
-    margin-top:10px !important;
+    margin-top:6px !important;
     font-weight:700;
 
 }

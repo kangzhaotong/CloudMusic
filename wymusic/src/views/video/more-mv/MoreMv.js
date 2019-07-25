@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from "react-redux"
-import { Player } from "video-react"
 import * as videoAction from "@/store/actionCreator/video"
 import { bindActionCreators } from "redux"
 import axios from "axios"

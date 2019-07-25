@@ -154,9 +154,7 @@ class Player extends Component {
     }
 
     touchEnd(e) {
-        this.setState({
-            touching: false,
-        })
+
     }
 
     handlerNext(){

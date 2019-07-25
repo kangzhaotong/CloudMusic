@@ -95,6 +95,12 @@ export default {
     },
     getPaymentList(limit = 20) {
         return (dispatch) => {
+            dispatch({
+                type:"CHANGE_IS_LOADING",
+                payload:{
+                    isLoading:true
+                }
+            });
             axios.get("/wymusic/dj/paygift?limit="+limit+"&offset=20")
                 .then(({data})=>{
                     const rsPaymentList = data.data.list;

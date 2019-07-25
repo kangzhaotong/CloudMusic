@@ -58,7 +58,6 @@ export default function CustomizedExpansionPanels(props) {
     setExpanded(newExpanded ? panel : false);
   };
   const handleChange2 = panel => (event, newExpanded) => {
-    console.log(111111)
     if(newExpanded){
       bba = true;
     }else{

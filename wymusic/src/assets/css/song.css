@@ -7,9 +7,11 @@ html{
     height:92px;
     top:0;
     left: 0;
-    position: absolute;
+    position: fixed;
     text-align: center;
     line-height: 92px;
+    background-color: #fff;
+    z-index: 1;
 }
 .head .iconfont:nth-child(1){
     position: absolute;
@@ -28,7 +30,6 @@ html{
 .nav1{
     width: 100%;
     height: 76px;
-
     border-bottom:1px solid #aea6ad;
     margin-top: 92px;
     overflow-x: scroll;
@@ -36,12 +37,11 @@ html{
     -webkit-overflow-scrolling: touch;
 }
 .nav1 p{
-    width:90px;
+    width:140px;
     height: 100%;
     line-height: 76px;
     font-size: 26px;
     text-align: center;
-    margin-left: 2px;
 }
 .banner1{
     width: 100%;
@@ -67,8 +67,12 @@ html{
     margin-right: 21px;
 
 }
+.mainContent p img{
+    width: 100%;
+    height: 70%;
+}
 .mainContent span{
-    font-size: 2px;
+    font-size: 26px;
     display: block;
     width: 100%;
     height: 80px;

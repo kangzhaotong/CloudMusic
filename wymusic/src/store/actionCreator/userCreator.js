@@ -8,6 +8,7 @@ export default {
                 phone,
                 password
             }).then(({data}) => {
+                console.log(data);
                 if(data.code === 200) {
                     loginStatus().then((v) => {
                         localStorage.avatarUrl = data.profile.avatarUrl;
@@ -23,8 +24,9 @@ export default {
                         })
                     })
                 }
-            }).catch(() => {
+            }).catch((err) => {
                 alert("账号或密码错误！！");
+                console.log(err);
             })
         }
     },
@@ -51,7 +53,7 @@ function loginStatus(){
             if(data.code === 200){
                 res(data)
             }else{
-                rej("网络错误")
+                rej("错误")
             }
         })
     })

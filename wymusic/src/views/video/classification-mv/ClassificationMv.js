@@ -80,7 +80,7 @@ class ClassificationMv extends React.Component {
 
                     </div>
 
-                    <div className="category-mv-box" ref="aaaa">
+                    <div className="category-mv-box" ref="aaaa" onScroll={this.handleScroll}>
                         {
                             this.props.categoryMvData.map(item => {
                                
@@ -122,8 +122,6 @@ class ClassificationMv extends React.Component {
                 isLoading: true
             })
         }
-    }
-    componentWillMount() {
         window.addEventListener('scroll', this.handleScroll, true)
     }
 

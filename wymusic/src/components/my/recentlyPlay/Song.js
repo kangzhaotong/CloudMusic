@@ -18,11 +18,11 @@ class Song extends Component {
         console.log("屏幕的高----------------------",document.documentElement.clientHeight);
     }  
     componentWillReceiveProps(nextProps) {
-        console.log(nextProps)
+        // console.log(nextProps)
         this.setState({
             collect_album: nextProps.my.recent_songs
         }, () => {
-            console.log(this.state.collect_album)
+            // console.log(this.state.collect_album)
         })
     }
     render() {
@@ -43,8 +43,8 @@ class Song extends Component {
                                         this.props.history.push("/player/"+v.song.id)
                                     }}>
                                         <div className="song_top_song_name">
-                                            <span>{v.song.name}</span><br />
-                                            <div className="songSQ">SQ</div><i>{v.song.ar[0].name}</i>
+                                            <span > {v.song.name}</span><br />
+                                            <i>{v.song.ar[0].name}</i>
                                         </div>
                                         <div className="tubiao">
                                             

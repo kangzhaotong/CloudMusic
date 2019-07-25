@@ -1,5 +1,3 @@
-
-/* @import '../../../assets/iconfont/iconfont.css' */
 body,
 p {
     margin: 0;
@@ -121,8 +119,7 @@ p {
 .user_playlist{
     width:650px;
     height:159px;
-   
-  
+    padding-bottom: 80px;
 }
 .user_playlist img{
     float: left;

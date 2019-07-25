@@ -5,7 +5,7 @@ import * as pro from  "../../actionType/video"
 export const navData = (state = initState.navList,action)=>{
     switch(action.type){
         case pro.NAV_LIST:
-            console.log({...state,...action})
+            // console.log({...state,...action})
             return {...state,...action}
         default:
             return state

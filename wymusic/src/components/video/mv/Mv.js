@@ -17,7 +17,7 @@ class Mv extends React.Component {
     render() {
         if (this.state.isLoading || this.state.isLoading2) {
 
-            console.log(1122334455)
+            // console.log(1122334455)
             return (
                 <div>Loading...</div>
             )
@@ -154,7 +154,7 @@ class Mv extends React.Component {
     }
 }
 function mapStateToProps(state) {
-    console.log(state)
+    // console.log(state)
     // console.log("state", state.selectMvData.mvSelectedList)
     return {
         selectMvData: state.selectMvData.mvSelectedList,

@@ -30,6 +30,7 @@ body{
     margin-left:66px;
     margin-right:20px;
     font-size:24px;
+    outline: none;
 }
 #search1 .container>i{
     font-size:28px !important;
