@@ -1,0 +1,2 @@
+export const GET_FIND_VIDEO = 'GET_FIND_VIDEO';
+export const GET_FIND_VIDEO_URL = 'GET_FIND_VIDEO_URL';

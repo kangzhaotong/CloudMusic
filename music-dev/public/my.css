@@ -1,0 +1,33 @@
+
+
+
+/*    张静所属 */
+
+.seg {
+    border: none !important;
+}
+
+.am-action-sheet-body .am-action-sheet-message {
+    text-align: left;
+    color: black
+
+}
+
+.my_add .am-checkbox .am-checkbox-inner{
+    border-radius: 0px;
+}
+.my_add .am-checkbox.am-checkbox-checked .am-checkbox-inner{
+    border-color: red;
+    background: red;
+    border-radius: 0px;
+}
+.my_add .am-checkbox-wrapper.am-checkbox-agree-label{
+    color:#999999;
+}
+
+.winHeight{
+    height:100%;
+    position: absolute;
+    width:100%
+}
+

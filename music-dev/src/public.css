@@ -1,0 +1,381 @@
+/*公共样式*/
+body,
+h1,
+h2,
+h3,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: 12px "微软雅黑";
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: middle;
+    border: 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 0;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.left{
+    float:left;
+}
+
+.right{
+    float:right;
+}
+
+header,
+footer {
+    /*box-sizing: border-box;*/
+    width:100%;
+    height:40px;
+    background-color: #C20C0C;
+
+}
+header{
+    position:absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+}
+footer{
+    /*background-color: #C20C0C;*/
+    /*border-bottom: 1px solid #a40011;*/
+    position:absolute;
+    bottom:0;
+    left:0;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+footer  .b-bottom{
+
+
+}
+* { touch-action: pan-y; }
+
+/***********************************底部导航*******************************************/
+.tabBar{
+    width:100%;
+    height:45px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    display: flex;
+    justify-content: space-around;
+    background:#eee;
+    z-index: 1000;
+}
+.tabBar a{
+    display: inline-block;
+    text-align: center;
+    color:#666;
+    margin-top:5px;
+    width:45px;
+}
+
+.tabBar a span{
+    font-size:16px;
+    display: inline-block;
+    height:16px;width:16px
+}
+.tabBar-link-active{
+
+    background:pink;
+}
+.tabBar-link-active a{
+    color:#f00a0f;
+}
+
+/*********************************发现页/个人推荐person***********************************/
+/*搜索*/
+.am-search {
+    border-bottom: 1px solid #ddd;
+}
+.sub-title {
+    color: #888;
+    font-size: 14px;
+    padding: 30px 0 18px 0;
+}
+/*选项*/
+.s-top{
+    position:absolute;
+    top:40px;
+    left:0;
+    width:100%;
+    height:40px;
+    /*background-color: #C20C0C;*/
+    background-color: pink;
+    line-height:40px;
+    font-size:14px;
+}
+.s-top p{
+    float:left;
+}
+
+/*选项卡*/
+.change-type{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    overflow: hidden;
+    border-bottom:1px solid #ddd;
+    padding:10px 0;
+}
+.change-type div{
+    text-align: center;
+}
+.change-type-icon{
+    display: inline-block;
+    height:40px;
+    width:40px;
+    background:#f00a0f;
+    border-radius: 50%;
+    font-size:22px;
+    color:#fff;
+    line-height:40px;
+}
+.person-change-type{
+    font-size:12px;
+    color:#000;
+}
+
+/*person页的推荐歌单模块*/
+
+.top-music-menu-name{
+    width: 100%;
+    height:40px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    color:#000;
+    font-size:14px;
+    line-height:22px;
+    margin-top:6px;
+}
+.top-music-menu-tit{
+    height:30px;
+    line-height:30px;
+    font-size:18px;
+    margin:10px 15px 0 15px;
+    color:#000;
+}
+.top-music-menu-tit i{
+    margin-left:10px;
+    color:#666;
+}
+
+/*************************************精品歌单列表页*******************************************/
+.Top-Music-Menu-top{
+    height:40px;
+    display: flex;
+    justify-content: space-between;
+    background:#C20C0C;
+    line-height:40px;
+    color:#fff;
+}
+
+.Top-Music-Menu-filter{
+    filter:blur(30px);
+    width:100%;
+}
+.Top-Music-Menu-filter img{
+    width:100%;
+}
+
+.Top-Music-Menu-tit{
+    position:absolute;
+    top:20px;
+    left:0;
+}
+.Top-Music-Menu-tit img{
+    height:25%;
+    width:25%;
+    margin:10px;
+}
+.Top-Music-Menu-All{
+    display: flex;
+    justify-content: space-between;
+    margin:15px 5px;
+    font-size:20px;
+}
+.Top-Music-Menu-All>div:nth-child(1){
+    border:1px solid #999;
+    border-radius: 15px;
+    padding:3px 8px;
+    display: inline-block;
+}
+.Top-Music-Menu-All>div:nth-child(2) p {
+    float: left;
+    margin: 0 10px;
+    display: inline-block;
+    line-height:36px;
+}
+/************************************歌单详情页面***************************************/
+.music-list-detail-icon{
+    height:50px;
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    margin:10px 0 20px 0;
+    text-align: center;
+    color:#fff;
+}
+.music-list-detail-icon div{
+
+}
+.music-list-detail-icon i{
+    display: inline-block;
+    width:50px;
+    font-size:28px;
+}
+/*中间的播放全部和收藏*/
+.music-list-detail-playAll{
+    overflow:hidden;
+    border-radius: 15px 15px 0 0;
+}
+.music-list-detail-playAll>div {
+    line-height:30px;
+    font-size:16px;
+    color:#000;
+    height:30px;
+    padding:5px;
+}
+.music-list-detail-playAll>div:nth-child(1){
+    float:left;
+
+}
+.music-list-detail-playAll>div:nth-child(1) i{
+    float: left;
+    margin:0 5px;
+}
+.music-list-detail-playAll>div:nth-child(1) p{
+    float: left;
+}
+.music-list-detail-playAll>div:nth-child(1) p:nth-child(3){
+    color:#aaa;
+}
+.music-list-detail-playAll>div:nth-child(2){
+    float:right;
+    background:#f00C0C;
+    color:#fff;
+}
+/*播放列表*/
+.music-list-detail-list{
+    height:40px;
+    margin:3px;
+}
+.music-list-detail-inner{
+    float:left;
+    border-bottom:1px solid #999;
+    width:90%;
+    height:100%;
+}
+.music-list-detail-inner div{
+    float:left;
+}
+.music-list-detail-inner>div:nth-child(1){
+    width:90%;
+}
+.music-list-detail-inner>div:nth-child(1) div{
+    width:100%;
+}
+.music-list-detail-inner>div:nth-child(2){
+    width:10%;
+}
+.music-list-detail-inner>div:nth-child(1) p{
+    float:left;
+
+}
+.lyric-list-box{
+    position:absolute;
+    top:200px;
+    left:0;
+}
+/***********************************************帐号页面*********************************/
+.account-top{
+    display: flex;
+    justify-content: space-between;
+    height:40px;
+    line-height:40px;
+    background:#C20C0C;
+    color:#fff;
+}
+
+/*登录*/
+.login{
+    background:#fff;
+    padding-bottom:20px;
+    box-sizing:border-box;
+    margin-bottom:10px;
+}
+.login p{
+    display: block;
+    text-align: center;
+    line-height:30px;
+}
+/***********************************************登录页面*********************************/
+.login-page{
+    height:100%;
+    background:#fff;
+}
+.login-top{
+    display: flex;
+    justify-content: space-between;
+    height:40px;
+    background:#C20C0C;
+    line-height:40px;
+    color:#fff;
+}
+.navlink-login-btn{
+    dispaly:inline-block;
+    width:80%;
+    height:35px;
+    line-height:35px;
+    border:1px solid #C20C0C;
+    border-radius:30px;
+    margin-top:15px;
+    margin-left:10%;
+    color:#c20c0c;
+    text-align: center;
+}
+/*手机登录*/
+.phoneLogin-top{
+    height:40px;
+    background:#c20c0c;
+    display: flex;
+    justify-content: space-between;
+}
+.phoneLogin-form{
+    height:80%;
+}
+.phoneLogin-form input{
+
+}
