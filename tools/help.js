@@ -41,6 +41,32 @@ module.exports.getNowTime=function() {
         //         }
         //         return targetObj;
         //     }
+
+//时间
+module.exports filters=function(v){
+            var time = new Date(v);
+            var timeStr = time.getFullYear()+"-"+
+                (time.getMonth()+1).toString().padStart(2,"0")+"-"+
+                time.getDate().toString().padStart(2,"0")+ " "+
+                time.getHours().toString().padStart(2,"0")+":"+
+                time.getMinutes().toString().padStart(2,"0")+":"+
+                time.getSeconds().toString().padStart(2,"0");
+            return timeStr;
+        }
+//数组扁平化
+module.exports flatten=function（arr）{
+var res=[];
+var i=0;
+for(i;i<arr.length;i++){
+if(Array.isArray(arr[i])){
+
+res=res.concat(flatten(arr[i]))
+}else{
+res.push(arr[i])
+}
+}
+return res;
+}
 /*
 * res:响应对象
 * ok:返回的编码 -1，失败
