@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <script src="js/Main.js"></script>
+</head>
+<body>
+编号：<input type="text" name="bookNo"><br>
+书名：<input type="text" name="bookName"><br>
+作者：<input type="text"  name="author"><br>
+出版社：<input type="text"  name="press"><br>
+<input type="button" value="添加" id="bn">
+
+查找：<input type="text" id="search">
+<input type="button" value="查找" id="searchBn">
+<input type="button" value="清除" id="clear">
+    <script>
+        var book=new BookManager();
+        $("body").append(book.createTable());
+        $("#bn").on("click",clickHandler);
+        $("#searchBn").on("click",searchHandler);
+        $("#clear").on("click",clearHandler);
+        function clickHandler(e) {
+            var obj={};
+            $.each($("input[name]"),function (index,item) {
+                var name=$(item).attr("name");
+                obj[name]=$.trim($(item).val());
+            });
+            book.appendBook(obj);
+        }
+        function searchHandler(e) {
+            var bookName=$.trim($("#search").val());
+            book.searchBook(bookName);
+        }
+        function clearHandler(e) {
+            book.clearAll();
+            for(var i=0;i<book.bookData.length;i++){
+                book.bookData[i]=null;
+            }
+            book.bookData.length=0;
+        }
+    </script>
+</body>
+</html>

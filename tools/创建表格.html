@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function creatTable() {
+        var table=document.createElement("table");
+        for(var i=0;i<10;i++){
+            var tr=document.createElement("tr");
+            table.appendChild(tr);
+            for(var j=0;j<10;j++){
+                var td=document.createElement("td");
+                tr.appendChild(td);
+            }
+        }
+        document.body.appendChild(table);
+    }
+    creatTable10();
+</script>
+</body>
+</html>
