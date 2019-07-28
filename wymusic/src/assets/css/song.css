@@ -1,0 +1,83 @@
+
+html{
+    position: relative;
+}
+.head{
+    width: 100%;
+    height:92px;
+    top:0;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    line-height: 92px;
+    background-color: #fff;
+    z-index: 1;
+}
+.head .iconfont:nth-child(1){
+    position: absolute;
+    top:0;
+    left: -20px;
+    font-size: 50px;
+    color: black
+}
+.head .iconfont:nth-child(3){
+    position: absolute;
+    top:0;
+    right: 35px;
+    font-size: 50px;
+    color: black
+}
+.nav1{
+    width: 100%;
+    height: 76px;
+    border-bottom:1px solid #aea6ad;
+    margin-top: 92px;
+    overflow-x: scroll;
+    display: -webkit-box;
+    -webkit-overflow-scrolling: touch;
+}
+.nav1 p{
+    width:140px;
+    height: 100%;
+    line-height: 76px;
+    font-size: 26px;
+    text-align: center;
+}
+.banner1{
+    width: 100%;
+    height: 400px;
+    background: #fcfcfc;
+}
+
+.banner1 .space-carousel {
+    overflow: hidden;
+    padding-top:50px;
+    touch-action: pan-y;
+  } 
+.mainContent{
+    padding-left: 30px;
+    padding-top:58px;
+    margin-bottom: 2500px;
+}
+.mainContent p{
+    width: 30%;
+    height: 300px;
+    margin-bottom: 42px;
+    float: left;
+    margin-right: 21px;
+
+}
+.mainContent p img{
+    width: 100%;
+    height: 70%;
+}
+.mainContent span{
+    font-size: 26px;
+    display: block;
+    width: 100%;
+    height: 80px;
+    margin-left: 5px;
+    padding-top:10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

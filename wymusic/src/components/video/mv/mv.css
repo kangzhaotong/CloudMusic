@@ -1,0 +1,148 @@
+.mv-bag-box{
+    padding-bottom:100px;
+}
+.mv-box{
+    position:relative;
+}
+.mv-box::after{
+    content: "  ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #8F8F8F;
+    -webkit-transform: scaleY(.2);
+    transform:scaleY(.2);
+}
+.mv-container{
+    padding:0 20px;
+}
+.mv-title{
+    display: flex;
+    justify-content: space-between;
+}
+.mv-title>h3{
+    line-height:130px;
+    font-size:40px;
+}
+.mv-title>p{
+   font-size:28px;
+   height:60px;
+   border:1px solid #ddd;
+   padding:10px 20px;
+   border-radius:25px 25px;
+   margin-top:30px;
+} 
+.mv-content-box{
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    /* flex: 0 0 33%; */
+}
+.mv-content{
+    width:49%;
+    border-radius:50px 50px;
+    margin-bottom:35px;
+    position: relative;
+}
+.mv-content img{
+    border-radius:10px;
+}
+.mv-content h4{
+    font-size:28px;
+}
+.mv-content>span{
+    font-size:22px;
+    display: inline-block;
+    color:#8F8F8F;
+}
+.mv-content p{
+    position: absolute;
+    right:10px;
+    top:5px;
+    color:white;
+    font-size:24px;
+}
+.mv-content .play-num{
+    position: absolute;
+    right:10px;
+    top:10px;
+    color:white;
+    font-size:28px;
+}
+.mv-content .play-num span{
+    color:white;
+}
+.play-num span:nth-child(1){
+    margin-right:5px;
+}
+.mv-ranking{
+    position: relative;
+    padding:40px 20px;
+}
+.mv-ranking p:nth-child(1){
+    font-size: 40px;
+}
+.mv-ranking p:nth-child(2){
+   color:#8F8F8F;
+   font-size: 22px;
+}
+.mv-ranking::after{
+    content: "  ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #8F8F8F;
+    -webkit-transform: scaleY(.2);
+    transform:scaleY(.2);
+}
+.mv-more-marvellous{
+    padding:0 20px;
+}
+.more-marvellous-mv{
+    width:95%;
+    margin:0 auto;
+    position: relative;
+    margin-bottom:30px;
+}
+.more-marvellous-mv img{
+    width:100%;
+    border-radius:15px 15px;
+}
+.more-marvellous-num{
+    position: absolute;
+    bottom:65px;
+    left:15px;
+}
+.more-marvellous-num span{
+    color:white;
+}
+.more-marvellous-num span:nth-child(1){
+    margin-right:10px;
+    font-size:30px;
+}
+.more-marvellous-name{
+    height: 30px;
+    line-height:30px;
+    margin-top:20px;
+    font-size: 24px;
+}
+.mv-sjx{
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 50px solid #ddd;
+    border-bottom: 25px solid transparent;
+    position: absolute;
+    left:45%;
+    top:45%;
+  }
+  .time-mv{
+    position: absolute;
+    bottom:75px;
+    right:20px;
+    color:white;
+  }
